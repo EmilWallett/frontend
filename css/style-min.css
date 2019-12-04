@@ -1,46 +1,89 @@
+/*Body selectors, changes for the whole website*/
 body {
 	background-color: #5672a1; /*steelblue*/
 	font-family: "Verdana";
 }
+/*Main grid layout for the whole website
+Sub grids are making smaller boxes inside of these boxes*/
 .wrapper {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas:
-	"header header header"
-	". . ."
-	"main main main"
-  "footer footer footer";
-	grid-gap: 15px 3rem;
-	grid-template-rows: auto 25px auto auto;
+	display: grid; /*Explains that the wrapper class should display a grid*/
+	grid-template-columns: 1fr 1fr 1fr; /*Devides the whole grid layout into 3 columns*/
+	grid-template-areas: /*How the different elements should be positioned inside of the grid and how much space/boxes the should use*/
+	"header header header" /*Row 1*/
+	". . ." /*Row 2 - empty row without any objects*/
+	"main main main" /*Row 3*/
+  	"footer footer footer"; /*Row 4*/
+	grid-gap: 15px 3rem; /*Gap/space between the different grid boxes - first value is laying (-,rows) while the second value is standing (|,columns)*/
+	grid-template-rows: auto 25px auto auto; /*How much space the different grid rows are allowed to use*/
 }
+/*Header gridlayout*/
 header {
-	grid-area: header;
+    grid-area: header; /*The name to use in the grid-template-areas*/
+    display: grid;
+    grid-template-areas: 
+    "logo h1 nav";
 }
+/*Top left logo class*/
+.logo {
+    grid-area: logo;
+}
+/*Main header (sustaining) class*/
+h1 {
+    grid-area: h1;
+}
+/*Dropdown menu class*/
+.dropdown {
+    grid-area: nav;
+}
+/*Moves the dropdown menu/nav to a top right position*/
+div.dropdown{
+	position: absolute;
+	right: 25px;
+	top: 25px;
+}
+/*Makes the dropdown content visible*/
+div.dropdown-content{
+	right: 0;
+}
+/*Grid layout inside of the main tags*/
 main {
     grid-area: main;
     display: grid;
     grid-template-areas:
     "images textblock textblock";
-    grid-gap: 30px;
-		grid-template-columns: 300px auto auto;
+    grid-gap: 30px; /*When only one value are used then both the laying rows and the standing columns get the same gap*/
+	grid-template-columns: 300px auto auto; /*Changes the size of the columns, the first one gets 300px while the other ones are automatic*/
 }
+/*The place where the text are written - uses the to right columns*/
 .textblock {
     grid-area: textblock;
-		text-align: justify;
+	text-align: justify; /*Spreads out the text so it uses the full rows - can look weird sometimes so make sure to check through all text*/
 }
+/*The left grid column, split into 2 rows*/
 .images {
     grid-area: images;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; /*Splits the grid section/box into to rows of boxes*/
     grid-gap: 30px;
 }
+/*Class for resizing all images - should be updated to only change the wanted images*/
+img {
+    height: 100px; /*Changes the height of the images*/
+    width: auto; /*Makes the image width auto compared to how big the height is*/
+}
+/*The footer (at the bottom of the page) - contains a logo and links to other pages of the website*/
 footer {
   grid-area: footer;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 30px;
 }
-img {
-    height: 100px;
-    width:	auto;
+/*Class for the unorderd list inside of the footer*/
+footer ul {
+    list-style: none; /*Removes the cirkles left of the text/links*/
+}
+/*Class for the a tag in the unorderd list inside of the footer*/
+footer ul a {
+    text-decoration: none; /*Removes the underline bellow the text*/
+    /*More text changes for the links can be added here*/
 }
