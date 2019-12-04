@@ -114,13 +114,13 @@ body{
 	border: 1px solid black;
 }
 
-#b1{grid-area: b1;}
-#b2{grid-area: b2;}
-#b3{grid-area: b3;}
-#b4{grid-area: b4;}
-#b5{grid-area: b5;}
-#b6{grid-area: b6;}
-#b7{grid-area: b7;}
-#b8{grid-area: b8;}
-#b9{grid-area: b9;}
+.b1{grid-area: b1;}
+.b2{grid-area: b2;}
+.b3{grid-area: b3;}
+.b4{grid-area: b4;}
+.b5{grid-area: b5;}
+.b6{grid-area: b6;}
+.b7{grid-area: b7;}
+.b8{grid-area: b8;}
+.b9{grid-area: b9;}
 
