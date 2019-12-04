@@ -120,3 +120,12 @@ img {
 p {
 	text-align: justify; /*Spreads out the text so it uses the full rows - can look weird sometimes so make sure to check through all text*/
 }
+/*Class for the unorderd list inside of the footer*/
+footer ul {
+    list-style: none; /*Removes the cirkles left of the text/links*/
+}
+/*Class for the a tag in the unorderd list inside of the footer*/
+footer ul a {
+    text-decoration: none; /*Removes the underline bellow the text*/
+    /*More text changes for the links can be added here*/
+}
