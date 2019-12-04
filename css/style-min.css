@@ -1,0 +1,47 @@
+body {
+	background-color: #5672a1; /*steelblue*/
+	font-family: "Verdana";
+}
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+	"header header header"
+	"main main main"
+    "footer footer footer";
+	grid-gap: 15px 3rem;
+	grid-template-rows: auto 25px auto auto;
+}
+header {
+	grid-area: header;
+}
+main {
+	grid-area: main;
+	display: grid;
+	grid-template-areas:
+	"aboutTree aboutTree aboutTree"
+	"fameShame fameShame fameShame"
+	"goals goals goals";
+	grid-gap: 30px;
+}
+.textblock {
+	grid-area: aboutTree;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
+}
+.pictures {
+	grid-area: fameShame;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
+}
+footer {
+    grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
+}
