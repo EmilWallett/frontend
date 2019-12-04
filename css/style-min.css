@@ -7,8 +7,9 @@ body {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:
 	"header header header"
+	". . ."
 	"main main main"
-    "footer footer footer";
+  "footer footer footer";
 	grid-gap: 15px 3rem;
 	grid-template-rows: auto 25px auto auto;
 }
@@ -16,32 +17,35 @@ header {
 	grid-area: header;
 }
 main {
-	grid-area: main;
-	display: grid;
-	grid-template-areas:
-	"aboutTree aboutTree aboutTree"
-	"fameShame fameShame fameShame"
-	"goals goals goals";
-	grid-gap: 30px;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "textblock textblock textblock"
+    "fameShame fameShame fameShame"
+    "goals goals goals";
+    grid-gap: 30px;
 }
 .textblock {
-	grid-area: aboutTree;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 30px;
-	border: 1px solid black;
+    grid-area: textblock;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "images animatedTree aboutText";
+    grid-gap: 30px;
 }
-.pictures {
-	grid-area: fameShame;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 30px;
-	border: 1px solid black;
+.images {
+    grid-area: images;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
 }
 footer {
     grid-area: footer;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 30px;
-	border: 1px solid black;
+}
+img {
+    height: 100px;
+    width:	auto;
 }
