@@ -1,3 +1,5 @@
+CreateGalleryGrid(true);
+CreateGalleryGrid(false);
 
 function CreateGalleryGrid(fame){
 	var informationArray = [];
@@ -14,19 +16,19 @@ function CreateGalleryGrid(fame){
 
 	for (let index = 0; index < informationArray.length; index++) {
 		const element = informationArray[index];
-		let boxID = index + 1;
-		boxID = "b" + boxID;
+		let boxClass = index + 1;
+		boxClass = "b" + boxClass;
 		
-		let galleryBox = CreateGalleryBox(element.title, element.username, element.imageURL, boxID);
+		let galleryBox = CreateGalleryBox(element.title, element.username, element.imageURL, boxClass);
 		appendElement.appendChild(galleryBox);
 	}
 
 }
 
-function CreateGalleryBox(title, username, imageURL, boxID){
+function CreateGalleryBox(title, username, imageURL, boxClass){
 	let returnElement = document.createElement("section");
 	returnElement.className = "gallery-box";
-	returnElement.id = boxID;
+	returnElement.classList.add(boxClass);
 
 	let imageElement = document.createElement("img");
 	imageElement.src = imageURL;
