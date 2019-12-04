@@ -14,17 +14,29 @@ body {
 	grid-template-rows: auto 25px auto auto;
 }
 header {
-	grid-area: header;
+    grid-area: header;
+    display: grid;
+    grid-template-areas: 
+    "logo h1 nav";
 }
 main {
     grid-area: main;
     display: grid;
     grid-template-areas:
     "aboutTree aboutTree aboutTree"
-		". . Button"
+	". . ."
     "fameShame fameShame fameShame"
     "goals goals goals";
     grid-gap: 30px;
+}
+h1 {
+    grid-area: h1;
+}
+.dropdown {
+    grid-area: nav;
+}
+.logo {
+    grid-area: logo;
 }
 .aboutTree {
     grid-area: aboutTree;
@@ -76,10 +88,7 @@ p	{
 	text-align: justify;
 }
 button {
-	grid-area: Button;
-	display: grid;
-	margin-left: 30%;
-	margin-right: 50%;
+	margin-left: 35%;
 	width: 150px;
 	height: 50px;
 }
