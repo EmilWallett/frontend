@@ -94,7 +94,22 @@ button {
     grid-area: fameShame;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "image tree text";
+    grid-template-areas: "fameText fameImages shameText shameImages";
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto auto;
+}
+/*The images for fame in the second section - makes a grid to place them bellow each other*/
+.fameImages {
+    grid-area: fameImages;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+/*The images for shame in the second section - makes a grid to place them bellow each other*/
+.shameImages {
+    grid-area: shameImages;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 /*The thrid section in the main - text about the goals with this website/project*/
