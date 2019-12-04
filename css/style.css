@@ -21,6 +21,7 @@ main {
     display: grid;
     grid-template-areas:
     "aboutTree aboutTree aboutTree"
+		". . Button"
     "fameShame fameShame fameShame"
     "goals goals goals";
     grid-gap: 30px;
@@ -52,7 +53,7 @@ main {
     grid-area: fameShame;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "fameText fameImages shameText shameImages";
+    grid-template-areas: "image tree text";
     grid-gap: 30px;
 }
 .goals {
@@ -71,20 +72,14 @@ img {
     height: 100px;
     width:auto;
 }
-.fameImages {
-    grid-area: fameImages;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 30px;
+p	{
+	text-align: justify;
 }
-.shameImages {
-    grid-area: shameImages;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 30px;
-}
-
-.goalText2{
-
-    margin-top: 44.5px;
+button {
+	grid-area: Button;
+	display: grid;
+	margin-left: 30%;
+	margin-right: 50%;
+	width: 150px;
+	height: 50px;
 }
