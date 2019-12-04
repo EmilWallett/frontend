@@ -6,6 +6,17 @@ header{
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	border: 2px solid black;
+	position: relative;
+}
+
+div.dropdown{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+div.dropdown-content{
+	right: 0;
 }
 
 header>img{
