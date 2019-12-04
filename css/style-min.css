@@ -20,9 +20,7 @@ main {
     grid-area: main;
     display: grid;
     grid-template-areas:
-    "textblock textblock textblock"
-    "fameShame fameShame fameShame"
-    "goals goals goals";
+    "textblock textblock textblock";
     grid-gap: 30px;
 }
 .textblock {
@@ -30,7 +28,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "images animatedTree aboutText";
+    "images textblock aboutText";
     grid-gap: 30px;
 }
 .images {
