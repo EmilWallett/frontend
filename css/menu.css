@@ -15,6 +15,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  font-family: "Verdana";
 }
 .dropdown-content {
   display: none;
