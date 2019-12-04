@@ -22,6 +22,7 @@ header {
     display: grid;
     grid-template-areas: 
     "logo h1 nav";
+    grid-template-columns: 150px auto 75px; /*Fixes the grid column sizes so the logo and the nav menu has a limited space*/
 }
 /*Top left logo class*/
 .logo {
