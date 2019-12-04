@@ -17,39 +17,57 @@ header {
 	grid-area: header;
 }
 main {
-	grid-area: main;
-	display: grid;
-	grid-template-areas:
-	"aboutTree aboutTree aboutTree"
-	"fameShame fameShame fameShame"
-	"goals goals goals";
-	grid-gap: 30px;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "aboutTree aboutTree aboutTree"
+    "fameShame fameShame fameShame"
+    "goals goals goals";
+    grid-gap: 30px;
 }
 .aboutTree {
-	grid-area: aboutTree;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 30px;
-	border: 1px solid black;
+    grid-area: aboutTree;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "aboutImages animatedTree aboutText";
+    grid-gap: 30px;
+}
+.aboutImages {
+    grid-area: aboutImages;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.animatedTree {
+    grid-area: animatedTree;
+    display: grid;
+}
+.aboutText {
+    grid-area: aboutText;
+    display: grid;
+    grid-template-rows: 60px auto;
 }
 .fameShame {
-	grid-area: fameShame;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 30px;
-	border: 1px solid black;
+    grid-area: fameShame;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "image tree text";
+    grid-gap: 30px;
 }
 .goals {
 	grid-area: goals;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 30px;
-	border: 1px solid black;
 }
 footer {
     grid-area: footer;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 30px;
-	border: 1px solid black;
+}
+img {
+    height: 100px;
+    width:auto;
 }
