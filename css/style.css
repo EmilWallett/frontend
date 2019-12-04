@@ -23,16 +23,9 @@ header {
     grid-template-areas: 
     "logo h1 nav";
 }
-/*Grid layout inside of the main tags*/
-main {
-    grid-area: main;
-    display: grid;
-    grid-template-areas:
-    "aboutTree aboutTree aboutTree"
-	". . ."
-    "fameShame fameShame fameShame"
-    "goals goals goals";
-    grid-gap: 30px; /*When only one value are used then both the laying rows and the standing columns get the same gap*/
+/*Top left logo class*/
+.logo {
+    grid-area: logo;
 }
 /*Main header (sustaining) class*/
 h1 {
@@ -52,9 +45,16 @@ div.dropdown{
 div.dropdown-content{
 	right: 0;
 }
-/*Top left logo class*/
-.logo {
-    grid-area: logo;
+/*Grid layout inside of the main tags*/
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    "aboutTree aboutTree aboutTree"
+	". . ."
+    "fameShame fameShame fameShame"
+    "goals goals goals";
+    grid-gap: 30px; /*When only one value are used then both the laying rows and the standing columns get the same gap*/
 }
 /*The first section in the main - text about the project, a tree and some photos*/
 .aboutTree {
@@ -104,13 +104,6 @@ button {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 30px;
 }
-/*The footer (at the bottom of the page) - contains a logo and links to other pages of the website*/
-footer {
-    grid-area: footer;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 30px;
-}
 /*Class for resizing all images - should be updated to only change the wanted images*/
 img {
     height: 100px; /*Changes the height of the images*/
@@ -119,6 +112,13 @@ img {
 /*Class for all p tags (paragraph/text tags)*/
 p {
 	text-align: justify; /*Spreads out the text so it uses the full rows - can look weird sometimes so make sure to check through all text*/
+}
+/*The footer (at the bottom of the page) - contains a logo and links to other pages of the website*/
+footer {
+    grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
 }
 /*Class for the unorderd list inside of the footer*/
 footer ul {
