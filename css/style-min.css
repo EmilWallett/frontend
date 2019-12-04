@@ -26,6 +26,7 @@ main {
 }
 .textblock {
     grid-area: textblock;
+		text-align: justify;
 }
 .images {
     grid-area: images;
