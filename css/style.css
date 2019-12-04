@@ -52,7 +52,7 @@ main {
     grid-area: fameShame;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "image tree text";
+    grid-template-areas: "fameText fameImages shameText shameImages";
     grid-gap: 30px;
 }
 .goals {
@@ -71,6 +71,20 @@ img {
     height: 100px;
     width:auto;
 }
-p	{
-	text-align: justify;
+.fameImages {
+    grid-area: fameImages;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.shameImages {
+    grid-area: shameImages;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.goalText2{
+
+    margin-top: 44.5px;
 }
