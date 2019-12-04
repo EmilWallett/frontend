@@ -1,0 +1,73 @@
+main{grid-area: main;}
+header{grid-area: header;}
+footer{grid-area: footer;}
+
+header h1{
+	text-align: center;
+}
+
+main h2{
+	text-align: center;
+	border: 3px black solid;
+}
+
+body{
+	background-color: rgb(192, 190, 190);
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+	"header header header"
+	"main main main"
+	"footer footer footer";
+	grid-gap: 5px;
+}
+
+#fameBox, #shameBox{
+	display: grid;
+	grid-template-areas: 
+	"b1 b2 b3"
+	"b4 b5 b6"
+	"b7 b8 b9";
+	grid-gap: 2%;
+}
+
+
+.gallery-box{
+	display: grid;
+	grid-template-areas: 
+	"imgGallery imgGallery"
+	"usernameGallery titleGallery";
+	grid-template-rows: 1fr 30px;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	background-color: rgba(105, 255, 59, 0.699);
+	padding: 5px;
+}
+.gallery-box>img{
+	grid-area: imgGallery;
+	margin: 0 auto;
+}
+
+.gallery-box>.username{
+	grid-area: usernameGallery;
+	margin: 5px;
+}
+
+.gallery-box>.title{
+	grid-area: titleGallery;
+	margin: 5px;
+}
+
+#b1{grid-area: b1;}
+#b2{grid-area: b2;}
+#b3{grid-area: b3;}
+#b4{grid-area: b4;}
+#b5{grid-area: b5;}
+#b6{grid-area: b6;}
+#b7{grid-area: b7;}
+#b8{grid-area: b8;}
+#b9{grid-area: b9;}
+
