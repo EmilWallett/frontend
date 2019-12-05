@@ -173,3 +173,17 @@ footer ul a {
     height:400px;
     width:400px:
 }
+footer a:hover {
+    background-color: white;
+}
+footer a:visited{
+    color:grey;
+}
+
+footer a:link {
+    color: gray;
+}
+
+footer ul{
+    list-style: none; 
+}
