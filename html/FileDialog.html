@@ -1,6 +1,6 @@
 <!doctype html>
 <head>
-<script type"text/javascript" src="./TestJS.js">
+<script type"text/javascript" src="./FileDialog.js">
 	</script>
   <title>HTML5-Site Structure</title>
 </head>
@@ -11,12 +11,12 @@
   </header>
   
   <!--Upload-->
-  <form class="fileupload" action="upload.php" method="post">
+  <form class="fileupload">
     <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
-    <button type="submit" id="upload-btn">Upload</button>
-	
+    
 </form>
 
+<button id="upload-btn">Upload</button>
   
 <div id="imgTest"></div>
   <footer>
