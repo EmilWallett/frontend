@@ -50,7 +50,6 @@ Which files connects to which website page:
   * menu.css
   * index.js
   
-  *Work in progress
 ### App
  * app.html
  * app.css
