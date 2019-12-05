@@ -35,7 +35,7 @@ Which files connects to which website page:
   * index.js
 
 ### Supporters
-  * HTML - MISSING?
+  * oursupporters.html
   * style-min.css
   * index.js
 
