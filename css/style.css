@@ -152,7 +152,7 @@ p {
 footer {
     grid-area: footer;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	grid-gap: 30px;
 }
 /*Class for the unorderd list inside of the footer*/
@@ -168,4 +168,8 @@ footer ul a {
 .goalText2{
 
     margin-top: 44.5px;
+}
+.tree {
+    height:400px;
+    width:400px:
 }
