@@ -20,7 +20,7 @@ Which files connects to which website page:
   * HTML - MISSING?
   * CSS - MISSING?
   * JS - MISSING?
-  
+
 ### Gallery
   * gallery.html
   * gallery.css
@@ -36,14 +36,14 @@ Which files connects to which website page:
 
 ### Supporters
   * HTML - MISSING?
-  * CSS - MISSING?
-  * JS - MISSING?
-  
+  * style-min.css
+  * index.js
+
 ### Other
   * HTML - MISSING?
-  * CSS - MISSING?
-  * JS - MISSING?
-  
+  * style-min.css
+  * index.js
+
 ### ToS
   * tos.html
   * style-min.css
