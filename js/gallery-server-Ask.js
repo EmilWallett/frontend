@@ -1,4 +1,4 @@
-function AskServerForPosts(fame){
+/*function AskServerForPosts(fame){
 	let returnObj = [];
 	if (fame) {
 		returnObj[0] = {
@@ -94,4 +94,6 @@ function AskServerForPosts(fame){
 		}
 	}
 	return returnObj;
-}
+}*/
+
+

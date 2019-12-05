@@ -1,11 +1,12 @@
  //Image encoding
  function encodeImageFileAsURL() { // <- Function to encode an image or anything else
+	 var srcData;
     var filesSelected = document.getElementById("inputFileToLoad").files;
     if (filesSelected.length > 0) {
       var fileToLoad = filesSelected[0];
       var fileReader = new FileReader();
       fileReader.onload = function(fileLoadedEvent) {
-        var srcData = fileLoadedEvent.target.result; // <--- data: base64
+        srcData = fileLoadedEvent.target.result; // <--- data: base64
         var newImage = document.createElement('img');
         newImage.src = srcData;
         document.getElementById("imgTest").innerHTML = newImage.outerHTML;
@@ -13,6 +14,25 @@
  
       }
       fileReader.readAsDataURL(fileToLoad);
-	  //fetch(, {image. ""})
-    }
+	  //let result= postData(srcData);
+	  //console.log(result);
+	  document.getElementById("upload-btn").onclick = ()=>postData(srcData);
+   
+  }
+ }
+  
+  async function postData(image){
+	  console.log("in postData")
+	  let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/image", {
+		  "method": "POST",
+		 "headers":{
+			  "Content-Type": "application/json"
+		  
+	  "body":{
+		  "image": image,
+			  "user": "",
+			  "rating": ""
+		  }
+			});
+			return await response.json();
   }
