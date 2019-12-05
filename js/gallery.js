@@ -1,25 +1,26 @@
 CreateGalleryGrid(true);
 CreateGalleryGrid(false);
 
-function CreateGalleryGrid(fame){
+async function CreateGalleryGrid(fame){
 	var informationArray = [];
 	if(fame){
 		//server request for fame
-		informationArray = AskServerForPosts(true);
+		informationArray = await AskServerForPosts();
 		var appendElement = document.getElementById("fameBox");
 	}
 	else{
 		//server request for shame
-		informationArray = AskServerForPosts(false);
+		informationArray = await AskServerForPosts();
 		var appendElement = document.getElementById("shameBox");
 	}
+	
 
-	for (let index = 0; index < 9; index++) {
+	for (let index = 0; index < informationArray.length; index++) {
 		const element = informationArray[index];
 		let boxClass = index + 1;
 		boxClass = "b" + boxClass;
 		
-		let galleryBox = CreateGalleryBox(element.title, element.username, element.imageURL, boxClass);
+		let galleryBox = CreateGalleryBox(element.image.title, element.image.user, element.image.image, boxClass);
 		appendElement.appendChild(galleryBox);
 	}
 
@@ -63,4 +64,10 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 	//</section>
 
 	return returnElement;
+}
+
+async function AskServerForPosts(){
+	const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/9");
+	const json = await response.json();
+	return json;
 }
