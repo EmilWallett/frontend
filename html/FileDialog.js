@@ -25,15 +25,15 @@
 	  console.log("in postData")
 	  let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/image", {
 		 headers:{
-			 "Accept-Type":"application/json",
+			 //"Accept-Type":"application/json",
 			  "Content-Type": "application/json"
 		 },
 		 method:"POST",
 	  body:
 		  JSON.stringify ({
 		  image: image,
-			  user: "",
-			  rating: ""
+			  userID: 1,
+			  title: "hello"
 		  })
 		  
 			});
