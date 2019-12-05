@@ -1,6 +1,6 @@
 /*Body selectors, changes for the whole website*/
 body {
-	background-color: #5672a1; /*steelblue*/
+    background-image: url('../img/background.jpg');
 	font-family: "Verdana";
 }
 /*Main grid layout for the whole website
