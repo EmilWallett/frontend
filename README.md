@@ -25,7 +25,8 @@ Which files connects to which website page:
   * gallery.html
   * gallery.css
   * menu.css
-  * JS - MISSING?
+  * gallery.js
+  * gallery-server-Ask.js
 
 ### About
   * about.html
