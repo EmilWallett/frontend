@@ -4,35 +4,66 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<script src="../js/gallery.js"></script>
+		<script defer src="../js/gallery.js"></script>
 		<link rel="stylesheet" href="../css/gallery.css">
+		<link href="../css/menu.css" rel="stylesheet">
+		<script src="../js/gallery-server-Ask.js"></script>
 		<title>Sustain - gallery</title>
 	</head>
 	<body>
 		<div class="grid-container">
 			<header>
+				<img src="../img/erasmus.png" class="logo">
 				<h1>SUSTAINING</h1>
+				<div class="dropdown">
+					<!--Burger menu-->
+					<section class="menu"></section>
+					<section class="menu"></section>
+					<section class="menu"></section>
+					<div class="dropdown-content">
+						<a href="./index.html">Home</a>
+						<a href="#">Register/Login</a>
+						<a href="./gallery.html">Gallery</a>
+						<a href="./about.html">About Us</a>
+						<a href="#">Our Supporters</a>
+						<a href="#">Others</a>
+					</div>
+				</div>
 			</header>
 			<main>
+				<noscript>
+					<h1>You need to have javascript enabled for this website to work</h1>
+				</noscript>
+				<!-- This is the fame section-->
 				<h2>Fame</h2>
 				<section id="fameBox"></section>
 				<br>
+				<!-- This is the shame section-->
 				<h2>Shame</h2>
 				<section id="shameBox"></section>
 			</main>
 			<footer>
 				<section>
 					<ul>
-						<li>TOS</li>
-						<li>ABOUT</li>
-						<li>and so on...</li>
+						<li>
+							<!--Home-Link-->
+							<a href="./index.html"> HOME </a>
+						</li>
+            			<li>
+							<!--TOS-Link-->
+							<a href="./tos.html"> TOS </a>
+						</li>
+            			<li>
+							<!--ABOUT-Link-->
+							<a href="./about.html"> ABOUT </a>
+						</li>
+						<li>
+							<!--Galary-link-->
+							<a href="./gallery.html"> GALLERY </a>
+						</li>
 					</ul>
 				</section>
 			</footer>
 		</div>
-		<script>
-			CreateGalleryGrid(true);
-			CreateGalleryGrid(false);
-		</script>
 	</body>
 </html>

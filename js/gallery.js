@@ -1,3 +1,5 @@
+CreateGalleryGrid(true);
+CreateGalleryGrid(false);
 
 function CreateGalleryGrid(fame){
 	var informationArray = [];
@@ -12,138 +14,53 @@ function CreateGalleryGrid(fame){
 		var appendElement = document.getElementById("shameBox");
 	}
 
-	for (let index = 0; index < informationArray.length; index++) {
+	for (let index = 0; index < 9; index++) {
 		const element = informationArray[index];
-		let boxID = index + 1;
-		boxID = "b" + boxID;
+		let boxClass = index + 1;
+		boxClass = "b" + boxClass;
 		
-		let galleryBox = CreateGalleryBox(element.title, element.username, element.imageURL, boxID);
+		let galleryBox = CreateGalleryBox(element.title, element.username, element.imageURL, boxClass);
 		appendElement.appendChild(galleryBox);
 	}
 
 }
 
-function CreateGalleryBox(title, username, imageURL, boxID){
+function CreateGalleryBox(title, username, imageURL, boxClass){
 	let returnElement = document.createElement("section");
 	returnElement.className = "gallery-box";
-	returnElement.id = boxID;
+	returnElement.classList.add(boxClass);
 
 	let imageElement = document.createElement("img");
 	imageElement.src = imageURL;
 	imageElement.alt = title;
 	returnElement.appendChild(imageElement);
 
+	let divElement = document.createElement("div");
+	divElement.className = "usernameAndTitleBox";
+
+
 	let textElementUsername = document.createElement("p");
 	textElementUsername.className = "username";
 	let textNodeUsername = document.createTextNode(username);
 	textElementUsername.appendChild(textNodeUsername);
-	returnElement.appendChild(textElementUsername);
+	divElement.appendChild(textElementUsername);
 
 	let textElementTitle = document.createElement("p");
 	textElementTitle.className = "title";
 	let textNodeTitle = document.createTextNode(title);
 	textElementTitle.appendChild(textNodeTitle);
-	returnElement.appendChild(textElementTitle);
+	divElement.appendChild(textElementTitle);
+
+	returnElement.appendChild(divElement);
+	
+	//this is what the returnElement looks like
+	//<section class="gallery-box" id="boxID">
+	//	<img src="imageURL" alt="title">
+	//	<div class="usernameAndTitleBox">
+	//		<p class="username">username</p>
+	// 		<p class="title">title</p>
+	//	</div>
+	//</section>
 
 	return returnElement;
-}
-
-
-
-function AskServerForPosts(fame){
-	let returnObj = [];
-	if (fame) {
-		returnObj[0] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[1] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[2] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[3] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[4] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[5] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[6] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[7] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[8] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-	} else {
-		returnObj[0] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[1] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[2] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[3] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[4] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[5] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[6] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[7] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-		returnObj[8] = {
-			"title": "",
-			"username": "",
-			"imageURL": ""
-		}
-	}
-	return returnObj;
 }
