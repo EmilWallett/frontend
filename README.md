@@ -49,6 +49,11 @@ Which files connects to which website page:
   * style-min.css
   * menu.css
   * index.js
+  
+### App
+ * app.html
+ * app.css
+ * app.js
 
 ### ANYTHING MORE?
   * ?
