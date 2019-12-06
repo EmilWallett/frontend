@@ -33,8 +33,8 @@ async function postData(imageData) {
 			userID: "1",
 			title: "TEST-title",
 			date: "2019-12-05",
-			location: "TEST-location"
-			rating :"rating"
+			location: "TEST-location",
+			rating: "rating"
 		})
 	});
 	const json = await response.json();
