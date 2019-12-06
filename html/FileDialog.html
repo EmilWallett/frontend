@@ -22,7 +22,6 @@
                 <section class="menu"></section>
                 <section class="menu"></section>
                 <div class="dropdown-content">
-			<a href="./index.html">Home</a>
                     <a href="#">Register/Login</a>
                     <a href="./gallery.html">Gallery</a>
                     <a href="./about.html">About Us</a>
@@ -43,10 +42,12 @@
 						<section>
 					  	<!--Upload-->
             	<form class="fileupload">
-            		<input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
+            		<input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" >
             	</form>
 							<section id="imgTest"></section>
 							<button id="upload-btn">Upload</button>
+							<button id="addratingFame" onclick=addratingFame()>Fame</button>
+							<button id="addratingShame" onclick=addratingShame() >Shame</button>
             </section>
 					</section>
 
