@@ -297,3 +297,16 @@ button {
 a{
     color:white;
 }
+.button1:target {
+    background-color: #2d3e50;
+    color:white;
+}
+.button1:active {
+    background-color: #2d3e50;
+    color: white;
+}
+
+.button1:focus {
+    background-color: #2d3e50;
+    color: white;
+}
