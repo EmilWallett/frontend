@@ -2,6 +2,7 @@ let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
 var imageIDArrayRemember = [];
 var imageIDCounter = 0;
+var firstRun = true;
 
 class text{
 	constructor(elementID){
@@ -64,13 +65,24 @@ async function LoadPost(){
 	var post;
 	let saftyStop = 0;
 
+
+	if(firstRun){
+		post = await AskServerForPost(1);
+		firstRun = false;
+	}
+	else{
+		post = await AskServerForPost(currentPost.image.id);
+	}
+
+	console.log(post);
 	//check so that the user hasen't alredy seen the post this sesion
-	do {
+	/*do {
 		imageIDCounter++;
 		post = await AskServerForPost(imageIDCounter);
 		saftyStop++;
-		console.log(post);
+		
 	} while(!CheckImgIDActive(post) && saftyStop < 20);
+	*/
 
 	if(!(saftyStop < 20)){
 		//if it goes in here it tried 20 times and failed to get a post that has not alredy been seen
