@@ -297,16 +297,17 @@ button {
 a{
     color:white;
 }
-.button1:target {
+/*Here are the buttons */
+.button1:target { /* when you had chose a button*/
     background-color: #2d3e50;
     color:white;
 }
-.button1:active {
+.button1:active { /*When you are in the website button*/
     background-color: #2d3e50;
     color: white;
 }
 
-.button1:focus {
+.button1:focus { /*That for if eou have the mouse over the butoon */
     background-color: #2d3e50;
     color: white;
 }
