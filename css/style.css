@@ -187,3 +187,36 @@ footer a:link {
 footer ul{
     list-style: none; 
 }
+.aboutText {
+    padding: 0px 100px 0px 100px;
+    border: 2px solid black;
+}
+ .aboutText >h2{
+     text-align:center;
+ }
+.about1 {
+
+    justify-self: center;
+}
+header h1 {
+    text-align: center;
+
+}
+.wrapper > header {
+    text-decoration: underline;
+  
+}
+button {
+    font-size: 13px;
+    padding: auto 45px;
+    background: rgb (0,0,0,0);
+    border: 2px solid #2d3e50; /* steel blue */
+    color: #2d3e50; /* steel blue */
+    border-radius: 30px;
+    font-family: roboto, impact;
+        font-size: 16px;
+}
+    button:hover {
+        background-color: #2d3e50; /* steel blue */
+        Color:white;
+    }
