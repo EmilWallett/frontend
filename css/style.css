@@ -153,13 +153,16 @@ p {
 /*The footer (at the bottom of the page) - contains a logo and links to other pages of the website*/
 footer {
     grid-area: footer;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    background-color: dimgrey; /* the background of the footer*/
+
 }
 /*Class for the unorderd list inside of the footer*/
 footer ul {
     list-style: none; /*Removes the cirkles left of the text/links*/
+    text-align:center;
 }
 /*Class for the a tag in the unorderd list inside of the footer*/
 footer ul a {
@@ -179,11 +182,11 @@ footer a:hover {
     background-color: white;
 }
 footer a:visited{
-    color:grey;
+    color:white;
 }
 
-footer a:link {
-    color: gray;
+ a:link {
+    color: white;
 }
 
 footer ul{
@@ -219,17 +222,20 @@ button {
     font-family: roboto, impact;
         font-size: 16px;
 }
-button:hover {
-    background-color: #2d3e50; /* steel blue */
-    Color:white;
-}
+    button:hover {
+        background-color: #2d3e50; /* steel blue */
+        Color:white;
+    }
 .aboutTree {
-    border-bottom: 3px solid black;
-    padding-bottom:50px;
+    border-bottom: 3px dashed black;
+    padding-bottom: 50px;
+    margin-left: 75px;
+    margin-right: 75px;
 }
 .shameText {
     padding: 0px 100px 0px 100px;
     border-left: 2px solid black;
+
 }
 .shameText > h2{
     text-align:center;
@@ -263,7 +269,7 @@ button:hover {
 
 }
 .fameShame {
-    border-bottom: 3px dotted black;
+    border-bottom: 3px dashed black;
     padding-bottom: 50px;
     margin-right: 75px;
     margin-left: 75px;
@@ -272,9 +278,21 @@ button:hover {
     padding-top:99px;
 
 }
-
-#imgPrew{
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
+.goalText1 {
+    padding: 0px 100px 0px 100px;
+}
+.goalText2 {
+    padding: 0px 100px 0px 100px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  
+}
+.euimg{
+    margin-top:50px;
+}
+.goalText1 > h3 {
+    text-align: center;
+}
+a{
+    color:white;
 }
