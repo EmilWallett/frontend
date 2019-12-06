@@ -34,6 +34,7 @@ async function postData(imageData) {
 			title: "TEST-title",
 			date: "2019-12-05",
 			location: "TEST-location"
+			rating :"rating"
 		})
 	});
 	const json = await response.json();
