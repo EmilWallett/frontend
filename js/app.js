@@ -4,6 +4,8 @@ var imageIDArrayRemember = [];
 var imageIDCounter = 0;
 var firstRun = true;
 var startPos = 1;
+var webbServerIp = "http://94.46.140.3:8080/", serverPath = "sustain_backend/api/";
+var webbServerAdress = webbServerIp + serverPath;
 
 class text{
 	constructor(elementID){
@@ -119,13 +121,13 @@ async function LoadPost(){
 }
 
 async function AskServerForPost(imageID){
-	const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/post/" + imageID);
+	const response = await fetch(webbServerAdress + "post/" + imageID);
 	const json = await response.json();
 	return json;
 }
 
 async function AskServerForRatings(imageID){
-	const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/rating/" + imageID);
+	const response = await fetch(webbServerAdress + "rating/" + imageID);
 	const json = await response.json();
 	return json;
 }
@@ -162,7 +164,7 @@ async function RatingSend(fame){
 	else{
 		ratingNumb = -1;
 	}
-	let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/rating/" + currentPost.image.id, {
+	let response = await fetch(webbServerAdress + "rating/" + currentPost.image.id, {
 		headers: {
 			"Content-Type": "application/json"
 		},
