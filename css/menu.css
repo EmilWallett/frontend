@@ -40,3 +40,6 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+header {
+    border-bottom: 2px solid black;
+}
