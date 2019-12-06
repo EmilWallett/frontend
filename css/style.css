@@ -52,7 +52,7 @@ h1 {
 div.dropdown{
 	position: absolute;
 	right: 25px;
-	top: 25px;
+	top: 15px;
 }
 /*Makes the dropdown content visible*/
 div.dropdown-content{
@@ -190,7 +190,7 @@ footer a:visited{
 }
 
 footer ul{
-    list-style: none; 
+    list-style: none;
 }
 .aboutText {
     padding: 0px 100px 0px 100px;
