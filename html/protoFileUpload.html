@@ -7,8 +7,8 @@
 		<link href="../css/menu.css" rel="stylesheet">
 		<link href="../js/index.js" rel="script">
 		<link href="../images/favicon.png" rel="icon">
-    <script defer src="../js/protoFileUpload.js"></script>
-  <title>FileUpload</title>
+    	<script defer src="../js/protoFileUpload.js"></script>
+  	<title>FileUpload</title>
 </head>
 
 <body class="page2" >
@@ -46,6 +46,8 @@
 				<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
 				<input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
 				<input type="checkbox" name="fameBox" id="fameCheckBox" onchange="FameBoxChange(this.value)">
+				<button id="addratingFame" onclick=addratingFame()>Fame</button>
+				<button id="addratingShame" onclick=addratingShame() >Shame</button>
 				<!--<input type="checkbox" name="shameBox" id="shameCheckBox" onchange="ShameBoxChange(this.value)">-->
             </form><br>
 			<section id="imgTest">

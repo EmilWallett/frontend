@@ -77,7 +77,7 @@ async function postData(imageData, title) {
 		body: JSON.stringify({
 			image: imageData,
 			userID: "1",
-			title: "TEST-title",
+			title: title,
 			date: "2019-12-05",
 			location: "TEST-location",
 			rating: 0

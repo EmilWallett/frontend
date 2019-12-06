@@ -3,6 +3,7 @@ let imageElement = document.getElementById("appImage");
 var imageIDArrayRemember = [];
 var imageIDCounter = 0;
 var firstRun = true;
+var startPos = 1;
 
 class text{
 	constructor(elementID){
@@ -67,7 +68,8 @@ async function LoadPost(){
 
 
 	if(firstRun){
-		post = await AskServerForPost(1);
+		loadProgress();
+		post = await AskServerForPost(startPos);
 		firstRun = false;
 	}
 	else{
@@ -171,4 +173,18 @@ async function RatingSend(fame){
 			imageID: currentPost.image.id
 		})
 	});
+}
+
+//window.onunload = saveProgress;
+
+function saveProgress(){
+	var toLoad = currentPost.image.id - 1;
+	localStorage.setItem("imgIDToLoad", toLoad);
+}
+
+function loadProgress(){
+	var toLoad = localStorage.getItem("imgIDToLoad");
+	if(toLoad != null){
+		startPos = parseInt(toLoad);
+	}
 }

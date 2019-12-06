@@ -5,12 +5,12 @@ async function CreateGalleryGrid(fame){
 	var informationArray = [];
 	if(fame){
 		//server request for fame
-		informationArray = await AskServerForPosts();
+		informationArray = await AskServerForPosts(true);
 		var appendElement = document.getElementById("fameBox");
 	}
 	else{
 		//server request for shame
-		informationArray = await AskServerForPosts();
+		informationArray = await AskServerForPosts(false);
 		var appendElement = document.getElementById("shameBox");
 	}
 	
@@ -20,7 +20,7 @@ async function CreateGalleryGrid(fame){
 		let boxClass = index + 1;
 		boxClass = "b" + boxClass;
 		
-		let galleryBox = CreateGalleryBox(element.image.title, element.image.user, element.image.image, boxClass);
+		let galleryBox = CreateGalleryBox(element.image.title, element.image.username, element.image.image, boxClass);
 		appendElement.appendChild(galleryBox);
 	}
 
@@ -66,8 +66,16 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 	return returnElement;
 }
 
-async function AskServerForPosts(){
-	const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/9");
-	const json = await response.json();
-	return json;
+async function AskServerForPosts(fame){
+	if(fame){
+		const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/fame/9");
+		const json = await response.json();
+		return json;
+	}
+	else{
+		const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/shame/9");
+		const json = await response.json();
+		return json;
+	}
+	
 }
