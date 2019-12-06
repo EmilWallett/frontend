@@ -6,9 +6,10 @@
 		<link href="../css/style.css" rel="stylesheet">
 		<link href="../css/menu.css" rel="stylesheet">
 		<link href="../js/index.js" rel="script">
-		<link href="../images/favicon.png" rel="icon">
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
     <script defer src="../js/FileDialog.js"></script>
-  <title>FileUpload</title>
+  <title>Sustaining - FileUpload</title>
 </head>
 
 <body class="page2" >
@@ -42,12 +43,20 @@
             </section>
 						<section>
 					  	<!--Upload-->
-            	<form class="fileupload">
-            		<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
+            	<form class="fileupload"> <!--This form for uploading -->
+            		<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" /> <!--We had maked that user can just only upload picture files-->
             	</form><br>
 							<section id="imgTest"></section>
-							<button id="upload-btn">Upload</button>
-            </section>
+							<p>
+								<button id="addratingFame" onclick=addratingFame()>Fame</button>
+							</p>
+							<p>
+								<button id="addratingShame" onclick=addratingShame() >Shame</button>
+							</p>
+							<p>
+								<button id="upload-btn">Upload</button>
+							</p>
+						</section>
 					</section>
 
 </main>

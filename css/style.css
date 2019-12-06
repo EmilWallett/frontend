@@ -2,6 +2,7 @@
 body {
     background-image: url('../img/background.jpg');
 	font-family: "Verdana";
+    margin:0px;
 }
 /*Main grid layout for the whole website
 Sub grids are making smaller boxes inside of these boxes*/
@@ -114,7 +115,7 @@ button {
     grid-area: fameShame;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "fameText fameImages shameText shameImages";
+    grid-template-areas: "fameText fameImages shameImages shameText ";
     grid-gap: 50px;
     grid-template-columns: auto auto auto auto;
 }
@@ -134,10 +135,11 @@ button {
 }
 /*The thrid section in the main - text about the goals with this website/project*/
 .goals {
-	grid-area: goals;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 30px;
+    grid-area: goals;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: " goalText1 goalText2 euimg";
+      grid-gap: 30px;
 }
 /*Class for resizing all images - should be updated to only change the wanted images*/
 img {
@@ -202,9 +204,10 @@ header h1 {
     text-align: center;
 
 }
-.wrapper > header {
-    text-decoration: underline;
-  
+ header {
+
+  border-bottom:3px solid black;
+
 }
 button {
     font-size: 13px;
@@ -220,7 +223,55 @@ button:hover {
     background-color: #2d3e50; /* steel blue */
     Color:white;
 }
+.aboutTree {
+    border-bottom: 3px solid black;
+    padding-bottom:50px;
+}
+.shameText {
+    padding: 0px 100px 0px 100px;
+    border-left: 2px solid black;
+}
+.shameText > h2{
+    text-align:center;
+}
+.fameText {
+    padding: 0px 100px 0px 100px;
+    border-right: 2px solid  black;
+}
 
+.fameText > h2 {
+        text-align: center;
+    }
+.fameImages{
+    padding-right:100px;
+
+
+}
+.DataUpload {
+    font-size: 12px;
+    padding: auto 65px;
+    background: rgb (1,0,7,0);
+    border: 2px solid #2d3e50; /* steel blue */
+    color: #2d3e50; /* steel blue */
+    border-radius: 32px;
+    font-family: roboto, impact;
+    font-size: 16px;
+    background-color: #f5f5f5;
+}
+.shameImages {
+    padding-left: 100px;
+
+}
+.fameShame {
+    border-bottom: 3px dotted black;
+    padding-bottom: 50px;
+    margin-right: 75px;
+    margin-left: 75px;
+}
+.butt{
+    padding-top:99px;
+
+}
 
 #imgPrew{
 	width: 100px;

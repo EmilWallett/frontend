@@ -1,4 +1,5 @@
 //Image encoding
+var rating =0;
 function encodeImageFileAsURL() { // <- Function to encode an image or anything else
 	var srcData;
 	var filesSelected = document.getElementById("inputFileToLoad").files;
@@ -16,18 +17,21 @@ function encodeImageFileAsURL() { // <- Function to encode an image or anything 
 		fileReader.readAsDataURL(fileToLoad);
 		//let result= postData(srcData);
 		//console.log(result);
-		document.getElementById("upload-btn").onclick = () => postData(srcData);
+		document.getElementById("upload-btn").onclick = () => postData(srcData, rating);
 
 	}
 }
 function addratingFame(){
-
-
-
-
+ rating= 1;
+ console.log("rated fame");
 }
 
-async function postData(imageData) {
+function addratingShame(){
+ rating= -1;
+ console.log("rated shame")
+}
+
+async function postData(imageData, rating) {
 	console.log("in postData")
 	let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/image", {
 		headers: {
@@ -40,7 +44,7 @@ async function postData(imageData) {
 			title: "TEST-title",
 			date: "2019-12-05",
 			location: "TEST-location",
-			rating: 0
+			rating: rating
 		})
 	});
 	const json = await response.json();
