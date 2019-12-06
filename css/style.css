@@ -179,7 +179,7 @@ footer ul a {
     width:400px;
 }
 footer a:hover {
-    background-color: white;
+    background-color: #1f986d;
 }
 footer a:visited{
     color:white;
@@ -190,7 +190,7 @@ footer a:visited{
 }
 
 footer ul{
-    list-style: none; 
+    list-style: none;
 }
 .aboutText {
     padding: 0px 100px 0px 100px;
@@ -286,7 +286,7 @@ button {
     padding: 0px 100px 0px 100px;
     border-left: 2px solid black;
     border-right: 2px solid black;
-  
+
 }
 .euimg{
     margin-top:50px;
