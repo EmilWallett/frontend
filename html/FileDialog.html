@@ -6,8 +6,7 @@
 		<link href="../css/style.css" rel="stylesheet">
 		<link href="../css/menu.css" rel="stylesheet">
 		<link href="../js/index.js" rel="script">
-		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.png">
-		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+		<link href="../images/favicon.png" rel="icon">
     <script defer src="../js/FileDialog.js"></script>
   <title>FileUpload</title>
 </head>
@@ -23,7 +22,6 @@
                 <section class="menu"></section>
                 <section class="menu"></section>
                 <div class="dropdown-content">
-			<a href="./index.html">Home</a>
                     <a href="#">Register/Login</a>
                     <a href="./gallery.html">Gallery</a>
                     <a href="./about.html">About Us</a>
@@ -44,10 +42,12 @@
 						<section>
 					  	<!--Upload-->
             	<form class="fileupload">
-            		<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
-            	</form><br>
+            		<input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" >
+            	</form>
 							<section id="imgTest"></section>
 							<button id="upload-btn">Upload</button>
+							<button id="addratingFame" onclick=addratingFame()>Fame</button>
+							<button id="addratingShame" onclick=addratingShame() >Shame</button>
             </section>
 					</section>
 
