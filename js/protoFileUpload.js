@@ -33,7 +33,7 @@ function TitleChange(value){
 }
 
 function FameBoxChange(value){
-	
+
 }
 
 function ShameBoxChange(value){
