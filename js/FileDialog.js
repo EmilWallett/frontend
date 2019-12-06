@@ -36,5 +36,6 @@ async function postData(imageData) {
 			location: "TEST-location"
 		})
 	});
-	return await response.json();
+	const json = await response.json();
+	return json;
 }
