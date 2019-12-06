@@ -43,8 +43,11 @@
             </section>
 						<section>
 					  	<!--Upload-->
+							<input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
+
             	<form class="fileupload"> <!--This form for uploading -->
-            		<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" /> <!--We had maked that user can just only upload picture files-->
+
+								<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" /> <!--We had maked that user can just only upload picture files-->
             	</form><br>
 							<section id="imgTest"></section>
 							<p>
@@ -62,9 +65,6 @@
 </main>
 <!--footer for links-->
 <footer>
-    <section>
-        <img src="../img/erasmus.png" alt="Erasmus+ Logo">
-    </section>
         <section>
         <ul>
             <li>

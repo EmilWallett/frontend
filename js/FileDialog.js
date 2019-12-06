@@ -1,5 +1,6 @@
 //Image encoding
 var rating =0;
+var titleData ="";
 function encodeImageFileAsURL() { // <- Function to encode an image or anything else
 	var srcData;
 	var filesSelected = document.getElementById("inputFileToLoad").files;
@@ -25,13 +26,16 @@ function addratingFame(){
  rating= 1;
  console.log("rated fame");
 }
-
+function TitleChange(){
+titleData	=document.getElementById("titleText").var;
+}
 function addratingShame(){
  rating= -1;
  console.log("rated shame")
 }
 
-async function postData(imageData, rating) {
+
+async function postData(imageData, rating, titleData) {
 	console.log("in postData")
 	let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/image", {
 		headers: {
@@ -41,12 +45,14 @@ async function postData(imageData, rating) {
 		body: JSON.stringify({
 			image: imageData,
 			userID: "1",
-			title: "TEST-title",
+			title: titleData,
 			date: "2019-12-05",
 			location: "TEST-location",
-			rating: rating
+			rating: 0
 		})
 	});
 	const json = await response.json();
 	return json;
+	alert("your image has been uploaded")
+
 }
