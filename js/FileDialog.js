@@ -20,6 +20,12 @@ function encodeImageFileAsURL() { // <- Function to encode an image or anything 
 
 	}
 }
+function addratingFame(){
+
+
+
+
+}
 
 async function postData(imageData) {
 	console.log("in postData")
@@ -34,7 +40,7 @@ async function postData(imageData) {
 			title: "TEST-title",
 			date: "2019-12-05",
 			location: "TEST-location",
-			rating: "rating"
+			rating: 0
 		})
 	});
 	const json = await response.json();
