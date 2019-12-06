@@ -1,6 +1,7 @@
 let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
 var imageIDArrayRemember = [];
+var imageIDCounter = 0;
 
 class text{
 	constructor(elementID){
@@ -25,7 +26,7 @@ class image{
 }
 
 class Post{
-	constructor(comments, image, rating, user) {
+	constructor(comments, image) {
 		this.image = {
 			"id":image.id,
 			"title": image.title,
@@ -34,9 +35,20 @@ class Post{
 			"location":image.location,
 			"userID": image.userID
 		};
-		this.rating = rating;
-		this.user = user;
+		this.rating = image.rating; //int
+		this.user = image.username;
 		this.comments = comments;
+	}
+}
+
+class imageObj{
+	constructor(image){
+		this.id = image.id;
+		this.title = image.title;
+		this.date = image.date;
+		image = image.image;
+		location = image.location;
+		userID = image.userID;
 	}
 }
 
@@ -49,23 +61,24 @@ var currentPost;
 
 async function LoadPost(){
 	//Requsets a post from the server
-	var postAr = await AskServerForPost();
+	var post;
 	let saftyStop = 0;
 
 	//check so that the user hasen't alredy seen the post this sesion
-	while(CheckImgIDIsUsed(postAr[0].image.id) && saftyStop < 1000){
-		postAr = await AskServerForPost();
+	do {
+		imageIDCounter++;
+		post = await AskServerForPost(imageIDCounter);
 		saftyStop++;
-	}
-	if(!(saftyStop < 1000)){
-		//if it goes in here it tried 1000 times and failed to get a post that has not alredy been seen
+		console.log(post);
+	} while(!CheckImgIDActive(post) && saftyStop < 20);
+
+	if(!(saftyStop < 20)){
+		//if it goes in here it tried 20 times and failed to get a post that has not alredy been seen
 		
 	}
 	// if saftyStop was not triggerd, so a post is now located in postAr[0]
 	else{
-		var post = postAr[0];
-		console.log(post);
-		currentPost = new Post(post.comments, post.image, post.rating, post.user);
+		currentPost = new Post(post.comments, post.image);
 		userText.setText(currentPost.user);
 		titleText.setText(currentPost.image.title);
 		appImg.setImgAlt(currentPost.image.image, currentPost.image.title);
@@ -80,7 +93,7 @@ async function LoadPost(){
 			if(element.rating == 1){
 				fameAmount += 1;
 			}
-			else if(element.rating == 0)
+			else if(element.rating == -1)
 			{
 				shameAmount += 1;
 			}
@@ -91,8 +104,8 @@ async function LoadPost(){
 	}
 }
 
-async function AskServerForPost(){
-	const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/1");
+async function AskServerForPost(imageID){
+	const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/post/" + imageID);
 	const json = await response.json();
 	return json;
 }
@@ -103,26 +116,47 @@ async function AskServerForRatings(imageID){
 	return json;
 }
 
-function CheckImgIDIsUsed(imageID){
-	imageIDArrayRemember.forEach(element => {
-		if (imageID == element) {
-			return true;
-		}
-	});
-	return false;
+function CheckImgIDActive(post){
+	if(post == null){
+		return false;
+	}
+	else{
+		return true;
+	}
 }
 
-function FamePress(){
-
+async function FamePress(){
+	await RatingSend(true);
 
 	LoadPost();
 }
 
-function ShamePress(){
-	
+async function ShamePress(){
+	await RatingSend(false);
 	
 	LoadPost();
 }
 
 LoadPost();
 
+
+async function RatingSend(fame){
+	let ratingNumb;
+	if(fame){
+		ratingNumb = 1;
+	}
+	else{
+		ratingNumb = -1;
+	}
+	let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/rating/" + currentPost.image.id, {
+		headers: {
+			"Content-Type": "application/json"
+		},
+		method: "POST",
+		body: JSON.stringify({
+			rating: ratingNumb,
+			userID: 1,
+			imageID: currentPost.image.id
+		})
+	});
+}
