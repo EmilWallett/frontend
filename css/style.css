@@ -33,7 +33,7 @@ header {
     grid-area: header; /*The name to use in the grid-template-areas*/
     display: grid;
     grid-template-areas:
-    "logo h1 nav";
+    "logo h1 euimg1 nav";
     grid-template-columns: 150px auto 75px; /*Fixes the grid column sizes so the logo and the nav menu has a limited space*/
 }
 /*Top left logo class*/
