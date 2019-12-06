@@ -30,13 +30,13 @@ Which files connects to which website page:
 
 ### About
   * about.html
-  * style-min.css
+  * style.css
   * menu.css
   * index.js
 
 ### Supporters
   * oursupporters.html
-  * style-min.css
+  * style.css
   * index.js
 
 ### Other
@@ -46,10 +46,10 @@ Which files connects to which website page:
 
 ### ToS
   * tos.html
-  * style-min.css
+  * style.css
   * menu.css
   * index.js
-  
+
 ### App
  * app.html
  * app.css
