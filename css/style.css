@@ -91,6 +91,7 @@ footer ul {
 /*Class for the a tag in the unorderd list inside of the footer*/
 footer ul a {
     text-decoration: none; /*Removes the underline bellow the text*/
+    color: white;
 }
 footer ul a:hover {
     color: rgb(128, 128, 128)
@@ -99,9 +100,18 @@ footer ul a:hover {
 /*OTHER GLOBAL DESIGNING*/
 
 /*Upload button*/
-button {
-    margin-left: 35%; /*Adds a margin to the left of the object (in this case the button)*/
-    /*The size of the button*/
+button {/*The size of the button*/
 	width: 150px;
 	height: 50px;
+}
+button {
+    font-size: 13px;
+    border: 2px solid #2d3e50; /* steel blue */
+    color: #2d3e50; /* steel blue */
+    border-radius: 30px;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #2d3e50; /* steel blue */
+    color:white;
 }

@@ -52,7 +52,6 @@ main {
 .fameShame {
     grid-area: fameShame;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "fameText fameImages shameImages shameText ";
     grid-gap: 50px;
     grid-template-columns: auto auto auto auto;
@@ -84,26 +83,18 @@ img {
     height: 100px; /*Changes the height of the images*/
     width: auto; /*Makes the image width auto compared to how big the height is*/
 }
-
-
 .tree {
-    height:400px;
+    height:100%;
     width:400px;
 }
 .aboutText {
     padding: 0px 100px 0px 100px;
     border: 2px solid black;
 }
- .aboutText >h2{
-     text-align:center;
- }
-
 p {
     text-align: center;
 }
-
 .aboutTree {
-    border-bottom: 3px dashed black;
     padding-bottom: 50px;
     margin-left: 75px;
     margin-right: 75px;
@@ -111,48 +102,22 @@ p {
 .shameText {
     padding: 0px 100px 0px 100px;
     border-left: 2px solid black;
-
 }
-.shameText > h2{
+h2, h3{
     text-align:center;
 }
 .fameText {
     padding: 0px 100px 0px 100px;
-    border-right: 2px solid  black;
-}
-
-.fameText > h2 {
-        text-align: center;
-    }
-.fameImages{
-    padding-right:100px;
-
-
-}
-.DataUpload {
-    font-size: 12px;
-    padding: auto 65px;
-    background: rgb (1,0,7,0);
-    border: 2px solid #2d3e50; /* steel blue */
-    color: #2d3e50; /* steel blue */
-    border-radius: 32px;
-    font-family: roboto, impact;
-    font-size: 16px;
-    background-color: #f5f5f5;
+    border-right: 2px solid black;
 }
 .shameImages {
     padding-left: 100px;
 
 }
 .fameShame {
-    border-bottom: 3px dashed black;
     padding-bottom: 50px;
     margin-right: 75px;
     margin-left: 75px;
-}
-.butt{
-    padding-top:99px;
-
 }
 .goalText1 {
     padding: 0px 100px 0px 100px;
@@ -161,43 +126,7 @@ p {
     padding: 0px 100px 0px 100px;
     border-left: 2px solid black;
     border-right: 2px solid black;
-
 }
 .euimg{
     margin-top:50px;
-}
-.goalText1 > h3 {
-    text-align: center;
-}
-a{
-    color:white;
-}
-/*Here are the buttons */
-.button1:target { /* when you had chose a button*/
-    background-color: #2d3e50;
-    color:white;
-}
-.button1:active { /*When you are in the website button*/
-    background-color: #2d3e50;
-    color: white;
-}
-
-.button1:focus { /*That for if eou have the mouse over the butoon */
-    background-color: #2d3e50;
-    color: white;
-}
-
-button {
-    font-size: 13px;
-    padding: auto 45px;
-    background: rgb (0,0,0,0);
-    border: 2px solid #2d3e50; /* steel blue */
-    color: #2d3e50; /* steel blue */
-    border-radius: 30px;
-    font-family: roboto, impact;
-        font-size: 16px;
-}
-button:hover {
-    background-color: #2d3e50; /* steel blue */
-    Color:white;
 }
