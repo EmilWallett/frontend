@@ -4,7 +4,7 @@ var imageIDArrayRemember = [];
 var imageIDCounter = 0;
 var firstRun = true;
 var startPos = 1;
-var webbServerIp = "http://94.46.140.3:8080/", serverPath = "sustain_backend/api/";
+var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
 
 class text{
