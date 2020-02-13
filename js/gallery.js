@@ -1,17 +1,37 @@
 CreateGalleryGrid(true);
 CreateGalleryGrid(false);
 
+var errorCard = {
+	image:{
+		title:"Not found",
+		username:"Not found",
+		image:""
+	}
+};
+
 async function CreateGalleryGrid(fame){
 	var informationArray = [];
-	if(fame){
-		//server request for fame
-		informationArray = await AskServerForPosts(true);
-		var appendElement = document.getElementById("fameBox");
-	}
-	else{
-		//server request for shame
-		informationArray = await AskServerForPosts(false);
-		var appendElement = document.getElementById("shameBox");
+	try {
+		if(fame){
+			//server request for fame
+			informationArray = await AskServerForPosts(true);
+			var appendElement = document.getElementById("fameBox");
+		}
+		else{
+			//server request for shame
+			informationArray = await AskServerForPosts(false);
+			var appendElement = document.getElementById("shameBox");
+		}
+	} catch (error) {
+		if(fame){
+			var appendElement = document.getElementById("fameBox");
+		}
+		else{
+			var appendElement = document.getElementById("shameBox");
+		}
+		informationArray.push(errorCard);
+		informationArray.push(errorCard);
+		informationArray.push(errorCard);
 	}
 	
 

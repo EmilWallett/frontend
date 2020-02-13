@@ -37,7 +37,7 @@ function addratingShame(){
 
 async function postData(imageData, rating, titleData) {
 	console.log("in postData")
-	let response = await fetch("http://94.46.140.3:8080/sustain_backend/api/image", {
+	let response = await fetch("http://localhost:8080/backend/api/image", {
 		headers: {
 			"Content-Type": "application/json"
 		},
