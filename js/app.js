@@ -4,13 +4,25 @@ var imageIDArrayRemember = [];
 var imageIDCounter = 0;
 var firstRun = true;
 var startPos = 1;
-var webbServerIp = "http://94.46.140.3:8080/", serverPath = "sustain_backend/api/";
+var webbServerIp = "http://its.teknikum.it:9000/";
+var serverPath = "sustain_backend/api/";
+//var webbServerIp = "http://localhost:8080/";
+//var serverPath = "backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
+
+var errorCard = {
+	image:{
+		title:"Not found",
+		username:"Not found",
+		image:""
+	}
+
+};
 
 class text{
 	constructor(elementID){
 		let element = document.getElementById(elementID);
-		this.setText = function(string){
+		this.set = function(string){
 			element.innerHTML = string;
 		}
 	}
@@ -19,11 +31,11 @@ class text{
 class image{
 	constructor(elementID){
 		let element = document.getElementById(elementID);
-		this.setImgAlt = function(data, alt){
+		this.setSrcAlt = function(data, alt){
 			element.src = data;
 			element.alt = alt;
 		}
-		this.setImg = function(data){
+		this.setSrc = function(data){
 			element.src = data;
 		}
 	}
@@ -56,6 +68,41 @@ class imageObj{
 	}
 }
 
+class comment{
+	constructor(comment){
+		this.id = comment.id;
+		this.imageID = comment.imageID;
+		this.userID = comment.userID;
+		this.text = comment.text;
+		this.date = comment.date;
+
+		this.element = this.makeElement(this.id);
+		this.mainText = new text("ct" + this.id);
+		this.dateText = new text("dt" + this.id);
+		this.usernameText = new text("ut" + this.id);
+		
+	}
+
+	makeElement(commentID){
+		let element = document.createElement("article");
+		element.classList.add("commentBox");
+		element.id = "c" + commentID;
+
+		let mainText = document.createElement("p");
+		mainText.classList.add("commentText");
+		mainText.id = "ct" + commentID;
+
+		let dateText = document.createElement("p");
+		dateText.classList.add("commentDate");
+		dateText.id = "dt" + commentID;
+
+		let usernameText = document.createElement("p");
+		usernameText.classList.add("commentUsername");
+		usernameText.id = "ut" + commentID;
+	}
+	
+}
+
 var titleText = new text("titleText");
 var userText = new text("userText");
 var fameText = new text("fameNumbText");
@@ -66,17 +113,52 @@ var currentPost;
 async function LoadPost(){
 	//Requsets a post from the server
 	var post;
-	let saftyStop = 0;
+	
+	try {
+		if(firstRun){
+			loadProgress();
+			post = await AskServerForPost(startPos);
+			firstRun = false;
+		}
+		else{
+			post = await AskServerForPost(currentPost.image.id);
+		}
 
 
-	if(firstRun){
-		loadProgress();
-		post = await AskServerForPost(startPos);
-		firstRun = false;
+		currentPost = new Post(post.comments, post.image);
+		userText.set(currentPost.user);
+		titleText.set(currentPost.image.title);
+		appImg.setSrcAlt(currentPost.image.image, currentPost.image.title);
+
+		//gets the ratings for the image
+		var rating = await AskServerForRatings(currentPost.image.id);
+		console.log(rating);
+
+		//counts amount of Fame and shame
+		let fameAmount = 0, shameAmount = 0;
+		rating.forEach(element => {
+		if(element.rating == 1){
+			fameAmount += 1;
+		}
+		else if(element.rating == -1)
+		{
+			shameAmount += 1;
+		}
+		});
+
+		fameText.set(fameAmount + "");
+		shameText.set(shameAmount + "");
+	} 
+	catch (error) {
+		post = errorCard;
+		currentPost = new Post(post.comments, post.image);
+		userText.set(currentPost.user);
+		titleText.set(currentPost.image.title);
+		appImg.setSrcAlt(currentPost.image.image, currentPost.image.title);
+		fameText.set("Not found");
+		shameText.set("Not found");
 	}
-	else{
-		post = await AskServerForPost(currentPost.image.id);
-	}
+	
 
 	console.log(post);
 	//check so that the user hasen't alredy seen the post this sesion
@@ -87,37 +169,8 @@ async function LoadPost(){
 		
 	} while(!CheckImgIDActive(post) && saftyStop < 20);
 	*/
-
-	if(!(saftyStop < 20)){
-		//if it goes in here it tried 20 times and failed to get a post that has not alredy been seen
-		
-	}
-	// if saftyStop was not triggerd, so a post is now located in postAr[0]
-	else{
-		currentPost = new Post(post.comments, post.image);
-		userText.setText(currentPost.user);
-		titleText.setText(currentPost.image.title);
-		appImg.setImgAlt(currentPost.image.image, currentPost.image.title);
-
-		//gets the ratings for the image
-		var rating = await AskServerForRatings(currentPost.image.id);
-		console.log(rating);
-
-		//counts amount of Fame and shame
-		let fameAmount = 0, shameAmount = 0;
-		rating.forEach(element => {
-			if(element.rating == 1){
-				fameAmount += 1;
-			}
-			else if(element.rating == -1)
-			{
-				shameAmount += 1;
-			}
-		});
-
-		fameText.setText(fameAmount + "");
-		shameText.setText(shameAmount + "");
-	}
+	
+	
 }
 
 async function AskServerForPost(imageID){
@@ -128,6 +181,12 @@ async function AskServerForPost(imageID){
 
 async function AskServerForRatings(imageID){
 	const response = await fetch(webbServerAdress + "rating/" + imageID);
+	const json = await response.json();
+	return json;
+}
+
+async function AskServerForComments(imageID){
+	const response = await fetch(webbServerAdress + "comment/" + imageID)
 	const json = await response.json();
 	return json;
 }
@@ -188,5 +247,12 @@ function loadProgress(){
 	var toLoad = localStorage.getItem("imgIDToLoad");
 	if(toLoad != null){
 		startPos = parseInt(toLoad);
+	}
+}
+
+class Comments{
+	createCommentElement(comment){
+		this.commentElement = document.createElement("article");
+		
 	}
 }
