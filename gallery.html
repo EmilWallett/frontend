@@ -4,35 +4,35 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<script defer src="../js/gallery.js"></script>
+		<script defer src="js/gallery.js"></script>
 		<link rel="stylesheet" href="../css/gallery.css">
-		<link href="../css/style.css" rel="stylesheet">
-		<link href="../css/menu.css" rel="stylesheet">
-		<script src="../js/gallery-server-Ask.js"></script>
-		<title>Sustain - Gallery</title>
-		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.png">
-		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/menu.css" rel="stylesheet">
+		<script src="js/gallery-server-Ask.js"></script>
+		<title>Sustaining - Gallery</title>
+		<link href="img/favicon.png" rel="icon">
 	</head>
 	<body>
 		<div class="grid-container">
 			<header>
-				<img src="../img/Sustaining_v1.png" class="logo" alt="Erasmus Logo">
-				<h1>SUSTAINING</h1>
-				<div class="dropdown">
-					<!--Burger menu-->
-					<section class="menu"></section>
-					<section class="menu"></section>
-					<section class="menu"></section>
-					<div class="dropdown-content">
-						<a href="./index.html">Home</a>
-						<a href="./app.html">Rate Images</a>
-						<a href="#">Register/Login</a>
-						<a href="./about.html">About Us</a>
-						<a href="./oursupporters.html">Our Supporters</a>
-						<a href="#">Others</a>
-					</div>
-				</div>
-			</header>
+                <img src="img/logo.png" alt="Sustaining logo" class="logo"> <!--logotype in header-->
+                <h1>Sustaining</h1><!--We have to have the logo and the drop down bar upp here-->
+                <nav>
+                    <section class="dropdown">
+                        <!--Burger menu-->
+                        <section class="burgermenu"></section> <!--nedeed for drop down menu-->
+                        <section class="burgermenu"></section>
+                        <section class="burgermenu"></section>
+                        <section class="dropdown-content"> <!--the drop down menu-->
+                            <a href="#">Register/Login</a> <!--just for style-->
+                            <a href="gallery.html">Gallery</a> <!--link to gallery-->
+                            <a href="about.html">About Us</a> <!--link to about-->
+                            <a href="oursupporters.html">Our Supporters</a> <!--link to support-->
+                            <a href="#">Others</a> <!--just for style-->
+                        </section>
+                    </section>
+                </nav>
+            </header>
 			<main>
 				<noscript>
 					<h1>You need to have javascript enabled for this website to work</h1>
@@ -45,28 +45,34 @@
 				<h2>Shame</h2>
 				<section id="shameBox"></section>
 			</main>
-			<footer>
+            <!--footer for links-->
+            <footer>
 				<section>
-					<ul>
+                    <img class="footerErasmus" src="img/erasmus.png" alt="Erasmus+ Logo"><!--Eu logo-->
+				</section>
+                <section>
+                    <ul>
+                        <li>
+                            <!--TOS-Link-->
+                            <a href="tos.html">TOS</a>
+                        </li>
+                        <li>
+                            <!--ABOUT-Link-->
+                            <a href="about.html">ABOUT</a>
+                        </li>
 						<li>
-							<!--Home-Link-->
-							<a href="./index.html"> HOME </a>
-						</li>
-            			<li>
-							<!--TOS-Link-->
-							<a href="./tos.html"> TOS </a>
-						</li>
-            			<li>
-							<!--ABOUT-Link-->
-							<a href="./about.html"> ABOUT </a>
+							<!--Galary-link-->
+							<a href="gallery.html"> GALLERY </a>
 						</li>
 						<li>
-							<!--oursupporters-link-->
-							<a href="./oursupporters.html"> OUR SUPPORTERS </a>
+							<!--Our Supporters link-->
+							<a href="oursupporters.html">OUR SUPPORTERS</a>
 						</li>
 					</ul>
+                </section>
+				<section>
 				</section>
-			</footer>
+            </footer>
 		</div>
 	</body>
 </html>
