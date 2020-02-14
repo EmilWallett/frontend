@@ -78,11 +78,7 @@ main {
     grid-template-areas: " goalText1 goalText2 euimg";
       grid-gap: 30px;
 }
-/*Class for resizing all images - should be updated to only change the wanted images*/
-img {
-    height: 100px; /*Changes the height of the images*/
-    width: auto; /*Makes the image width auto compared to how big the height is*/
-}
+
 .tree {
     height:100%;
     width:400px;

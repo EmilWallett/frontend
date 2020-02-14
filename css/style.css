@@ -22,6 +22,11 @@ header {
 .logo {
     grid-area: logo;
 }
+/*Class for resizing all images - should be updated to only change the wanted images*/
+img {
+    height: 100px; /*Changes the height of the images*/
+    width: auto; /*Makes the image width auto compared to how big the height is*/
+}
 /*Main header (sustaining) class*/
 h1 {
     grid-area: title;
