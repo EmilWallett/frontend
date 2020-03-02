@@ -1,5 +1,4 @@
-CreateGalleryGrid(true);
-CreateGalleryGrid(false);
+
 
 var errorCard = {
 	image:{
@@ -8,6 +7,9 @@ var errorCard = {
 		image:""
 	}
 };
+
+var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
+var webbServerAdress = webbServerIp + serverPath;
 
 async function CreateGalleryGrid(fame){
 	var informationArray = [];
@@ -88,14 +90,18 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 
 async function AskServerForPosts(fame){
 	if(fame){
-		const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/fame/9");
+		const response = await fetch(webbServerAdress + "posts/fame/9");
 		const json = await response.json();
 		return json;
 	}
 	else{
-		const response = await fetch("http://94.46.140.3:8080/sustain_backend/api/posts/shame/9");
+		const response = await fetch(webbServerAdress +"posts/shame/9");
 		const json = await response.json();
 		return json;
 	}
 	
 }
+
+
+CreateGalleryGrid(true);
+CreateGalleryGrid(false);

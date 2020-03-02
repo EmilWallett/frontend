@@ -4,6 +4,8 @@ var titleData = "";
 var imageLoaded = false;
 var famebox = false, shamebox = false;
 var fbox = document.getElementById("fameCheckBox"), sbox = document.getElementById("shameCheckBox");
+var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
+var webbServerAdress = webbServerIp + serverPath;
 
 function encodeImageFileAsURL() { // <- Function to encode an image or anything else
 	var srcData;
@@ -16,13 +18,13 @@ function encodeImageFileAsURL() { // <- Function to encode an image or anything 
 			var imgElement = document.getElementById("imgPrew");
 			imgElement.src = srcData;
 			imgElement.style.visibility = "visible";
-			console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+			imageData = srcData;
+			console.log(srcData);
 
 		}
 		fileReader.readAsDataURL(fileToLoad);
 		//let result= postData(srcData);
-		//console.log(result);
-		imageData = srcData;
+		//console.log(result);		
 		imageLoaded = true;
 
 	}
@@ -68,21 +70,19 @@ function tryToPost(){
 }
 
 async function postData(imageData, title) {
-	console.log("in postData")
-	let response = await fetch("http://localhost:8080/backend/api/image", {
+	let response = await fetch(webbServerAdress + "image", {
 		headers: {
 			"Content-Type": "application/json"
 		},
 		method: "POST",
 		body: JSON.stringify({
 			image: imageData,
-			userID: "1",
+			userID: 1,
 			title: title,
 			date: "2019-12-05",
 			location: "TEST-location",
-			rating: 0
 		})
 	});
-	const json = await response.json();
-	return json;
+	//const json = await response.json();
+	//return json;
 }
