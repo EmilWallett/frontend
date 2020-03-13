@@ -135,6 +135,8 @@ section.commentSection{
 	margin-top: 10px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 
@@ -145,4 +147,5 @@ section.commentSection{
 	width: 80%;
 	min-height: 100px;
 	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
 }

@@ -26,6 +26,14 @@ var errorCard = {
 
 };
 
+let tempComment = {
+	id:1,
+	imageID: 58,
+	userID: 11,
+	text: "test Comment",
+	date: "2020"
+}
+
 class text{
 	constructor(elementID){
 		let element = document.getElementById(elementID);
@@ -98,6 +106,8 @@ class comment{
 		let mainText = document.createElement("p");
 		mainText.classList.add("commentText");
 		mainText.id = "ct" + commentID;
+		let mainTextNode = document.createTextNode("temp");
+		mainText.appendChild(mainTextNode);
 
 		let dateText = document.createElement("p");
 		dateText.classList.add("commentDate");
@@ -106,6 +116,11 @@ class comment{
 		let usernameText = document.createElement("p");
 		usernameText.classList.add("commentUsername");
 		usernameText.id = "ut" + commentID;
+
+		element.appendChild(mainText);
+		element.appendChild(dateText);
+		element.appendChild(usernameText);
+		return element;
 	}
 	
 }
