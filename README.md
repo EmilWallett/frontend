@@ -13,41 +13,32 @@ Which files connects to which website page:
 ### Home
   * index.html
   * style.css
-  * menu.css
+  * home.css
   * index.js
-
-### Register/Login
-  * HTML - MISSING?
-  * CSS - MISSING?
-  * JS - MISSING?
 
 ### Gallery
   * gallery.html
   * gallery.css
-  * menu.css
+  * style.css
   * gallery.js
   * gallery-server-Ask.js
 
 ### About
   * about.html
   * style.css
-  * menu.css
+  * about.css
   * index.js
 
 ### Supporters
-  * oursupporters.html
+  * supporters.html
   * style.css
-  * index.js
-
-### Other
-  * HTML - MISSING?
-  * style-min.css
+  * supporters.css
   * index.js
 
 ### ToS
   * tos.html
   * style.css
-  * menu.css
+  * tos.css
   * index.js
 
 ### App
