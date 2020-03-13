@@ -9,11 +9,11 @@ Sub grids are making smaller boxes inside of these boxes*/
 .wrapper {
 	display: grid; /*Explains that the wrapper class should display a grid*/
 	grid-template-areas: /*How the different elements should be positioned inside of the grid and how much space/boxes the should use*/
-	"header header header" /*Row 1*/
-	". . ." /*Row 2 - empty row without any objects*/
-	"main main main" /*Row 3*/
-    "footer footer footer"; /*Row 4*/
-	grid-template-columns: 1fr 1fr 1fr; /*Devides the whole grid layout into 3 columns*/
+	"header" /*Row 1*/
+	"." /*Row 2 - empty row without any objects*/
+	"main" /*Row 3*/
+    "footer"; /*Row 4*/
+	grid-template-columns: 1fr; /*Devides the whole grid layout into 3 columns*/
 	grid-gap: 15px 3rem; /*Gap/space between the different grid boxes - first value is laying (-,rows) while the second value is standing (|,columns)*/
 	grid-template-rows: auto 25px auto auto; /*How much space the different grid rows are allowed to use*/
 }
@@ -21,10 +21,11 @@ Sub grids are making smaller boxes inside of these boxes*/
 main {
     grid-area: main;
     display: grid;
+	grid-template-columns: 1fr;
     grid-template-areas:
-    "aboutTree aboutTree aboutTree"
-    "fameShame fameShame fameShame"
-    "goals goals goals";
+    "aboutTree"
+    "fameShame"
+    "goals";
     grid-gap: 30px; /*When only one value are used then both the laying rows and the standing columns get the same gap*/
 }
 /*The first section in the main - text about the project, a tree and some photos*/
@@ -61,9 +62,13 @@ main {
 .fameShame {
     grid-area: fameShame;
     display: grid;
-    grid-template-areas: " fameImages fameText shameText shameImages ";
+    grid-template-areas: "fameImages fameText shameText shameImages";
     grid-gap: 50px;
     grid-template-columns: auto auto auto auto;
+	
+    padding-bottom: 50px;
+    margin-right: 75px;
+    margin-left: 75px;
 }
 /*The images for fame in the second section - makes a grid to place them bellow each other*/
 .fameImages {
@@ -79,12 +84,19 @@ main {
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
+.shameText {
+    padding: 0px 100px 0px 100px;
+    border-left: var(--border);
+}
+.fameText {
+    padding: 0px 100px 0px 100px;
+}
 /*The thrid section in the main - text about the goals with this website/project*/
 .goals {
     grid-area: goals;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: " goalText1 euimg";
+    grid-template-areas: "goalText1 euimg";
       grid-gap: 30px;
 }
 .goalText1 {
@@ -98,6 +110,7 @@ main {
 .tree {
     height:100%;
     width:400px;
+
 }
 p {
     text-align: center;
@@ -107,21 +120,7 @@ p {
     margin-left: 75px;
     margin-right: 75px;
 }
-.shameText {
-    padding: 0px 100px 0px 100px;
-    border-left: var(--border);
-}
+
 h2, h3{
     text-align:center;
-}
-.fameText {
-    padding: 0px 100px 0px 100px;
-}
-.shameImages {
-    padding-left: 100px;
-}
-.fameShame {
-    padding-bottom: 50px;
-    margin-right: 75px;
-    margin-left: 75px;
 }
