@@ -1,11 +1,21 @@
 //Image encoding
 var imageData;
 var titleData = "";
-var imageLoaded = false;
+var imageLoaded = false, loggedIn = false, ratingSet = true;
 var famebox = false, shamebox = false;
 var fbox = document.getElementById("fameCheckBox"), sbox = document.getElementById("shameCheckBox");
 var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
+
+let user = {
+	isSignedIn : function() {
+		return false;
+	}
+};
+
+function onSignIn(googleUser) {
+	user = googleUser;
+}
 
 function encodeImageFileAsURL() { // <- Function to encode an image or anything else
 	var srcData;
@@ -56,8 +66,8 @@ function tryToPost(){
 		ratingData = -1;
 	}
 
-	if(titleData != "" && imageLoaded){
-		postData(imageData, titleData, ratingData);
+	if(titleData != "" && imageLoaded && user.isSignedIn()){
+		postData(imageData, titleData, user);
 		alert("image has been uploaded");
 	}
 	else if(titleData == ""){
@@ -66,18 +76,21 @@ function tryToPost(){
 		alert("you need to upload an image");
 	} else if(!ratingSet){
 		alert("you need to rate it");
+	} else if(!user.isSignedIn()){
+		alert("You need to sign in");
 	}
 }
 
-async function postData(imageData, title) {
+async function postData(imageData, title, currentUser) {
+	let token = currentUser.getAuthResponse().id_token;
 	let response = await fetch(webbServerAdress + "image", {
 		headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": token
 		},
 		method: "POST",
 		body: JSON.stringify({
 			image: imageData,
-			userID: 1,
 			title: title,
 			date: "2019-12-05",
 			location: "TEST-location",

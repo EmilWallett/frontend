@@ -2,10 +2,20 @@ let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
 var imageIDArrayRemember = [];
 var imageIDCounter = 0;
-var firstRun = true;
+var firstRun = true, loggedIn = false;
 var startPos = 1;
 var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
+
+let user = {
+	isSignedIn : function() {
+		return false;
+	}
+};
+
+function onSignIn(googleUser) {
+	user = googleUser;
+}
 
 var errorCard = {
 	image:{
@@ -198,15 +208,24 @@ function CheckImgIDActive(post){
 }
 
 async function FamePress(){
-	await RatingSend(true);
-
-	LoadPost();
+	if(user.isSignedIn()){
+		await RatingSend(true);
+		LoadPost();
+	}
+	else{
+		alert("You need to be logged in to rate the image");
+	}
+	
 }
 
 async function ShamePress(){
-	await RatingSend(false);
-	
-	LoadPost();
+	if(user.isSignedIn()){
+		await RatingSend(false);
+		LoadPost();
+	}
+	else{
+		alert("You need to be logged in to rate the image");
+	}
 }
 
 LoadPost();
@@ -214,6 +233,7 @@ LoadPost();
 
 async function RatingSend(fame){
 	let ratingNumb;
+	let token = user.getAuthResponse().id_token;
 	if(fame){
 		ratingNumb = 1;
 	}
@@ -222,12 +242,12 @@ async function RatingSend(fame){
 	}
 	let response = await fetch(webbServerAdress + "rating/" + currentPost.image.id, {
 		headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"Authorization": token
 		},
 		method: "POST",
 		body: JSON.stringify({
 			rating: ratingNumb,
-			userID: 1,
 			imageID: currentPost.image.id
 		})
 	});
