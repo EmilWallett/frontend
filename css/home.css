@@ -2,7 +2,6 @@
 :root {
 	--border: 2px solid black;
 	--box-background: rgba(0,0,0,0.2);
-	--tos : white;
 }
 
 /*Main grid layout for the whole website
@@ -57,9 +56,6 @@ main {
 	background-color:var(--box-background);
 	padding: 0px 100px 0px 100px;
     border: var(--border);
-}
-.aboutText a{
-	color: var(--tos);
 }
 /*The second section in the main - text about fame and same along with both fame and shame images*/
 .fameShame {
