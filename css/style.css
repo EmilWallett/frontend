@@ -1,9 +1,15 @@
+/*CSS VARIABLES*/
+:root {
+	--background: rgb(250, 250, 250);
+	--nav-background: rgba(50,50,50,1);
+}
+
 /*BODY*/
 
 /*Body selectors, changes for the whole website*/
 body {
-    background-color: rgb(255, 255, 255);
-	font-family: "Verdana";
+    background-color: var(--background);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin:0px;
 }
 
@@ -16,7 +22,7 @@ header {
     grid-template-areas:
     "logo title nav";
     grid-template-columns: 1fr 1fr 1fr; /*Fixes the grid column sizes so the logo and the nav menu has a limited space*/
-    background-color: rgb(44, 44, 44);
+    background-color: var(--nav-background);
 }
 /*Top left logo class*/
 .logo {
@@ -87,7 +93,7 @@ footer {
     grid-template-areas: "footerErasmus footerLinks .";
 	grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
-    background-color: rgb(44, 44, 44); /* the background of the footer*/
+    background-color: var(--nav-background); /* the background of the footer*/
 }
 /*Class for the unorderd list inside of the footer*/
 footer ul {

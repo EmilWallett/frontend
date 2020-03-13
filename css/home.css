@@ -1,3 +1,8 @@
+/*CSS VARIABLES*/
+:root {
+	--border: 2px solid black;
+}
+
 /*Main grid layout for the whole website
 Sub grids are making smaller boxes inside of these boxes*/
 .wrapper {
@@ -85,7 +90,7 @@ main {
 }
 .aboutText {
     padding: 0px 100px 0px 100px;
-    border: 2px solid black;
+    border: var(--border);
 }
 p {
     text-align: center;
@@ -97,14 +102,14 @@ p {
 }
 .shameText {
     padding: 0px 100px 0px 100px;
-    border-left: 2px solid black;
+    border-left: var(--border);
 }
 h2, h3{
     text-align:center;
 }
 .fameText {
     padding: 0px 100px 0px 100px;
-    border-right: 2px solid black;
+    border-right: var(--border);
 }
 .shameImages {
     padding-left: 100px;
@@ -120,8 +125,8 @@ h2, h3{
 }
 .goalText2 {
     padding: 0px 100px 0px 100px;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: var(--border);
+    border-right: var(--border);
 }
 .euimg{
     margin-top:50px;
