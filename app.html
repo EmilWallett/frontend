@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<script defer="defer" src="js/app.js"></script>
 		<link rel="stylesheet" href="css/app.css">
-		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/style.css">
 		<meta name="google-signin-scope" content="profile email">
 		<meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -15,36 +15,33 @@
 	</head>
 	<body>
 		<div class="grid-container">
-			<header>
-				<a href="index.html"><img src="img/logo.png" alt="Sustaining logo" class="logo"></a>
-				<!--logotype in header-->
-				<h1>Sustaining</h1>
-				<!--We have to have the logo and the drop down bar upp here-->
-				<nav>
-					<section class="dropdown">
-						<!--Burger menu-->
-						<section class="burgermenu"></section>
-						<!--nedeed for drop down menu-->
-						<section class="burgermenu"></section>
-						<section class="burgermenu"></section>
-						<section class="dropdown-content">
-							<!--the drop down menu-->
-							<a href="index.html">Home</a>
-							<!--link to gallery-->
-							<a href="#">Register/Login</a>
-							<!--just for style-->
-							<a href="gallery.html">Gallery</a>
-							<!--link to gallery-->
-							<a href="about.html">About Us</a>
-							<!--link to about-->
-							<a href="oursupporters.html">Our Supporters</a>
-							<!--link to support-->
-							<a href="#">Others</a>
-							<!--just for style-->
-						</section>
-					</section>
-				</nav>
-			</header>
+            <header>
+                <a href="index.html"><img src="img/logo.png" alt="Sustaining logo" class="logo"></a>
+                <!--logotype in header-->
+                <h1>Sustaining</h1>
+                <!--We have to have the logo and the drop down bar upp here-->
+                <nav>
+                    <div class="dropdown">
+                        <!--Burger menu-->
+                        <div class="burgermenu"></div>
+                        <!--nedeed for drop down menu-->
+                        <div class="burgermenu"></div>
+                        <div class="burgermenu"></div>
+                        <div class="dropdown-content">
+                            <!--the drop down menu-->
+                            <a href="index.html">Home</a>
+                            <!--link to Uploade-->
+                            <a href="protoFileUpload.html">Upload</a>
+                            <!--link to gallery-->
+                            <a href="gallery.html">Gallery</a>
+                            <!--link to gallery-->
+                            <a href="about.html">About Us</a>
+                            <!--link to about-->
+                            <a href="supporters.html">Our Supporters</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
 			<aside></aside>
 			<main>
 				<div id="mainAppBox">
@@ -82,33 +79,34 @@
 				</section>
 			</main>
 			<aside></aside>
-			<footer>
-				<section>
-					<img class="footerErasmus" src="img/erasmus.png" alt="Erasmus+ Logo"><!--Eu logo--></section>
-				<section>
-					<ul>
-						<li>
-							<!--TOS-Link-->
-							<a href="tos.html">TOS</a>
-						</li>
-						<li>
-							<!--ABOUT-Link-->
-							<a href="about.html">ABOUT</a>
-						</li>
-						<li>
-							<!--Galary-link-->
-							<a href="gallery.html">
-								GALLERY
-							</a>
-						</li>
-						<li>
-							<!--Our Supporters link-->
-							<a href="oursupporters.html">OUR SUPPORTERS</a>
-						</li>
-					</ul>
-				</section>
-				<section></section>
-			</footer>
+            <footer>
+                <div>
+                    <img class="footerErasmus" src="img/erasmus.png" alt="Erasmus+ Logo"><!--Eu logo-->
+                </div>
+                <section>
+                    <ul>
+                        <li>
+                            <!--TOS-Link-->
+                            <a href="tos.html">TOS</a>
+                        </li>
+                        <li>
+                            <!--ABOUT-Link-->
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <!--Galary-link-->
+                            <a href="gallery.html">GALLERY</a>
+                        </li>
+                        <li>
+                            <!--Our Supporters link-->
+                            <a href="supporters.html">OUR SUPPORTERS</a>
+                        </li>
+                    </ul>
+                </section>
+                <div>
+                    <img class="footerLogo" src="img/logo.png" alt="Sustaining logo"><!--Project logo-->
+                </div>
+            </footer>
 		</div>
 	</body>
 </html>
