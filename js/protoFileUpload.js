@@ -59,13 +59,6 @@ function ShameBoxChange(value){
 }
 
 function tryToPost(){
-	if(document.getElementById("fameCheckBox").value == "on"){
-		ratingData = 1;
-	}
-	else{
-		ratingData = -1;
-	}
-
 	if(titleData != "" && imageLoaded && user.isSignedIn()){
 		postData(imageData, titleData, user);
 		alert("image has been uploaded");
