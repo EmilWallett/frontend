@@ -1,6 +1,8 @@
 /*CSS VARIABLES*/
 :root {
 	--border: 2px solid black;
+	--box-background: rgba(0,0,0,0.2);
+	--tos : white;
 }
 
 /*Main grid layout for the whole website
@@ -51,13 +53,19 @@ main {
     grid-area: aboutText;
     display: grid;
     grid-template-rows: 60px auto auto;
+	border-radius:10%;
+	background-color:var(--box-background);
+	padding: 0px 100px 0px 100px;
+    border: var(--border);
 }
-
+.aboutText a{
+	color: var(--tos);
+}
 /*The second section in the main - text about fame and same along with both fame and shame images*/
 .fameShame {
     grid-area: fameShame;
     display: grid;
-    grid-template-areas: "fameText fameImages shameImages shameText ";
+    grid-template-areas: " fameImages fameText shameText shameImages ";
     grid-gap: 50px;
     grid-template-columns: auto auto auto auto;
 }
@@ -79,18 +87,21 @@ main {
 .goals {
     grid-area: goals;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: " goalText1 goalText2 euimg";
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: " goalText1 euimg";
       grid-gap: 30px;
 }
-
+.goalText1 {
+    padding: 0px 100px 0px 100px;
+	border-right: var(--border);
+}
+.euimg{
+    margin-top:30px;
+	height:140px;
+}
 .tree {
     height:100%;
     width:400px;
-}
-.aboutText {
-    padding: 0px 100px 0px 100px;
-    border: var(--border);
 }
 p {
     text-align: center;
@@ -109,25 +120,12 @@ h2, h3{
 }
 .fameText {
     padding: 0px 100px 0px 100px;
-    border-right: var(--border);
 }
 .shameImages {
     padding-left: 100px;
-
 }
 .fameShame {
     padding-bottom: 50px;
     margin-right: 75px;
     margin-left: 75px;
-}
-.goalText1 {
-    padding: 0px 100px 0px 100px;
-}
-.goalText2 {
-    padding: 0px 100px 0px 100px;
-    border-left: var(--border);
-    border-right: var(--border);
-}
-.euimg{
-    margin-top:50px;
 }
