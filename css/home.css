@@ -43,7 +43,8 @@ main {
 .aboutImages {
     grid-area: aboutImages;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-gap: 30px;
 }
 /*The class for the tree in the first section of the main*/
@@ -66,12 +67,11 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-    "fameImages"
     "fameText"
+    "fameImages"
     "shameText"
     "shameImages";
     grid-gap: 50px;
-	
     padding-bottom: 50px;
     margin-right: 75px;
     margin-left: 75px;
@@ -80,14 +80,14 @@ main {
 .fameImages {
     grid-area: fameImages;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 /*The images for shame in the second section - makes a grid to place them bellow each other*/
 .shameImages {
     grid-area: shameImages;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
 }
 .shameText {
@@ -147,5 +147,13 @@ h2, h3{
     .goals {
         grid-template-columns: 2fr 1fr;
         grid-template-areas: "goalText1 euimg";
+    }
+    .fameImages, .shameImages {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    .aboutImages {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
