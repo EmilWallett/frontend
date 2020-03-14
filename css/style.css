@@ -23,8 +23,10 @@ header {
     grid-area: header; /*The name to use in the grid-template-areas*/
     display: grid;
     grid-template-areas:
-    "logo title nav";
-    grid-template-columns: 1fr 1fr 1fr; /*Fixes the grid column sizes so the logo and the nav menu has a limited space*/
+    "logo"
+    "title"
+    "nav";
+    grid-template-columns: 1fr; /*Fixes the grid column sizes so the logo and the nav menu has a limited space*/
     background-color: var(--nav-background);
 }
 /*Top left logo class*/
@@ -102,8 +104,11 @@ button{
 footer {
     grid-area: footer;
     display: grid;
-    grid-template-areas: "footerErasmus footerLinks footerLogo";
-	grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "footerErasmus"
+    "footerLinks"
+    "footerLogo";
+	grid-template-columns: 1fr;
     grid-gap: 30px;
     background-color: var(--nav-background); /* the background of the footer*/
 }
@@ -140,4 +145,18 @@ button {
 button:hover {
     background-color: #2d3e50; /* steel blue */
     color:white;
+}
+
+
+/*MEDIA QUERIES*/
+@media only screen and (min-width: 1100px) {
+    header {
+        grid-template-areas:
+        "logo title nav";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    footer {
+        grid-template-areas: "footerErasmus footerLinks footerLogo";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
