@@ -24,8 +24,7 @@ header {
     display: grid;
     grid-template-areas:
     "logo"
-    "title"
-    "nav";
+    "title";
     grid-template-columns: 1fr; /*Fixes the grid column sizes so the logo and the nav menu has a limited space*/
     background-color: var(--nav-background);
 }
@@ -58,9 +57,8 @@ a:hover {
 /*Moves the dropdown menu/nav to a top right position*/
 nav .dropdown{
 	position: absolute;
-	right: 2.1875rem;
-    top: 2.1875rem;
-    grid-area: nav;
+	right: 2rem;
+    top: 2rem;
     display: inline-block;
 }
 .dropdown {
@@ -152,7 +150,7 @@ button:hover {
 @media only screen and (min-width: 1100px) {
     header {
         grid-template-areas:
-        "logo title nav";
+        "logo title .";
         grid-template-columns: 1fr 1fr 1fr;
     }
     footer {
