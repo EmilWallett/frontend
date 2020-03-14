@@ -48,3 +48,7 @@ Which files connects to which website page:
 
 ### ANYTHING MORE?
   * ?
+
+## Images used
+ * https://www.pexels.com/photo/orange-fire-948270/
+ * https://www.pexels.com/photo/nature-forest-trees-fog-4827/
