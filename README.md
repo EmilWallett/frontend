@@ -21,7 +21,6 @@ Which files connects to which website page:
   * fileUpload.html
   * style.css
   * index.js
-  * protoFileUpload.js
 
 ### Gallery
   * gallery.html
@@ -47,9 +46,9 @@ Which files connects to which website page:
 
 ### Vote
   * vote.html
-  * app.css
+  * vote.css
   * style.css
-  * app.js
+  * vote.js
 
 ### ANYTHING MORE?
   * ?
