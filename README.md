@@ -18,7 +18,7 @@ Which files connects to which website page:
   * imageHandler.js
 
 ### Upload
-  * protoFileUpload.html
+  * fileUpload.html
   * style.css
   * index.js
   * protoFileUpload.js
@@ -45,11 +45,11 @@ Which files connects to which website page:
   * style.css
   * tos.css
 
-### App
- * app.html
- * app.css
- *  style.css
- * app.js
+### Vote
+  * vote.html
+  * app.css
+  * style.css
+  * app.js
 
 ### ANYTHING MORE?
   * ?
