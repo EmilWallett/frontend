@@ -90,12 +90,12 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 
 async function AskServerForPosts(fame){
 	if(fame){
-		const response = await fetch(webbServerAdress + "posts/fame/9");
+		const response = await fetch(webbServerAdress + "posts/fame/999");
 		const json = await response.json();
 		return json;
 	}
 	else{
-		const response = await fetch(webbServerAdress +"posts/shame/9");
+		const response = await fetch(webbServerAdress +"posts/shame/999");
 		const json = await response.json();
 		return json;
 	}
