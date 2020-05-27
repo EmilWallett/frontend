@@ -26,7 +26,7 @@ var errorCard = {
 
 };
 
-let tempComment = {
+var tempComment = {
 	id:1,
 	imageID: 58,
 	userID: 11,
