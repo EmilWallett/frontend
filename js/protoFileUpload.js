@@ -1,11 +1,12 @@
 //Image encoding
 var imageData;
 var titleData = "";
-var imageLoaded = false, loggedIn = false, ratingSet = true;
+var imageLoaded = false, loggedIn = false, ratingSet = false;
 var famebox = false, shamebox = false;
 var fbox = document.getElementById("fameCheckBox"), sbox = document.getElementById("shameCheckBox");
 var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
+var ratingIsFame;
 
 let user = {
 	isSignedIn : function() {
@@ -44,22 +45,31 @@ function TitleChange(value){
 	titleData = value;
 }
 
-function FameBoxChange(value){
-
+function FameClick(){
+	ratingSet = true;
+	ratingIsFame = true;
+	ResetFameShameButtons();
+	let fameButton = document.getElementById("fame-btn");
+	fameButton.classList.add("currentlySelected");
 }
 
-function ShameBoxChange(value){
-	famebox != famebox;
-	if(famebox){
-		value = on;
-	}
-	else{
-		value = off;
-	}
+function ShameClick(){
+	ratingSet = true;
+	ratingIsFame = false;
+	ResetFameShameButtons();
+	let shameButton = document.getElementById("shame-btn");
+	shameButton.classList.add("currentlySelected");
+}
+
+function ResetFameShameButtons(){
+	let fameButton = document.getElementById("fame-btn");
+	let shameButton = document.getElementById("shame-btn");
+	fameButton.classList = [];
+	shameButton.classList = [];
 }
 
 function tryToPost(){
-	if(titleData != "" && imageLoaded && user.isSignedIn()){
+	if(titleData != "" && imageLoaded && user.isSignedIn() && ratingSet){
 		postData(imageData, titleData, user);
 		alert("image has been uploaded");
 	}
@@ -75,6 +85,18 @@ function tryToPost(){
 }
 
 async function postData(imageData, title, currentUser) {
+	let ratingNumb = 0;
+	if(ratingIsFame){
+		ratingNumb = 1;
+	}
+	else{
+		ratingNumb = -1;
+	}
+	var today = new Date();
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	var dateTime = date+' '+time;
+
 	let token = currentUser.getAuthResponse().id_token;
 	let response = await fetch(webbServerAdress + "image", {
 		headers: {
@@ -85,10 +107,26 @@ async function postData(imageData, title, currentUser) {
 		body: JSON.stringify({
 			image: imageData,
 			title: title,
-			date: "2019-12-05",
+			date: dateTime,
 			location: "TEST-location",
+			rating: ratingNumb
 		})
 	});
 	//const json = await response.json();
 	//return json;
+}
+
+async function PostRating(rating, currentUser, imageID){
+	let token = currentUser.getAuthResponse().id_token;
+	let response = await fetch(webbServerAdress + "rating/" + imageID, {
+		headers: {
+			"Content-Type": "application/json",
+			"Authorization": token
+		},
+		method: "POST",
+		body: JSON.stringify({
+			rating: rating,
+			imageID: imageID
+		})
+	});
 }

@@ -1,11 +1,17 @@
 let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
+var commentParent = document.getElementById("commentSection");
 var imageIDArrayRemember = [];
 var imageIDCounter = 0;
 var firstRun = true, loggedIn = false;
 var startPos = 1;
 var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
+
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
 
 let user = {
 	isSignedIn : function() {
@@ -15,6 +21,74 @@ let user = {
 
 function onSignIn(googleUser) {
 	user = googleUser;
+}
+
+var postCommentObj = {
+	id: 6,
+	imageID: 0,
+	text: "",
+	date: "",
+	userID: 8
+}
+
+function PostCommentTextUpdate(){
+	var inputElement = document.getElementById("commentPostText");
+	postCommentObj.text = inputElement.value;
+}
+
+async function TryPostComment(){
+	postCommentObj.imageID = currentPost.image.id;
+	var today = new Date();
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	var dateTime = date+' '+time;
+	postCommentObj.date = dateTime;
+	if(!user.isSignedIn()){
+		alert("You need to be logged in to post a comment");
+		return;
+	}
+	if(postCommentObj.text == ""){
+		alert("The comment needs to have text");
+		return;
+	}
+	await PostComment();
+}
+
+async function PostComment(){
+	console.log(JSON.stringify(postCommentObj));
+	let token = user.getAuthResponse().id_token;
+	console.log(postCommentObj);
+	try {
+		let response = await fetch(webbServerAdress + "comment/" + currentPost.image.id, {
+			headers: {
+				"Authorization": token,
+				"Content-Type": "application/json"
+			},
+			method: "POST",
+			body: JSON.stringify(postCommentObj)
+		});
+		console.log(response);
+	} catch (error) {
+		console.log(error);
+		alert("Your comment faild to post");
+	}
+	await ReloadComments();
+}
+
+async function ReloadComments(){
+	var commentsInfo = await AskServerForComments(currentPost.image.id);
+	
+	currentPost = new Post(commentsInfo, currentPost.image);
+
+	for (let index = 0; index < commentParent.children.length; index++) {
+		const element = commentParent.children[index];
+		element.remove();	
+	}
+
+	currentComments = [];
+	commentsInfo.forEach(element => {
+		currentComments.push(new comment(element));
+	});
 }
 
 var errorCard = {
@@ -92,9 +166,13 @@ class comment{
 		this.date = comment.date;
 
 		this.element = this.makeElement(this.id);
+		commentParent.appendChild(this.element);
 		this.mainText = new text("ct" + this.id);
 		this.dateText = new text("dt" + this.id);
 		this.usernameText = new text("ut" + this.id);
+
+		this.mainText.set(this.text);
+		this.dateText.set(this.date);
 		
 	}
 
@@ -131,6 +209,7 @@ var fameText = new text("fameNumbText");
 var shameText = new text("shameNumbText");
 var appImg = new image("appImage");
 var currentPost;
+var currentComments = [];
 
 async function LoadPost(){
 	//Requsets a post from the server
@@ -146,15 +225,24 @@ async function LoadPost(){
 			post = await AskServerForPost(currentPost.image.id);
 		}
 
-
-		currentPost = new Post(post.comments, post.image);
+		var commentsInfo = await AskServerForComments(post.image.id);
+		currentPost = new Post(commentsInfo, post.image);
 		userText.set(currentPost.user);
 		titleText.set(currentPost.image.title);
 		appImg.setSrcAlt(currentPost.image.image, currentPost.image.title);
 
+		for (let index = 0; index < commentParent.children.length; index++) {
+			const element = commentParent.children[index];
+			element.remove();	
+		}
+
+		currentComments = [];
+		commentsInfo.forEach(element => {
+			currentComments.push(new comment(element));
+		});
+
 		//gets the ratings for the image
 		var rating = await AskServerForRatings(currentPost.image.id);
-		console.log(rating);
 
 		//counts amount of Fame and shame
 		let fameAmount = 0, shameAmount = 0;
@@ -181,8 +269,6 @@ async function LoadPost(){
 		shameText.set("Not found");
 	}
 	
-
-	console.log(post);
 	//check so that the user hasen't alredy seen the post this sesion
 	/*do {
 		imageIDCounter++;
@@ -190,13 +276,17 @@ async function LoadPost(){
 		saftyStop++;
 		
 	} while(!CheckImgIDActive(post) && saftyStop < 20);
-	*/
-	
-	
+	*/	
 }
 
 async function AskServerForPost(imageID){
 	const response = await fetch(webbServerAdress + "post/" + imageID);
+	const json = await response.json();
+	return json;
+}
+
+async function AskServerForImage(imageID){
+	const response = await fetch(webbServerAdress + "image/" + imageID);
 	const json = await response.json();
 	return json;
 }
@@ -279,12 +369,5 @@ function loadProgress(){
 	var toLoad = localStorage.getItem("imgIDToLoad");
 	if(toLoad != null){
 		startPos = parseInt(toLoad);
-	}
-}
-
-class Comments{
-	createCommentElement(comment){
-		this.commentElement = document.createElement("article");
-		
 	}
 }

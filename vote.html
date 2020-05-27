@@ -62,22 +62,20 @@
 					</div>
 				</div>
 				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-				<section class="commentSection">
+				<section class="commentSection" id="commentSection">
+					<!-- Comment blueprint
 					<article class="commentBox">
 						<p class="commentText"></p>
 						<p class="commentDate"></p>
 						<p class="commentUsername"></p>
 					</article>
-					<article class="commentBox">
-						<p class="commentText"></p>
-						<p class="commentDate"></p>
-						<p class="commentUsername"></p>
-					</article>
-					<article class="commentBox">
-						<p class="commentText"></p>
-						<p class="commentDate"></p>
-						<p class="commentUsername"></p>
-					</article>
+					-->
+				</section>
+				<section class="postCommentSection">
+					<section class="postBox">
+						<input type="text" onChange="PostCommentTextUpdate()" id="commentPostText">
+						<button onclick="TryPostComment()">Post comment</button>
+					</section>
 				</section>
 			</main>
 			<aside></aside>
