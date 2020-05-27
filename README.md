@@ -15,6 +15,12 @@ Which files connects to which website page:
   * style.css
   * home.css
   * index.js
+  * imageHandler.js
+
+### Upload
+  * fileUpload.html
+  * style.css
+  * index.js
 
 ### Gallery
   * gallery.html
@@ -23,28 +29,26 @@ Which files connects to which website page:
   * gallery.js
   * gallery-server-Ask.js
 
-### About
+### About (Us)
   * about.html
   * style.css
-  * about.css
   * index.js
 
-### Supporters
+### Our Supporters
   * supporters.html
   * style.css
   * supporters.css
-  * index.js
 
 ### ToS
   * tos.html
   * style.css
   * tos.css
-  * index.js
 
-### App
- * app.html
- * app.css
- * app.js
+### Vote
+  * vote.html
+  * vote.css
+  * style.css
+  * vote.js
 
 ### ANYTHING MORE?
   * ?

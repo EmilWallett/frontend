@@ -97,6 +97,11 @@ button{
 	box-shadow:var(--button-shadow);
 }
 
+/*MAIN*/
+main {
+	margin: 10px;
+}
+
 /*FOOTER*/
 
 /*The footer (at the bottom of the page) - contains a logo and links to other pages of the website*/

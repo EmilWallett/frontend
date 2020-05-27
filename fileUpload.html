@@ -5,9 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--Linking in the css, js and favicon-->
 		<link href="css/style.css" rel="stylesheet">
-		<link href="css/supporters.css" rel="stylesheet">
+		<link href="js/index.js" rel="script">
 		<link href="img/favicon.ico" rel="icon">
-		<title>Sustaining - Our Supporters</title>
+		<script defer src="../js/protoFileUpload.js"></script>
+		<meta name="google-signin-scope" content="profile email">
+		<meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<title>Sustaining - Upload</title>
 	</head>
 	<body>
         <div class="wrapper">
@@ -41,21 +45,25 @@
 				</nav>
             </header>
             <main>
-                <!--Top section after the header-->
                 <section class="images">
-                    <!--Images on the left-->
-                    <img src="img/erasmus.png" alt="Erasmus+ logo">
-                    <img src="img/europeancommission.png" alt="European Commission logo">
+                    <section></section>
                 </section>
-                <!--More text-->
                 <section class="textblock">
-                    <h2>Our Supporters</h2>
-                    <p>Our project called Sustaining, it's a "Erasmus+" project wich is supported by the European Union. By presenting them the project in a very long textdocument the teachers of both involved schools did a great job. They made it possible for us to develop this project. The project had to have a goal wich in our case was to develop this website and with help our countries by protecting the environment. The EU kindly sponsored this project with plenty of financial resources and made it possible for both, the swedish students traveling to Germany and the german students traveling to Sweden. We are happy that the EU just made this whole project possible and that we are the students that has been entrusted with the honorable task do help our very neglected planet to heal.</p>
-                    <h3>Erasmus+</h3>
-                    <p>Erasmus+ is the EU's programme to support education, training, youth and sport in Europe. Its budget of €14.7 billion will provide opportunities for over 4 million Europeans to study, train, and gain experience abroad. Set to last until 2020, Erasmus+ doesn't just have opportunities for students. Merging seven prior programmes, it has opportunities for a wide variety of individuals and organisations. Detailed information on these opportunities, including eligibility criteria, is available in the Erasmus+ Programme Guide. An indicative funding guide for some centralised opportunities is also available.</p>
-                    <p>Read more about Erasmus+ at the <a href="https://ec.europa.eu/programmes/erasmus-plus/node_en">European Commissions website</a>.<p>
-
-                </section>
+                    <section>
+                        <h2> Upload </h2>
+                    </section>
+                    <section>
+                        <!--Upload-->
+                        <form class="fileupload">
+                            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                            <input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
+                            <input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
+                            <!--<input type="checkbox" name="shameBox" id="shameCheckBox" onchange="ShameBoxChange(this.value)">-->
+                        </form><br>
+                        <section id="imgTest">
+                            <img src="" id="imgPrew" style="visibility: hidden;">
+                        </section>
+                        <button id="upload-btn" onclick="tryToPost()">Upload</button>
             </main>
             <!--footer for links-->
 			<footer>
@@ -74,7 +82,7 @@
                         </li>
                         <li>
                             <!--Our Supporters link-->
-                            <a class="active">OUR SUPPORTERS</a>
+                            <a href="supporters.html">OUR SUPPORTERS</a>
                         </li>
                         <li>
                             <!--TOS-Link-->
@@ -87,5 +95,5 @@
                 </div>
             </footer>
         </div>
-	</body>
+  </body>
 </html>
