@@ -24,11 +24,8 @@ function onSignIn(googleUser) {
 }
 
 var postCommentObj = {
-	id: 6,
-	imageID: 0,
 	text: "",
 	date: "",
-	userID: 8
 }
 
 function PostCommentTextUpdate(){
@@ -37,12 +34,11 @@ function PostCommentTextUpdate(){
 }
 
 async function TryPostComment(){
-	postCommentObj.imageID = currentPost.image.id;
 	var today = new Date();
 	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 	var dateTime = date+' '+time;
-	postCommentObj.date = dateTime;
+	postCommentObj.date = date;
 	if(!user.isSignedIn()){
 		alert("You need to be logged in to post a comment");
 		return;
