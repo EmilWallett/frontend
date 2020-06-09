@@ -24,6 +24,7 @@ function onSignIn(googleUser) {
 }
 
 var postCommentObj = {
+	imageID: 0,
 	text: "",
 	date: "",
 }
@@ -35,10 +36,16 @@ function PostCommentTextUpdate(){
 
 async function TryPostComment(){
 	var today = new Date();
-	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	var dateTime = date+' '+time;
+	let day = today.getDate() + "", month = (today.getMonth()+1) + "";
+	if(day.length == 1){
+		day = "0" + day;
+	}
+	if(month.length == 1){
+		month = "0" + month
+	}
+	var date = today.getFullYear()+'-'+month+'-'+day;
 	postCommentObj.date = date;
+	postCommentObj.imageID = currentPost.image.id;
 	if(!user.isSignedIn()){
 		alert("You need to be logged in to post a comment");
 		return;
@@ -73,12 +80,15 @@ async function PostComment(){
 
 async function ReloadComments(){
 	var commentsInfo = await AskServerForComments(currentPost.image.id);
-	
 	currentPost = new Post(commentsInfo, currentPost.image);
 
-	for (let index = 0; index < commentParent.children.length; index++) {
-		const element = commentParent.children[index];
-		element.remove();	
+	while(commentParent.children.length > 0){
+		commentParent.children[0].remove();
+	}
+
+	for (let index = 0; index < commentsInfo.length; index++) {
+		const element = commentsInfo[index];
+		commentsInfo[index] = await ReadyCommentForClass(element);
 	}
 
 	currentComments = [];
@@ -153,15 +163,28 @@ class imageObj{
 	}
 }
 
+async function ReadyCommentForClass(comment){
+	var newComment = comment;
+	newComment.username = await GetUsername(comment.userID);
+	return newComment;
+}
+
+async function GetUsername(userID){
+	const response = await fetch(webbServerAdress + "user/" + userID);
+	const text = await response.text();
+	return text;
+}
+
 class comment{
 	constructor(comment){
 		this.id = comment.id;
 		this.imageID = comment.imageID;
 		this.userID = comment.userID;
+		this.username = comment.username;
 		this.text = comment.text;
 		this.date = comment.date;
 
-		this.element = this.makeElement(this.id);
+		this.element = this.MakeElement(this.id);
 		commentParent.appendChild(this.element);
 		this.mainText = new text("ct" + this.id);
 		this.dateText = new text("dt" + this.id);
@@ -169,10 +192,11 @@ class comment{
 
 		this.mainText.set(this.text);
 		this.dateText.set(this.date);
+		this.usernameText.set(this.username);
 		
 	}
 
-	makeElement(commentID){
+	MakeElement(commentID){
 		let element = document.createElement("article");
 		element.classList.add("commentBox");
 		element.id = "c" + commentID;
@@ -196,7 +220,6 @@ class comment{
 		element.appendChild(usernameText);
 		return element;
 	}
-	
 }
 
 var titleText = new text("titleText");
@@ -227,9 +250,13 @@ async function LoadPost(){
 		titleText.set(currentPost.image.title);
 		appImg.setSrcAlt(currentPost.image.image, currentPost.image.title);
 
-		for (let index = 0; index < commentParent.children.length; index++) {
-			const element = commentParent.children[index];
-			element.remove();	
+		while(commentParent.children.length > 0){
+			commentParent.children[0].remove();
+		}
+
+		for (let index = 0; index < commentsInfo.length; index++) {
+			const element = commentsInfo[index];
+			commentsInfo[index] = await ReadyCommentForClass(element);
 		}
 
 		currentComments = [];
@@ -354,7 +381,7 @@ async function RatingSend(fame){
 	});
 }
 
-//window.onunload = saveProgress;
+window.onunload = saveProgress;
 
 function saveProgress(){
 	var toLoad = currentPost.image.id - 1;
@@ -362,8 +389,13 @@ function saveProgress(){
 }
 
 function loadProgress(){
-	var toLoad = localStorage.getItem("imgIDToLoad");
-	if(toLoad != null){
-		startPos = parseInt(toLoad);
+	if(localStorage.getItem("notAutoContinue") == "0"){
+		startPos = 1;
+	}
+	else{
+		var toLoad = localStorage.getItem("imgIDToLoad");
+		if(toLoad != null){
+			startPos = parseInt(toLoad);
+		}
 	}
 }

@@ -41,14 +41,20 @@ async function CreateGalleryGrid(fame){
 		const element = informationArray[index];
 		let boxClass = index + 1;
 		boxClass = "b" + boxClass;
-		
-		let galleryBox = CreateGalleryBox(element.image.title, element.image.username, element.image.image, boxClass);
+		let totalRatings = await GetTotalRatings(element.image.id);
+		let galleryBox = CreateGalleryBox(element.image.title, element.image.username, element.image.image, boxClass, element.image.rating, totalRatings);
 		appendElement.appendChild(galleryBox);
 	}
 
 }
 
-function CreateGalleryBox(title, username, imageURL, boxClass){
+async function GetTotalRatings(imageID){
+	const response = await fetch(webbServerAdress + "rating/" + imageID);
+	const json = await response.json();
+	return json.length;
+}
+
+function CreateGalleryBox(title, username, imageURL, boxClass, rating, totalRatings){
 	let returnElement = document.createElement("section");
 	returnElement.className = "gallery-box";
 	returnElement.classList.add(boxClass);
@@ -57,6 +63,8 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 	imageElement.src = imageURL;
 	imageElement.alt = title;
 	returnElement.appendChild(imageElement);
+
+
 
 	let divElement = document.createElement("div");
 	divElement.className = "usernameAndTitleBox";
@@ -75,7 +83,16 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 	divElement.appendChild(textElementTitle);
 
 	returnElement.appendChild(divElement);
+
+	let ratingElement = document.createElement("progress");
+	ratingElement.className = "ratingBox";
+	let midRate = totalRatings/2;
+	let fixedRate = rating/2;
+	ratingElement.value = midRate+fixedRate;
+	ratingElement.max = totalRatings;
+	returnElement.appendChild(ratingElement);
 	
+
 	//this is what the returnElement looks like
 	//<section class="gallery-box" id="boxID">
 	//	<img src="imageURL" alt="title">
@@ -83,6 +100,7 @@ function CreateGalleryBox(title, username, imageURL, boxClass){
 	//		<p class="username">username</p>
 	// 		<p class="title">title</p>
 	//	</div>
+	//	<progress max="100" value="70"></progress>
 	//</section>
 
 	return returnElement;
