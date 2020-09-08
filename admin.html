@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="google-site-verification" content="1t6_82cccIfnZotz5PGAHDjCHBoJYq_2hQqSUVBGQRE" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Linking in the css, js and favicon-->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/admin.css" rel="stylesheet">
+		<script src="js/admin.js" defer></script>
+		<meta name="google-signin-scope" content="profile email">
+		<meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<link href="img/favicon.ico" rel="icon">
+		<title>Sustaining - Admin</title>
+	</head>
+	<body class="adminPage">
+		<!--main page class-->
+        <div class="wrapper">
+            <header>
+                <img src="img/logo.png" alt="Sustaining logo" class="logo">
+                <!--logotype in header-->
+                <h1>Sustaining</h1>
+				<!--drop down menu here-->
+				<nav>
+					<div class="dropdown">
+						<!--Burger menu-->
+						<div class="burgermenu"></div>
+						<!--nedeed for drop down menu-->
+						<div class="burgermenu"></div>
+						<div class="burgermenu"></div>
+                        <div class="dropdown-content">
+                            <!--the drop down menu-->
+                            <a href="index.html">Home</a>
+                            <!--link to Uploade-->
+                            <a href="fileUpload.html">Upload images</a>
+                            <!--link to gallery-->
+                            <a href="gallery.html">Gallery of images</a>
+                            <!--link to voting-->
+                            <a href="vote.html">Vote for images</a>
+                            <!--link to about-->
+                            <a href="about.html">About Us</a>
+                            <!--link to about-->
+                            <a href="supporters.html">Our Supporters</a>
+                        </div>
+					</div>
+				</nav>
+            </header>
+        	<main>
+				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+				<section class="adminTables">
+					<table id="imageTable" class="table">
+						<thead>
+							<tr>
+								<th>Title</th>
+								<th>User</th>
+								<th>Img</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody id="postAdminBody">
+							
+						</tbody>
+					</table>
+					<table id="userTable" class="table">
+						<thead>
+							<tr>
+								<th>Username</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody id="userAdminBody">
+							<tr>
+								<td>Elias</td>
+								<td><button class="deleteButton is-danger">Delete</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+            </main>
+            <!--footer for links-->
+            <footer>
+                <div>
+                    <img class="footerErasmus" src="img/erasmus.png" alt="Erasmus+ Logo"><!--Eu logo-->
+                </div>
+                <section>
+                    <ul>
+                        <li>
+                            <!--Galary-link-->
+                            <a href="gallery.html">GALLERY</a>
+                        </li>
+                        <li>
+                            <!--ABOUT-Link-->
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <!--Our Supporters link-->
+                            <a href="supporters.html">OUR SUPPORTERS</a>
+                        </li>
+                        <li>
+                            <!--TOS-Link-->
+                            <a href="tos.html">TOS</a>
+                        </li>
+                    </ul>
+                </section>
+                <div>
+                    <img class="footerLogo" src="img/logo.png" alt="Sustaining logo"><!--Project logo-->
+                </div>
+            </footer>
+        </div>
+	</body>
+</html>

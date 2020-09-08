@@ -1,0 +1,59 @@
+.table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.adminTables .table{
+	margin: 0 3rem;
+}
+
+.table thead th{
+	color: #363636;
+	border-width: 0 0 2px;
+}
+
+.table td, .table th{
+	border: 1px solid #dbdbdb;
+	border-width: 0 0 1px;
+	padding: .5em .75em;
+	
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.table td>img{
+	height: 10rem;
+	width: 10rem;
+	object-fit: cover;
+}
+
+.table td>button{
+	box-shadow: none;
+	border-radius: 3px;
+	border-color: transparent;
+	height: auto;
+	widows: auto;
+}
+
+.table td>button.is-danger{
+	color: #fff;
+	background-color: #f44336;
+}
+
+.table td>button.is-danger:hover{
+	background-color: #f32c1e;
+}
+
+body.adminPage main section.adminTables{
+	display: flex;
+}
+
+.table#imageTable{
+	max-width: 75%;
+}
+
+.table#userTable{
+	max-width: 25%;
+}
