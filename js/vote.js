@@ -245,6 +245,13 @@ async function LoadPost(){
 		}
 
 		var commentsInfo = await AskServerForComments(post.image.id);
+
+		let buttons = document.getElementsByTagName("button");
+		for (let index = 0; index < buttons.length; index++) {
+			const element = buttons[index];
+			element.removeAttribute("disabled");
+		}
+
 		currentPost = new Post(commentsInfo, post.image);
 		userText.set(currentPost.user);
 		titleText.set(currentPost.image.title);
@@ -358,8 +365,21 @@ async function ShamePress(){
 
 LoadPost();
 
+var buttons = document.getElementsByTagName("button");
+for (let index = 0; index < buttons.length; index++) {
+	const element = buttons[index];
+	element.setAttribute("disabled", "disabled");
+}
+	
+
+
 
 async function RatingSend(fame){
+	let buttons = document.getElementsByTagName("button");
+	for (let index = 0; index < buttons.length; index++) {
+		const element = buttons[index];
+		element.setAttribute("disabled", "disabled");
+	}
 	let ratingNumb;
 	let token = user.getAuthResponse().id_token;
 	if(fame){

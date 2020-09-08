@@ -92,13 +92,19 @@ async function postData(imageData, title, currentUser) {
 	else{
 		ratingNumb = -1;
 	}
+
 	var today = new Date();
-	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	var dateTime = date+' '+time;
+	let day = today.getDate() + "", month = (today.getMonth()+1) + "";
+	if(day.length == 1){
+		day = "0" + day;
+	}
+	if(month.length == 1){
+		month = "0" + month
+	}
+	var date = today.getFullYear()+'-'+month+'-'+day;
 
 	let token = currentUser.getAuthResponse().id_token;
-	let response = await fetch(webbServerAdress + "image", {
+	let response = await fetch(webbServerAdress + "image/", {
 		headers: {
 			"Content-Type": "application/json",
 			"Authorization": token
@@ -107,7 +113,7 @@ async function postData(imageData, title, currentUser) {
 		body: JSON.stringify({
 			image: imageData,
 			title: title,
-			date: dateTime,
+			date: date,
 			location: "TEST-location",
 			rating: ratingNumb
 		})
@@ -128,5 +134,26 @@ async function PostRating(rating, currentUser, imageID){
 			rating: rating,
 			imageID: imageID
 		})
+	});
+}
+
+async function GetLocation(){
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(GetPlace);
+	} else {
+		console.log("Browser does not support location");
+	}
+}
+
+async function GetPlace(position){
+	console.log(position.coords);
+	let response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude +","+position.coords.longitude+"&key=AIzaSyD9-Vka0EqR6qZKZZeS4wrek5Ue9ridPGc");
+	let json = await response.json();
+	json.results.forEach(element => {
+		element.types.forEach(type => {
+			if(type == "administrative_area_level_1"){
+				console.log(element.formatted_address);
+			}
+		});
 	});
 }

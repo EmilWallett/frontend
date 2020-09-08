@@ -67,6 +67,11 @@ div.dropdown-content{
 	background-color: rgba(37, 37, 37, 0.596);
 }
 
+#mainAppBox .rateButton:disabled{
+	background-color: rgba(116, 113, 113, 0.719);
+	color: rgb(201, 201, 201);
+}
+
 #fameButton{
 	bottom: 10px;
 	left:10px;
