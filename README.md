@@ -1,5 +1,6 @@
 # Sustaining-Everybody-counts/frontend
 Frontend website for the project as part of the [ERASMUS+](https://ec.europa.eu/programmes/erasmus-plus/node_en) project.
+
 ![](https://raw.githubusercontent.com/Sustaining-Everybody-counts/frontend/master/img/favicon.ico)
 
 ### Links
