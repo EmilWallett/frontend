@@ -1,8 +1,8 @@
-#Sustaining-Everybody-counts/frontend
+# Sustaining-Everybody-counts/frontend
 Frontend website for the project as part of the [ERASMUS+](https://ec.europa.eu/programmes/erasmus-plus/node_en) project.
 ![](https://raw.githubusercontent.com/Sustaining-Everybody-counts/frontend/master/img/favicon.ico)
 
-###Links
+### Links
 
 **GitHub**
 Projects: [https://github.com/orgs/Sustaining-Everybody-counts/projects](https://github.com/orgs/Sustaining-Everybody-counts/projects)
@@ -19,16 +19,16 @@ CSS - [W3C CSS Validator](https://jigsaw.w3.org/css-validator)
 
 ------------
 
-###All Pages
+### All Pages
 
-####Home
+#### Home
 * index.html
 * css/style.css
 * css/home.css
 * js/index.js
 * js/imageHandler.js
 
-####Upload
+#### Upload
 * fileUpload.html
 * css/style.css
 * js/index.js
@@ -41,38 +41,38 @@ CSS - [W3C CSS Validator](https://jigsaw.w3.org/css-validator)
 * js/index.js
 * js/gallery-server-Ask.js
 
-####Vote App
+#### Vote App
 * vote.html
 * css/style.css
 * css/vote.css
 * js/vote.js
 
-####Admin
+#### Admin
 * admin.html
 * css/style.css
 * css/admin.css
 * js/admin.js
 
-####About
+#### About
 * about.html
 * css/style.css
 
-####Supporters
+#### Supporters
 * supporters.html
 * css/style.css
 * css/supporters.css
 
-####Terms of Service
+#### Terms of Service
 * tos.html
 * css/style.css
 * css/tos.css
 
-####Something missing?
+#### Something missing?
 * ?
 
 ------------
 
-###Image Credits
+### Image Credits
 
 1. &copy;https://www.pexels.com/photo/orange-fire-948270
 2. &copy;https://www.pexels.com/photo/nature-forest-trees-fog-4827
