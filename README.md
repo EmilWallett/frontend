@@ -5,17 +5,17 @@ Frontend website for the project as part of the [ERASMUS+](https://ec.europa.eu/
 
 ### Links
 
-**GitHub**
-Projects: [https://github.com/orgs/Sustaining-Everybody-counts/projects](https://github.com/orgs/Sustaining-Everybody-counts/projects)
-Backend: [https://github.com/orgs/Sustaining-Everybody-counts/teams/backend](https://github.com/orgs/Sustaining-Everybody-counts/teams/backend)
+#### **GitHub**
+* Projects: [https://github.com/orgs/Sustaining-Everybody-counts/projects](https://github.com/orgs/Sustaining-Everybody-counts/projects)
+* Backend: [https://github.com/orgs/Sustaining-Everybody-counts/teams/backend](https://github.com/orgs/Sustaining-Everybody-counts/teams/backend)
 
-**Server/Website**
-Frontend: [http://sustaining.te-vxo.se](http://sustaining.te-vxo.se)
-Backend: [http://its.teknikum.it:9000/sustaining_backend](http://its.teknikum.it:9000/sustaining_backend)
+#### **Server/Website**
+* Frontend: [http://sustaining.te-vxo.se](http://sustaining.te-vxo.se)
+* Backend: [http://its.teknikum.it:9000/sustaining_backend](http://its.teknikum.it:9000/sustaining_backend)
 
-**Validators**
-HTML - [Validator.nu](https://validator.nu)
-CSS - [W3C CSS Validator](https://jigsaw.w3.org/css-validator)
+#### **Validators**
+* HTML - [Validator.nu](https://validator.nu)
+* CSS - [W3C CSS Validator](https://jigsaw.w3.org/css-validator)
 > Do not forget to document your work with comments so everyone understands your code!
 
 ------------
@@ -35,7 +35,7 @@ CSS - [W3C CSS Validator](https://jigsaw.w3.org/css-validator)
 * js/index.js
 * js/protoFileUpload.js
 
-####Gallery
+#### Gallery
 * gallery.html
 * css/style.css
 * css/gallery.css
