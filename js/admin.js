@@ -3,14 +3,15 @@ var webbServerAdress = webbServerIp + serverPath;
 
 
 async function LoadPosts() {
-	let data = await RequestPosts(10);
-	console.log(data);
+	let postIDs = await RequestPostsID(10);
+	console.log(postIDs);
 
 	let postTableBody = document.getElementById("postAdminBody");
 
-	for (let index = 0; index < data.length; index++) {
-		const element = data[index];
-		let rowElement = GeneratePostRow(element);
+	for (let index = 0; index < postIDs.length; index++) {
+		const element = postIDs[index];
+		let data = await RequestPost(element);
+		let rowElement = GeneratePostRow(data);
 		postTableBody.appendChild(rowElement);
 	}
 
@@ -18,8 +19,14 @@ async function LoadPosts() {
 
 }
 
-async function RequestPosts(amount){
-	let response = await fetch(webbServerAdress + "posts/all/" + amount);
+async function RequestPost(postID){
+	let response = await fetch(webbServerAdress + "post/id/" + postID);
+	let json = await response.json();
+	return json;
+}
+
+async function RequestPostsID(amount){
+	let response = await fetch(webbServerAdress + "postsid/all/" + amount);
 	let json = await response.json();
 	return json;
 }
