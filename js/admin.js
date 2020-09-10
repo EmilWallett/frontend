@@ -1,6 +1,15 @@
 var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
 
+let user = {
+	isSignedIn : function() {
+		return false;
+	}
+};
+
+function onSignIn(googleUser) {
+	user = googleUser;
+}
 
 async function LoadPosts() {
 	let postIDs = await RequestPostsID(10);
