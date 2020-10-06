@@ -9,13 +9,53 @@ let user = {
 
 function onSignIn(googleUser) {
 	user = googleUser;
+	LoadPosts();
 }
 
 async function LoadPosts() {
+	try {
+		let postIDs = await RequestPostsID(10);
+		let users = await RequsetUsers(10);
+
+		let postTableBody = document.getElementById("postAdminBody");
+		let userTableBody = document.getElementById("userAdminBody");
+
+		postTableBody.innerHTML = "";
+		userTableBody.innerHTML = "";
+
+		for (let index = 0; index < users.length; index++) {
+			const element = users[index];
+			let rowElement = GenerateUserRow(element);
+			userTableBody.appendChild(rowElement);
+		}
+
+		for (let index = 0; index < postIDs.length; index++) {
+			const element = postIDs[index];
+			let data = await RequestPost(element);
+			let rowElement = GeneratePostRow(data);
+			postTableBody.appendChild(rowElement);
+		}
+	} catch (error) {
+		window.location.pathname = "index.html";
+	}
+	
+}
+
+async function ReloadPosts(){
 	let postIDs = await RequestPostsID(10);
-	console.log(postIDs);
+	let users = await RequsetUsers(10);
 
 	let postTableBody = document.getElementById("postAdminBody");
+	let userTableBody = document.getElementById("userAdminBody");
+
+	postTableBody.innerHTML = "";
+	userTableBody.innerHTML = "";
+	
+	for (let index = 0; index < users.length; index++) {
+		const element = users[index];
+		let rowElement = GenerateUserRow(element);
+		userTableBody.appendChild(rowElement);
+	}
 
 	for (let index = 0; index < postIDs.length; index++) {
 		const element = postIDs[index];
@@ -23,9 +63,6 @@ async function LoadPosts() {
 		let rowElement = GeneratePostRow(data);
 		postTableBody.appendChild(rowElement);
 	}
-
-	
-
 }
 
 async function RequestPost(postID){
@@ -36,6 +73,18 @@ async function RequestPost(postID){
 
 async function RequestPostsID(amount){
 	let response = await fetch(webbServerAdress + "postsid/all/" + amount);
+	let json = await response.json();
+	return json;
+}
+
+async function RequsetUsers(amount){
+	let token = user.getAuthResponse().id_token;
+	let response = await fetch(webbServerAdress + "admin/users/" + amount, {
+		headers: {
+			"Authorization": token
+		},
+		method: "GET"
+	});
 	let json = await response.json();
 	return json;
 }
@@ -73,8 +122,46 @@ function GeneratePostRow(post) {
 	return rowElement;
 }
 
-function DeletePost(postID) {
-	console.log(postID);
+async function DeletePost(postID) {
+	let token = user.getAuthResponse().id_token;
+	let response = await fetch(webbServerAdress + "admin/image/" + postID, {
+		headers: {
+			"Authorization": token
+		},
+		method: "DELETE"
+	});
+	ReloadPosts();
 }
 
-LoadPosts();
+
+function GenerateUserRow(user){
+	let rowElement = document.createElement("tr");
+
+	let userElement = document.createElement("td");
+	let userText = document.createTextNode(user.username);
+	userElement.appendChild(userText);
+	rowElement.appendChild(userElement);
+
+	let buttonRowElement = document.createElement("td");
+	let deleteButtonElement = document.createElement("button");
+	let deleteButtonText = document.createTextNode("Delete");
+	deleteButtonElement.appendChild(deleteButtonText);
+	deleteButtonElement.classList.add("deleteButton");
+	deleteButtonElement.classList.add("is-danger");
+	deleteButtonElement.setAttribute("onclick", "DeleteUser(" + user.id +");");
+	buttonRowElement.appendChild(deleteButtonElement);
+	rowElement.appendChild(buttonRowElement);
+	
+	return rowElement;
+}
+
+async function DeleteUser(userID){
+	let token = user.getAuthResponse().id_token;
+	let response = await fetch(webbServerAdress + "admin/user/" + userID, {
+		headers: {
+			"Authorization": token
+		},
+		method: "DELETE"
+	});
+	ReloadPosts();
+}

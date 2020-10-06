@@ -4,7 +4,7 @@ var commentParent = document.getElementById("commentSection");
 var imageIDArrayRemember = [];
 var imageIDCounter = 0;
 var firstRun = true, loggedIn = false;
-var startPos = 1;
+var startPos = 0;
 var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
 
@@ -356,6 +356,7 @@ async function FamePress(){
 async function ShamePress(){
 	if(user.isSignedIn()){
 		await RatingSend(false);
+		saveProgress();
 		LoadPost();
 	}
 	else{
@@ -404,13 +405,15 @@ async function RatingSend(fame){
 window.onunload = saveProgress;
 
 function saveProgress(){
-	var toLoad = currentPost.image.id - 1;
-	localStorage.setItem("imgIDToLoad", toLoad);
+	if(currentPost.image.id != null){
+		var toLoad = currentPost.image.id - 1;
+		localStorage.setItem("imgIDToLoad", toLoad);
+	}
 }
 
 function loadProgress(){
 	if(localStorage.getItem("notAutoContinue") == "0"){
-		startPos = 1;
+		startPos = 0;
 	}
 	else{
 		var toLoad = localStorage.getItem("imgIDToLoad");
