@@ -1,4 +1,4 @@
-var webbServerIp = "http://its.teknikum.it:9000/", serverPath = "sustaining_backend/api/";
+var webbServerIp = "http://its.teknikum.it:8080/", serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
 
 

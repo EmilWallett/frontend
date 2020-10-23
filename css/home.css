@@ -54,11 +54,11 @@ main {
 /*The about text in the first section of the main - does also contain the upload button*/
 .aboutText {
     grid-area: aboutText;
-    display: grid;
+    /*display: grid;*/
     grid-template-rows: 60px auto auto;
 	border-radius:10%;
 	background-color:var(--box-background);
-	padding: 0px 100px 0px 100px;
+	padding: 0px 1.5em 0px 1.5em;
     border: var(--border);
 }
 /*The second section in the main - text about fame and same along with both fame and shame images*/
