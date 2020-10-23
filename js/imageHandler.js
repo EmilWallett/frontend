@@ -10,8 +10,10 @@ async function  setAllFameImages() {
 
     for (var i = 0; i < fameImages.length; i++)
     {
-        fameImages[i].src = posts[i].image.image;
-        fameImages[i].alt = posts[i].image.title;
+		if(posts.length > i){
+			fameImages[i].src = posts[i].image.image;
+			fameImages[i].alt = posts[i].image.title;
+		}
     }
 }
 
@@ -22,8 +24,10 @@ async function setAllShameImages() {
 
     for (var i = 0; i < shameImages.length; i++)
     {
-        shameImages[i].src = posts[i].image.image;
-        shameImages[i].alt = posts[i].image.title;
+		if(posts.length > i){
+        	shameImages[i].src = posts[i].image.image;
+			shameImages[i].alt = posts[i].image.title;
+		}
     }
 }
 
