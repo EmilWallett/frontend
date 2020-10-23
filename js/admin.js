@@ -14,8 +14,8 @@ function onSignIn(googleUser) {
 
 async function LoadPosts() {
 	try {
-		let postIDs = await RequestPostsID(10);
-		let users = await RequsetUsers(10);
+		let postIDs = await RequestPostsID(100);
+		let users = await RequsetUsers(50);
 
 		let postTableBody = document.getElementById("postAdminBody");
 		let userTableBody = document.getElementById("userAdminBody");

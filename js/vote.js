@@ -374,7 +374,7 @@ for (let index = 0; index < buttons.length; index++) {
 	
 
 
-
+// Sends the rating of an image
 async function RatingSend(fame){
 	let buttons = document.getElementsByTagName("button");
 	for (let index = 0; index < buttons.length; index++) {
@@ -382,7 +382,7 @@ async function RatingSend(fame){
 		element.setAttribute("disabled", "disabled");
 	}
 	let ratingNumb;
-	let token = user.getAuthResponse().id_token;
+	let token = user.getAuthResponse().id_token; //gets current users token
 	if(fame){
 		ratingNumb = 1;
 	}
