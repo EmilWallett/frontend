@@ -159,9 +159,6 @@ button {
   /*The size of the button*/
   width: 150px;
   height: 50px;
-}
-
-button {
   border: 2px solid #2d3e50;
   /* steel blue */
   color: #2d3e50;
@@ -174,6 +171,12 @@ button:hover {
   background-color: #2d3e50;
   /* steel blue */
   color: white;
+}
+
+/*Upload button*/
+#upload-btn {
+	width: 305px;
+	margin-top: 10px;
 }
 
 /* Fame and shame button */
