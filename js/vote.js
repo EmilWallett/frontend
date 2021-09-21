@@ -1,3 +1,5 @@
+//original author unknown, file restructuring done by Zander Koch
+
 let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
 var commentParent = document.getElementById("commentSection");
@@ -114,10 +116,20 @@ var tempComment = {
 	date: "2020"
 }
 
+
+/**
+ * serves as a handle for a HTML element with text in its innerHTML, 
+ * provides set() method to change said text
+ */
 class text{
-	constructor(elementID){
+	/**
+     * @constructs creates a handle for HTML element with the given id
+     * @param {string} elementID - id of given HTML element
+     */
+    constructor(elementID){
 		let element = document.getElementById(elementID);
-		this.set = function(string){
+		//set(string) - set innerHTML of the element this object is a handle for
+        this.set = function(string){
 			element.innerHTML = string;
 		}
 	}
@@ -222,6 +234,8 @@ class comment{
 	}
 }
 
+//these are all exclusively used in LoadPost(), need to figure out  
+//if there's a reason they're not declared with let inside the function
 var titleText = new text("titleText");
 var userText = new text("userText");
 var fameText = new text("fameNumbText");
