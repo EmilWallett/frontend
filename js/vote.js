@@ -118,8 +118,7 @@ var tempComment = {
 
 
 /**
- * serves as a handle for a HTML element with text in its innerHTML, 
- * provides set() method to change said text
+ * a reference to an HTML element with text in its innerHTML
  */
 class text{
 	/**
@@ -134,7 +133,9 @@ class text{
 		}
 	}
 }
-
+/**
+ * serves as 
+ */
 class image{
 	constructor(elementID){
 		let element = document.getElementById(elementID);
@@ -234,18 +235,21 @@ class comment{
 	}
 }
 
-//these are all exclusively used in LoadPost(), need to figure out  
-//if there's a reason they're not declared with let inside the function
-var titleText = new text("titleText");
-var userText = new text("userText");
-var fameText = new text("fameNumbText");
-var shameText = new text("shameNumbText");
-var appImg = new image("appImage");
-var currentPost;
-var currentComments = [];
 
 async function LoadPost(){
-	//Requsets a post from the server
+    //these were all var variables located in a block above this function,
+    //I can't think of a reason they'd be needed for anything outside it and 
+    //have as such moved it and made them all lets
+    let titleText = new text("titleText");
+    let userText = new text("userText");
+    let fameText = new text("fameNumbText");
+    let shameText = new text("shameNumbText");
+    let appImg = new image("appImage");
+    let currentPost;
+    let currentComments = [];
+
+
+    //Requsets a post from the server
 	var post;
 	
 	try {
