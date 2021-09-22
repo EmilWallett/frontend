@@ -1,4 +1,11 @@
-//original author unknown, file restructuring done by Zander Koch
+//original author unknown
+/*modification and most documentation done by Zander Koch, detailed list below:
+    cleanup of functions that communicate with backend:
+        moving of declarations into functions that use them
+        changing function variables from vars to lets where applicable
+        adding JSDocs
+*/
+
 
 let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
@@ -235,11 +242,15 @@ class comment{
 	}
 }
 
-
+/**
+ * @todo write proper documentation for this
+ * @todo look through for vars and make them lets
+ */
 async function LoadPost(){
-    //these were all var variables located in a block above this function,
-    //I can't think of a reason they'd be needed for anything outside it and 
-    //have as such moved it and made them all lets
+    /* These were all var variables located in a block above this function.
+       I can't think of a reason they'd be needed for anything outside this
+       function and have as such moved them inside it and made them all lets
+       - Zander Koch, 21-09-21 */
     let titleText = new text("titleText");
     let userText = new text("userText");
     let fameText = new text("fameNumbText");
