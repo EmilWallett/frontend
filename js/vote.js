@@ -4,11 +4,18 @@
         moving of declarations into functions that use them
         changing function variables from vars to lets where applicable
         adding JSDocs
+    adding JSDocs to various other code to aid in the above mentioned cleanup
+    changing vars to lets where possible
+    moving variables only used inside a single function into said function
 */
 
 
 let appElement = document.getElementById("mainAppBox");
 let imageElement = document.getElementById("appImage");
+/**
+ * section showing a post's comments
+ * @type {HTMLElement}
+ */
 var commentParent = document.getElementById("commentSection");
 var imageIDArrayRemember = [];
 var imageIDCounter = 0;
@@ -21,6 +28,14 @@ var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 var dateTime = date+' '+time;
+
+//stores the current post and its comments, respectively
+/**
+ * the currently loaded post
+ * @type {Post}
+ */
+let currentPost; 
+let currentComments = [];
 
 let user = {
 	isSignedIn : function() {
@@ -140,9 +155,6 @@ class text{
 		}
 	}
 }
-/**
- * serves as 
- */
 class image{
 	constructor(elementID){
 		let element = document.getElementById(elementID);
@@ -156,7 +168,17 @@ class image{
 	}
 }
 
+
+/**
+ * class representing a post
+ * @property
+ */
 class Post{
+    /**
+     * 
+     * @param {number} comments the current post's 
+     * @param {*} image 
+     */
 	constructor(comments, image) {
 		this.image = {
 			"id":image.id,
@@ -243,8 +265,9 @@ class comment{
 }
 
 /**
+ * 
  * @todo write proper documentation for this
- * @todo look through for vars and make them lets
+ * @todo look through for vars and make them lets where possible
  */
 async function LoadPost(){
     /* These were all var variables located in a block above this function.
@@ -256,9 +279,6 @@ async function LoadPost(){
     let fameText = new text("fameNumbText");
     let shameText = new text("shameNumbText");
     let appImg = new image("appImage");
-    let currentPost;
-    let currentComments = [];
-
 
     //Requsets a post from the server
 	var post;
@@ -273,6 +293,9 @@ async function LoadPost(){
 			post = await AskServerForPost(currentPost.image.id);
 		}
 
+        /**
+         * @type {Promise}
+         */
 		var commentsInfo = await AskServerForComments(post.image.id);
 
 		let buttons = document.getElementsByTagName("button");
@@ -356,6 +379,12 @@ async function AskServerForRatings(imageID){
 	return json;
 }
 
+/**
+ * sends a GET request to .../comment
+ * @todo find out what number exactly and what it returns and in what format
+ * @param {number} imageID 
+ * @returns 
+ */
 async function AskServerForComments(imageID){
 	const response = await fetch(webbServerAdress + "comment/" + imageID)
 	const json = await response.json();
@@ -404,6 +433,11 @@ for (let index = 0; index < buttons.length; index++) {
 
 
 // Sends the rating of an image
+/**
+ * @todo write documentation
+ * @function
+ * @param {boolean} fame 
+ */
 async function RatingSend(fame){
 	let buttons = document.getElementsByTagName("button");
 	for (let index = 0; index < buttons.length; index++) {
