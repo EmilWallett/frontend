@@ -324,7 +324,7 @@ async function LoadPost(){
 		});
 
 		//gets the ratings for the image
-		var rating = await AskServerForRatings(currentPost.image.id);
+		let rating = await AskServerForRatings(currentPost.image.id);
 
 		//counts amount of Fame and shame
 		let fameAmount = 0, shameAmount = 0;
