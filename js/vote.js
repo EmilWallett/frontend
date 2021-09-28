@@ -1,4 +1,4 @@
-//original author unknown
+//original author Elias Böök
 /*modification and most documentation done by Zander Koch, detailed list below:
     cleanup of functions that communicate with backend:
         moving of declarations into functions that use them
@@ -141,6 +141,7 @@ var tempComment = {
 
 /**
  * a reference to an HTML element with text in its innerHTML
+ * the main purpuse for these classes is to abstract away the HTML elements and give a simple way to set ui with functions //Elias Böök
  */
 class text{
 	/**
