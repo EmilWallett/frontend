@@ -1,3 +1,5 @@
+//original author Elias Böök (lolman#0744)
+
 var webbServerIp = "http://its.teknikum.it:8080/";
 var serverPath = "sustain_backend/api/";
 //var webbServerIp = "http://localhost:8080/";

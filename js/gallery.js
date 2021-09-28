@@ -1,3 +1,5 @@
+//original author Elias Böök (lolman#0744)
+
 var multiLoadIsActive = true;
 
 var errorCard = {

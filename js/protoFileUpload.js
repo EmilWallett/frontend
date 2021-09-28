@@ -1,3 +1,6 @@
+//Author Elias Böök (lolman#0744)
+//Elias Böök is not the original creator but the code majorly rewriten by Elias Böök
+
 //Image encoding
 var imageData;
 var titleData = "";

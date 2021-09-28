@@ -1,4 +1,4 @@
-//original author Elias Böök
+//original author Elias Böök (lolman#0744)
 /*modification and most documentation done by Zander Koch, detailed list below:
     cleanup of functions that communicate with backend:
         moving of declarations into functions that use them
@@ -139,9 +139,10 @@ var tempComment = {
 }
 
 
+//the main purpuse for these classes is to abstract away the HTML elements and give a simple way to set ui with functions //Elias Böök
+
 /**
  * a reference to an HTML element with text in its innerHTML
- * the main purpuse for these classes is to abstract away the HTML elements and give a simple way to set ui with functions //Elias Böök
  */
 class text{
 	/**
@@ -218,6 +219,10 @@ async function GetUsername(userID){
 	return text;
 }
 
+/**
+ * class representing a comment
+ * @property
+ */
 class comment{
 	constructor(comment){
 		this.id = comment.id;
@@ -425,6 +430,11 @@ async function ShamePress(){
 
 LoadPost();
 
+/*
+	This should me moved in to a function as it just disables the buttons
+	(so you can't click until post is loaded)
+	- Elias Böök, 28-09-21
+	*/
 var buttons = document.getElementsByTagName("button");
 for (let index = 0; index < buttons.length; index++) {
 	const element = buttons[index];
@@ -436,10 +446,12 @@ for (let index = 0; index < buttons.length; index++) {
 // Sends the rating of an image
 /**
  * @todo write documentation
+ * @todo Make a case for if the request to the server fails
  * @function
  * @param {boolean} fame 
  */
 async function RatingSend(fame){
+	//First disables all buttons so they can not be pressed until new post loaded
 	let buttons = document.getElementsByTagName("button");
 	for (let index = 0; index < buttons.length; index++) {
 		const element = buttons[index];
@@ -447,7 +459,7 @@ async function RatingSend(fame){
 	}
 	let ratingNumb;
 	let token = user.getAuthResponse().id_token; //gets current users token
-	if(fame){
+	if(fame){ // bool check to set the rating value to send to server
 		ratingNumb = 1;
 	}
 	else{
