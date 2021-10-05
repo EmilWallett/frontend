@@ -1,0 +1,157 @@
+main{grid-area: main;}
+aside#nr1{grid-area: asideNr1;}
+aside#nr2{grid-area: asideNr2;}
+
+body{
+	background: linear-gradient(-90deg, rgb(0, 224, 120), rgb(33, 211, 255));
+}
+
+div.dropdown{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+div.dropdown-content{
+	right: 0;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: auto 60% auto;
+	grid-template-areas:
+	"header header header"
+	"asideNr1 main asideNr2"
+	"footer footer footer";
+	grid-gap: 10px;
+}
+
+
+/* styling for the app box*/
+#mainAppBox{
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background-color: white;
+}
+
+#mainAppBox button, #mainAppBox p, #mainAppBox img{
+	position: absolute;
+	color: white;
+}
+
+#mainAppBox p{
+	margin: 0;
+	
+}
+
+
+.buttonBox{
+	background-color: rgba(0, 0, 0, 0.644);
+	width: 100%;
+	height: 28%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.rateButton{
+	height: 100px;
+	width: 100px;
+	border-radius: 15px;
+	background-color: rgba(59, 59, 59, 0.473);
+	border-style: solid;
+}
+
+.rateButton:active{
+	background-color: rgba(37, 37, 37, 0.596);
+}
+
+#mainAppBox .rateButton:disabled{
+	background-color: rgba(116, 113, 113, 0.719);
+	color: rgb(201, 201, 201);
+}
+
+#fameButton{
+	bottom: 10px;
+	left:10px;
+}
+
+#shameButton{
+	bottom: 10px;
+	right: 10px;
+}
+
+.numberText{
+	color: black;
+	bottom: 50px;
+}
+
+#fameNumbText{
+	left: 120px;
+}
+
+#shameNumbText{
+	right: 120px;
+}
+
+.showImg{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.postText{
+	text-align: center;
+	left: 36%;
+	width: 28%;
+}
+
+#titleText{
+	top: 15px;	
+	font-size: large;
+}
+
+#userText{
+	bottom: 20px;
+	font-size: medium;
+}
+/* style for comment section */
+section.commentSection{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+
+/* style for comment box */
+
+.commentBox{
+	width: 80%;
+	min-height: 100px;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
+}
+
+
+/* style for post box */
+.postBox{
+	width: 80%;
+	min-height: 100px;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section.postCommentSection{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}

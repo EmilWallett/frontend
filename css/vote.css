@@ -1,0 +1,294 @@
+main{grid-area: main;}
+aside#nr1{grid-area: asideNr1;}
+aside#nr2{grid-area: asideNr2;}
+
+body{
+	background: linear-gradient(120deg, rgb(225, 0, 255),rgb(0, 174, 255), rgb(225, 0, 255));
+}
+
+.dropdown{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.dropdown-content{
+	right: 0;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: auto 60% auto;
+	grid-template-areas:
+	"header header header"
+	"asideNr1 main asideNr2"
+	"footer footer footer";
+	grid-gap: 10px;
+}
+
+
+/* styling for the app box*/
+#mainAppBox{
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background-color: white;
+}
+
+#mainAppBox button, #mainAppBox p, #mainAppBox img{
+	position: absolute;
+	color: white;
+}
+
+#mainAppBox p{
+	margin: 0;
+	
+}
+
+.buttonBox{
+	background-color: rgba(0, 0, 0, 0.644);
+	width: 100%;
+	height: 28%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+
+.rateButton{
+	height: 100px;
+	width: 100px;
+	border-radius: 15px;
+
+	border-style: solid;
+	background:rgb(9, 235, 9);
+	color: darkgray;
+
+}
+
+.rateButton2{
+	height: 100px;
+	width: 100px;
+	border-radius: 15px;
+	background-color: rgba(59, 59, 59, 0.473);
+	border-style: solid;
+	background:red;
+	
+}
+
+
+.rateButton:active{
+	background-color: rgba(37, 37, 37, 0.596);
+}
+
+
+
+
+#fameButton{
+	bottom: 10px;
+	left:10px;
+}
+
+#shameButton{
+	bottom: 10px;
+	right: 10px;
+}
+
+.numberText{
+	color: black;
+	bottom: 50px;
+}
+
+#fameNumbText{
+	left: 120px;
+}
+
+#shameNumbText{
+	right: 120px;
+}
+
+.showImg{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.postText{
+	text-align: center;
+	left: 36%;
+	width: 28%;
+}
+
+#titleText{
+	top: 15px;	
+	font-size: large;
+}
+
+#userText{
+	bottom: 20px;
+	font-size: medium;
+}
+/* style for comment section */
+section.commentSection{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+
+/* style for comment box */
+
+.commentBox{
+	width: 80%;
+	min-height: 100px;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
+}
+
+
+/* style for post box */
+.postBox{
+	width: 80%;
+	min-height: 100px;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section.postCommentSection{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media (max-width: 768px){
+	/*Grid container for website*/
+	.grid-container{
+		grid-template-areas: 
+			"header header header"
+			"main main main"
+			"footer footer footer";
+	}
+
+
+	/*Image, voting, comments container*/
+	main{
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto;
+	}
+
+
+	/*Voting container (div)*/
+	.buttonBox{
+		display: grid;
+		grid-template-areas: 
+			"imageName imageName"
+			"username username"
+			"fameButton shameButton";
+		grid-template-rows: 40px 40px auto;
+		height: auto;
+	}
+
+	/*Fame/Shame buttons*/
+	#mainAppBox button{
+		position: initial;
+	}
+
+	/*Fame/Shame text (p)*/
+	#mainAppBox p{
+		position: initial;
+		margin: auto;
+	}
+
+	/*Image name*/
+	#titleText{
+		grid-area: imageName;
+	}
+
+	/*Username (user that posted the image)*/
+	#userText{
+		grid-area: username;
+	}
+
+	/*Section containing fame button & fame score*/
+	#fameSection{
+		grid-area: fameButton;
+		display: grid;
+		grid-template-areas: 
+			"score"
+			"button";
+		grid-template-rows: 30px auto;
+	}
+	
+	/*Section containing shame button & shame score*/
+	#shameSection{
+		grid-area: shameButton;
+		display: grid;
+		grid-template-areas: 
+		"score"
+		"button";
+		grid-template-rows: 30px auto
+	}
+	
+	/*Voting buttons*/
+	#fameSection>button, #shameSection>button{
+		grid-area: button;
+		width: 90%;
+		font-size: 2em;
+	}
+	
+
+	/*Comments*/
+	.commentBox, .postBox{
+		width: 100%;
+	}
+
+	/*Post comment section*/
+	section.postCommentSection{
+		margin-top: 0px;
+	}
+
+	/*Create comment section*/
+	.postBox{
+		display: grid;
+		grid-template-areas: 
+			"input"
+			"button";
+		grid-template-columns: 100%;
+	}
+
+	/*Comment input*/
+	input[type=text]{
+		margin: auto;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height: 50px;
+		width: 80%;
+		font-size: 1.5em;
+		padding-left: 10px;
+	}
+
+	/*Post comment button*/
+	button{
+		margin: auto;
+		margin-bottom: 10px;
+	}
+}
+
+.famecolor{
+	background:lightgreen;
+	color: black;
+}
+
+.shamecolor{
+	background:red;
+	color:black;
+}

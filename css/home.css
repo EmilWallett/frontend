@@ -1,0 +1,161 @@
+/*CSS VARIABLES*/
+:root {
+	--border: 2px solid black;
+	--box-background: rgba(0,0,0,0.2);
+}
+
+/*Main grid layout for the whole website
+Sub grids are making smaller boxes inside of these boxes*/
+.wrapper {
+	display: grid; /*Explains that the wrapper class should display a grid*/
+	grid-template-areas: /*How the different elements should be positioned inside of the grid and how much space/boxes the should use*/
+	"header" /*Row 1*/
+	"." /*Row 2 - empty row without any objects*/
+	"main" /*Row 3*/
+    "footer"; /*Row 4*/
+	grid-template-columns: 1fr; /*Devides the whole grid layout into 3 columns*/
+	grid-gap: 15px 3rem; /*Gap/space between the different grid boxes - first value is laying (-,rows) while the second value is standing (|,columns)*/
+	grid-template-rows: auto 25px auto auto; /*How much space the different grid rows are allowed to use*/
+}
+/*Grid layout inside of the main tags*/
+main {
+    grid-area: main;
+    display: grid;
+	grid-template-columns: 1fr;
+    grid-template-areas:
+    "aboutTree"
+    "fameShame"
+    "goals";
+    grid-gap: 30px; /*When only one value are used then both the laying rows and the standing columns get the same gap*/
+}
+/*The first section in the main - text about the project, a tree and some photos*/
+.aboutTree {
+    grid-area: aboutTree;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "aboutImages"
+    "aboutText"
+    "animatedTree";
+    grid-gap: 30px;
+}
+/*The grid for the images in the first section of the main*/
+.aboutImages {
+    grid-area: aboutImages;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+}
+/*The class for the tree in the first section of the main*/
+.animatedTree {
+    grid-area: animatedTree;
+}
+/*The about text in the first section of the main - does also contain the upload button*/
+.aboutText {
+    grid-area: aboutText;
+    /*display: grid;*/
+    grid-template-rows: 60px auto auto;
+	border-radius:10%;
+	background-color:var(--box-background);
+	padding: 0px 1.5em 0px 1.5em;
+    border: var(--border);
+}
+/*The second section in the main - text about fame and same along with both fame and shame images*/
+.fameShame {
+    grid-area: fameShame;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "fameText"
+    "fameImages"
+    "shameText"
+    "shameImages";
+    grid-gap: 1em;
+    padding-bottom: 50px;
+    margin-right: 75px;
+    margin-left: 75px;
+}
+/*The images for fame in the second section - makes a grid to place them bellow each other*/
+.fameImages {
+    grid-area: fameImages;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+/*The images for shame in the second section - makes a grid to place them bellow each other*/
+.shameImages {
+    grid-area: shameImages;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.shameText {
+   
+    border-left: var(--border);
+}
+
+/*The thrid section in the main - text about the goals with this website/project*/
+.goals {
+    grid-area: goals;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "goalText1"
+    "euimg";
+    grid-gap: 30px;
+}
+.goalText1 {
+    padding: 0px 100px 0px 100px;
+	border-right: var(--border);
+}
+.euimg{
+    margin-top:30px;
+	height:140px;
+}
+.tree {
+    height:100%;
+    width:400px;
+
+}
+p {
+    text-align: center;
+}
+.aboutTree {
+    padding-bottom: 50px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+h2, h3{
+    text-align:center;
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (min-width: 1100px) {
+    .fameShame {
+        grid-template-columns: 4fr 1fr 1fr;
+        grid-template-areas: "fameImages fameText shameText"
+    }
+    .aboutTree {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+        "animatedTree aboutText";
+    }
+    .goals {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "goalText1 euimg";
+    }
+    .fameImages, .shameImages {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    .aboutImages {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+header,body,footer{
+    background-image: linear-gradient url(background.jpg);
+}
