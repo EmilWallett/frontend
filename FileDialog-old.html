@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!--Linking in the css, js and favicon-->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="js/index.js" rel="script">
+		<link href="img/favicon.ico" rel="icon">
+    <script defer src="js/FileDialog.js"></script>
+  <title>Sustaining - File Upload</title>
+</head>
+
+<body>
+  <div class="wrapper">
+			<header>
+                <img src="img/logo.png" alt="Sustaining logo" class="logo"> <!--logotype in header-->
+                <h1>Sustaining</h1><!--We have to have the logo and the drop down bar upp here-->
+                <nav>
+                    <section class="dropdown">
+                        <!--Burger menu-->
+                        <section class="burgermenu"></section> <!--nedeed for drop down menu-->
+                        <section class="burgermenu"></section>
+                        <section class="burgermenu"></section>
+                        <section class="dropdown-content"> <!--the drop down menu-->
+                            <a href="#">Register/Login</a> <!--just for style-->
+                            <a href="gallery.html">Gallery</a> <!--link to gallery-->
+                            <a href="about.html">About Us</a> <!--link to about-->
+                            <a href="oursupporters.html">Our Supporters</a> <!--link to support-->
+                            <a href="#">Others</a> <!--just for style-->
+                        </section>
+                    </section>
+                </nav>
+            </header>
+        <main>
+					<section class="images">
+						<section>
+						</section>
+					</section>
+          <section class="textblock">
+            <section>
+            	<h2> Upload </h2>
+            </section>
+						<section>
+					  	<!--Upload-->
+							<input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
+
+            	<form class="fileupload"> <!--This form for uploading -->
+
+								<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" /> <!--We had maked that user can just only upload picture files-->
+            	</form><br>
+							<section id="imgTest"></section>
+							<p>
+								<button class="button1" id="addratingFame" onclick=addratingFame()>Fame</button>
+							</p>
+							<p>
+								<button class="button1" id="addratingShame" onclick=addratingShame() >Shame</button>
+							</p>
+							<p>
+								<button id="upload-btn">Upload</button>
+							</p>
+						</section>
+					</section>
+
+</main>
+<!--footer for links-->
+            <footer>
+				<section>
+                    <img class="footerErasmus" src="img/erasmus.png" alt="Erasmus+ Logo"><!--Eu logo-->
+				</section>
+                <section>
+                    <ul>
+                        <li>
+                            <!--TOS-Link-->
+                            <a href="tos.html">TOS</a>
+                        </li>
+                        <li>
+                            <!--ABOUT-Link-->
+                            <a href="about.html">ABOUT</a>
+                        </li>
+						<li>
+							<!--Galary-link-->
+							<a href="gallery.html"> GALLERY </a>
+						</li>
+						<li>
+							<!--Our Supporters link-->
+							<a href="oursupporters.html">OUR SUPPORTERS</a>
+						</li>
+					</ul>
+                </section>
+				<section>
+				</section>
+            </footer>
+    </div>
+  </body>
+</html>

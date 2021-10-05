@@ -1,6 +1,3 @@
-# Why does this branch exist?
-the code in the master branch is messy, and needs to be both documented and refactored extensively. 
-
 # Sustaining-Everybody-counts/frontend
 Frontend website for the project as part of the [ERASMUS+](https://ec.europa.eu/programmes/erasmus-plus/node_en) project.
 
