@@ -1,3 +1,27 @@
+/* Fully Custom */
+@media (min-width: 992px) {
+  header.masthead {
+    padding-bottom: 10rem;
+  }
+
+  header.masthead .masthead-content .masthead-heading {
+    font-size: 6rem;
+  }
+
+  header.masthead .masthead-content .masthead-subheading {
+    font-size: 4rem;
+  }
+}
+
+#fpic {
+  color: red;
+  padding-top: 1rem;
+}
+
+#page-top {
+  font-family: otama;
+}
+
 .navbar-custom {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -38,29 +62,6 @@ header.masthead .masthead-content {
   position: relative;
 }
 
-@media (min-width: 992px) {
-  header.masthead {
-    padding-bottom: 10rem;
-  }
-
-  header.masthead .masthead-content .masthead-heading {
-    font-size: 6rem;
-  }
-
-  header.masthead .masthead-content .masthead-subheading {
-    font-size: 4rem;
-  }
-}
-
-.row {
-  --bs-gutter-x: 0rem !important;
-  --bs-gutter-y: 0;
-}
-
-.img-fluid {
-  max-width: 40% !important;
-}
-
 footer div {
   background-color: #F2F0ED;
   padding-bottom: 40px;
@@ -81,56 +82,36 @@ footer a {
   background-color: #B6C3B7;
 }
 
-#page-top {
-  font-family: otama;
+.statistics {
+  background-color: #B6C3B7;
+}
+
+.tpic {
+  padding-top: 1rem;
+}
+
+/* Bootstrap Overwrite */
+.row {
+  --bs-gutter-x: 0rem !important;
+  --bs-gutter-y: 0;
+}
+
+.img-fluid {
+  max-width: 40% !important;
 }
 
 .p-5 {
   align-items: center !important;
 }
-.lead{
 
+.lead {
   font-weight: lighter !important;
 }
 
 .navbar-brand {
   color: #2B362D !important;
+}
 
-}
-.nav-link{
-color: #2B362D !important;
-
-}
-.h1, h1{
-color: #2B362D;
-font-weight: bold !important;
-text-align: center !important;
-}
-.statistics{
-  background-color: #B6C3B7;
-}
-.tpic{
-padding-top: 1rem;
-
-}
-.textpic{
-color: red;
-  padding-top: 1rem ;
-}
-.logo{
-  padding-right: 20px;
-}
-#textpiccss{
-  font-size: 24px;
-
-  color:#2B362D  ;
-}
-#textfamecss{
-  font-size: 24px;
-
-  color:#2B362D  ;
-}
-#textshamecss{
-  font-size: 24px;
-  color:#2B362D  ;
+.nav-link {
+  color: #2B362D !important;
 }
