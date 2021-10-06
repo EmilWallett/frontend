@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 .row{
   --bs-gutter-x: 0rem !important;
     --bs-gutter-y: 0;
@@ -15,8 +14,7 @@
   font-weight: bolder;
   font-family: otama;
 }
-=======
->>>>>>> Stashed changes
+
 .navbar-custom .navbar-nav .nav-item .nav-link {
   text-transform: uppercase;
   font-size: 1.2rem;
