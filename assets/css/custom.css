@@ -98,7 +98,14 @@ header.masthead .bg-circle-4 {
   }
 }
 
-footer a{
-  float: right;
-  margin:;
-}
+footer div{
+  background-color:#F2F0ED; 
+   padding-bottom: 40px;
+    padding-top: 40px
+  }
+  
+  footer a{
+    float: right;
+    margin-right: 15rem;
+    margin-top: 2rem;
+  }
