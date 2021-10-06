@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--Linking in the css, js and favicon-->
 	<link href="img/favicon.ico" rel="icon">
-	<link href="assets/css/custom.css" rel="stylesheet" />
+	<link href="../assets/css/custom.css" rel="stylesheet" />
 	<script src="assets/js/statistics.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>dataPicFameShame</title>
@@ -30,18 +30,22 @@
 </script>
 
 <body>
-	<p id="tpic"><span id="textpic"></span></p>
-	<p id="fpic"><span id="textfame"></span></p>
-	<p id="spic"><span id="textshame"></span></p>
-
+	<div id="tfs">
+	<p id="tpic" ></p>
+	<p id="fpic" ></p>
+	<p id="spic" ></p>
+</div>
 </body>
 <script>
 	let textpic = "Number of Pictures on the Website: " + data.nrOfPictures;
 	let textfame = "Number of Fame Pictures on the Website: " + data.nrOfFames;
 	let textshame = "Number of Shame Pictures on the Website: " + data.nrOfShames;
-	document.getElementById("tpic").innerHTML = textpic;
-	document.getElementById("fpic").innerHTML = textfame;
-	document.getElementById("spic").innerHTML = textshame;
+
+	document.getElementById("tpic").innerHTML = "<span id='textpiccss'>" + textpic + "</span>";
+	document.getElementById("fpic").innerHTML = "<span id='textfamecss'>" + textfame + "</span>";
+	document.getElementById("spic").innerHTML = "<span id='textshamecss'>" + textfame + "</span>";
+
+
 </script>
 
 </html>
