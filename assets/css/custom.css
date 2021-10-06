@@ -13,13 +13,23 @@
   }
 }
 
-#fpic {
-  color: red;
-  padding-top: 1rem;
-}
-
 #page-top {
   font-family: otama;
+}
+
+#textpiccss {
+  font-size: 24px;
+  color: #2B362D;
+}
+
+#textfamecss {
+  font-size: 24px;
+  color: #2B362D;
+}
+
+#textshamecss {
+  font-size: 24px;
+  color: #2B362D;
 }
 
 .navbar-custom {
