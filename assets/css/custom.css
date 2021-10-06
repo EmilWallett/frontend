@@ -123,7 +123,20 @@ footer a {
 .p-5 {
   align-items: center !important;
 }
+.lead{
+
+  font-weight: lighter !important;
+}
 
 .navbar-brand {
   color: #2B362D !important;
+}
+.nav-link{
+color: #2B362D !important;
+
+}
+.h1, h1{
+color: #2B362D;
+font-weight: bold !important;
+text-align: center !important;
 }
