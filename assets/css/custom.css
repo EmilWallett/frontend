@@ -88,34 +88,49 @@ footer a {
 .p-5 {
   align-items: center !important;
 }
+.lead{
 
-.lead {
   font-weight: lighter !important;
 }
 
 .navbar-brand {
   color: #2B362D !important;
-}
 
-.nav-link {
-  color: #2B362D !important;
 }
+.nav-link{
+color: #2B362D !important;
 
-.h1, h1 {
-  color: #2B362D;
-  font-weight: bold !important;
-  text-align: center !important;
 }
-
-.statistics {
+.h1, h1{
+color: #2B362D;
+font-weight: bold !important;
+text-align: center !important;
+}
+.statistics{
   background-color: #B6C3B7;
 }
+.tpic{
+padding-top: 1rem;
 
-.tpic {
-  padding-top: 1rem;
 }
+.textpic{
+color: red;
+  padding-top: 1rem ;
+}
+.logo{
+  padding-right: 20px;
+}
+#textpiccss{
+  font-size: 24px;
 
-#fpic {
-  color: red;
-  padding-top: 1rem;
+  color:#2B362D  ;
+}
+#textfamecss{
+  font-size: 24px;
+
+  color:#2B362D  ;
+}
+#textshamecss{
+  font-size: 24px;
+  color:#2B362D  ;
 }
