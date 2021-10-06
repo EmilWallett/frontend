@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--Linking in the css, js and favicon-->
 		<link href="img/favicon.ico" rel="icon">
+		<script src="assets/js/statistics.js" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<title>FameShamePie</title>
 	</head>
@@ -19,7 +20,8 @@
                     <section>
 										</section>
 										<script>
-										data = {
+
+										var data = {
 												"nrOfPictures":2500,
 												"nrOfVotes":3400,
 												"nrOfFames":1500,
@@ -63,7 +65,7 @@
 												bottom: 0
 											},
 											font: {
-												size: 65
+												size: 30
 											}
 										}
 									}
