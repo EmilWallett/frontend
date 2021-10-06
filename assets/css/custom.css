@@ -11,6 +11,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #f2f0ed;
+  font-family: otama;
 }
 
 .navbar-custom .navbar-brand {
@@ -19,6 +20,7 @@
   letter-spacing: 0.1rem;
   font-weight: bolder;
   font-family: otama;
+  background-color: #f2f0ed;
 }
 
 .navbar-custom .navbar-nav .nav-item .nav-link {
@@ -116,4 +118,12 @@ footer a {
 
 #page-top {
   font-family: otama;
+}
+
+.p-5 {
+  align-items: center !important;
+}
+
+.navbar-brand {
+  color: #2B362D !important;
 }

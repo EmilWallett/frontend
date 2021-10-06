@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Linking in the css, js and favicon-->
+	<link href="img/favicon.ico" rel="icon">
 	<script src="assets/js/statistics.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>FameShamePie</title>
 </head>
 
 <body>
@@ -16,6 +20,8 @@
 			<!--Projekt deskription-->
 			<section class="images">
 				<canvas id="FameandShamePieChart" style="width:100%;max-width:1800px"></canvas>
+				<section>
+				</section>
 				<script>
 					var data = {
 						"nrOfPictures": 2500,
@@ -71,6 +77,7 @@
 					});
 				</script>
 			</section>
+
 		</main>
 	</div>
 </body>
