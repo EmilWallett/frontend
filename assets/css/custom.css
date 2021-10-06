@@ -1,12 +1,14 @@
-.row{
+.row {
   --bs-gutter-x: 0rem !important;
-    --bs-gutter-y: 0;
+  --bs-gutter-y: 0;
 }
+
 .navbar-custom {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #f2f0ed;
 }
+
 .navbar-custom .navbar-brand {
   text-transform: uppercase;
   font-size: 3rem;
@@ -24,8 +26,6 @@
   background-color: #f2f0ed;
   font-family: otama;
 }
-
-
 
 header.masthead {
   position: relative;
@@ -98,14 +98,14 @@ header.masthead .bg-circle-4 {
   }
 }
 
-footer div{
-  background-color:#F2F0ED; 
-   padding-bottom: 40px;
-    padding-top: 40px
-  }
-  
-  footer a{
-    float: right;
-    margin-right: 15rem;
-    margin-top: 2rem;
-  }
+footer div {
+  background-color: #F2F0ED;
+  padding-bottom: 40px;
+  padding-top: 40px
+}
+
+footer a {
+  float: right;
+  margin-right: 15rem;
+  margin-top: 2rem;
+}
