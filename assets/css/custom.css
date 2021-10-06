@@ -1,4 +1,7 @@
-
+.row{
+  --bs-gutter-x: 0rem !important;
+    --bs-gutter-y: 0;
+}
 .navbar-custom {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -19,6 +22,8 @@
   font-family: otama;
 
 }
+
+
 
 header.masthead {
   position: relative;
@@ -81,4 +86,9 @@ header.masthead .bg-circle-4 {
   header.masthead .masthead-content .masthead-subheading {
     font-size: 4rem;
   }
+}
+
+footer a{
+  float: right;
+  margin:;
 }
