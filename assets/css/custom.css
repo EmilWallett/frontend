@@ -143,3 +143,11 @@ text-align: center !important;
 .statistics{
   background-color: #B6C3B7;
 }
+.tpic{
+padding-top: 1rem;
+
+}
+#fpic{
+color: red;
+  padding-top: 1rem ;
+}
