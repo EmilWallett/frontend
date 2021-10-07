@@ -119,9 +119,6 @@ p{
 .goal{
   background-color:  #546957 ;
   padding: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto auto;
