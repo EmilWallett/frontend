@@ -114,6 +114,7 @@ button {
   background-color: #2B362D;
   width: 100%;
   height: 100px;
+  color: #F2F0ED;
 }
 
 #goaltext {
@@ -139,9 +140,15 @@ button {
 .spacer-left {
   border-top: 4px solid #2b362d;
 }
+.spacer-left2{
+  border-top: 4px solid  #F2F0ED;
+}
 
 .spacer-right {
   border-top: 4px solid #2b362d;
+}
+.spacer-right2{
+  border-top: 4px solid #F2F0ED;
 }
 
 .header-image {
