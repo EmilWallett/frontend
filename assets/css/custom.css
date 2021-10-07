@@ -111,19 +111,32 @@ button {
 }
 
 
-
-#goal {
-  background-color: #2B362D;
-  width: 100%;
-  height: 100px;
-  color: #F2F0ED;
-}
-
 #goaltext{
   width: 100%;
   height: auto;
   color: #F2F0ED;
   }
+
+p{
+  grid-area: p;
+}
+  
+/* goal line*/
+.goal{
+  background-color:  #546957 ;
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "gridContainer gridContainer gridContainer"
+    ". p ."
+    ;
+  }
+
 
 .grid-container {
   display: grid;
@@ -140,6 +153,13 @@ button {
   border-top: 4px solid white;
 }
 
+.goal-header{
+  display: block;
+  font-size: 4em;
+  color: white;
+  font-family: "Otama.ep";
+  text-align: center; 
+}
 
 .goal-spacer-right {
   border-top: 4px solid white;
