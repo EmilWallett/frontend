@@ -10,3 +10,15 @@ var data = {
   percentageOfFame: 0,
   percentageOfShame: 0
 };
+
+function doFetch(){
+    var posts = getPosts();
+    post.forEach(post => {
+
+    });
+}
+const getPosts = () => {
+return fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .then(posts => console.log(posts))
+}
