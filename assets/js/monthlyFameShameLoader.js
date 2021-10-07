@@ -1,8 +1,10 @@
 var fameContainer = document.getElementById("fameImages");
 var shameContainer = document.getElementById("shameImages");
 
-window.onload = function(){
+var fImgs = [fameContainer.firstElementChild, fameContainer.lastElementChild]
+var sImgs = [shameContainer.firstElementChild, shameContainer.lastElementChild]
 
+window.onload = function(){
     return fetch('https://jsonplaceholder.typicode.com/posts')
         .then(Response => Response.json())
         .then(data => {
@@ -11,6 +13,4 @@ window.onload = function(){
                 console.log(element.title);
             });
         });
-
-
 };
