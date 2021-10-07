@@ -92,12 +92,6 @@ footer a {
   background-color: #B6C3B7;
 }
 
-button {
-  background-color: #A68163;
-  color: white;
-  border: none
-}
-
 .box-text {
   background-color: #B6C3B7;
 }
@@ -156,6 +150,11 @@ button {
 }
 
 /* Bootstrap Overwrite */
+.btn-primary {
+  background-color: #A68163 !important;
+  border-color: #A68163 !important;
+}
+
 .row {
   --bs-gutter-x: 0rem !important;
   --bs-gutter-y: 0;
