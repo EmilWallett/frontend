@@ -88,6 +88,12 @@ footer a {
   background-color: #B6C3B7;
 }
 
+button {
+  background-color: #A68163;
+  color: white;
+  border: none
+}
+
 .box-text {
   background-color: #B6C3B7;
 }
@@ -98,6 +104,46 @@ footer a {
 
 .tpic {
   padding-top: 1rem;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #2B362D;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+  margin-top: -.5em;
+}
+
+.nav-links ul li:hover::after {
+  width: calc(100% - 1em);
 }
 
 /* Bootstrap Overwrite */
