@@ -92,7 +92,7 @@ footer a {
   background-color: #B6C3B7;
 }
 
-#fileUpload {
+button {
   background-color: #A68163;
   color: white;
   border: none
@@ -110,23 +110,13 @@ footer a {
   padding-top: 1rem;
 }
 
-p{
-  grid-area: p;
-}
 
-.goal{
-  background-color:  #546957 ;
-  padding: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-    "gridContainer gridContainer gridContainer"
-    ". p ."
-  ;
+
+#goal {
+  background-color: #2B362D;
+  width: 100%;
+  height: 100px;
+  color: #F2F0ED;
 }
 
 #goaltext{
@@ -162,11 +152,17 @@ p{
 .spacer-left {
   border-top: 4px solid #2b362d;
 }
-
+.spacer-left2{
+  border-top: 4px solid  #F2F0ED;
+}
 
 .spacer-right {
   border-top: 4px solid #2b362d;
 }
+.spacer-right2{
+  border-top: 4px solid #F2F0ED;
+}
+
 .header-image {
   width: 100%;
 }
