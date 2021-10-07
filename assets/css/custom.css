@@ -150,6 +150,19 @@ nav {
   width: calc(100% - 1em);
 }
 
+#goal{
+background-color: #2B362D;
+width: 100%;
+height: 100px;
+}
+#goaltext{
+background-color: #2B362D;
+width: 100%;
+height: 100px;
+color: #F2F0ED;
+}
+
+
 /* Bootstrap Overwrite */
 .row {
   --bs-gutter-x: 0rem !important;
@@ -174,10 +187,4 @@ nav {
 
 .nav-link {
   color: #2B362D !important;
-}
-
-#green-spacer{
-  width: 100%;
-  height: 100px;
-  background-color: #2B362D;
 }
