@@ -1,5 +1,4 @@
 /* Fully Custom */
-
 @media (min-width: 992px) {
   header.masthead {
     padding-bottom: 10rem;
@@ -13,10 +12,11 @@
     font-size: 4rem;
   }
 }
-strong{
-font-family:"Otama.ep";
 
+strong {
+  font-family: "Otama.ep";
 }
+
 #page-top {
   font-family: "Otama.ep";
 }
@@ -110,57 +110,55 @@ button {
   padding-top: 1rem;
 }
 
-
-
-#goal{
-background-color: #2B362D;
-width: 100%;
-height: 100px;
+#goal {
+  background-color: #2B362D;
+  width: 100%;
+  height: 100px;
 }
-#goaltext{
-background-color: #2B362D;
-width: 100%;
-height: 100px;
-color: #F2F0ED;
+
+#goaltext {
+  background-color: #2B362D;
+  width: 100%;
+  height: 100px;
+  color: #F2F0ED;
 }
-{
-    box-sizing: border-box;
-  }
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    grid-gap: 10px;
-    padding: 10px;
-  }
+  {
+  box-sizing: border-box;
+}
 
-  .grid-container > div {
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
 
-    text-align: center;
-    padding: 20px 0;
-    font-size: 60px;
-    height: 10px;
-  }
-
-
+.grid-container>div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 60px;
+  height: 10px;
+}
 
 .item1 {
-    border-top: 4px solid #2b362d;
-    margin-top: 8vh;
+  border-top: 4px solid #2b362d;
+  margin-top: 8vh;
 }
-.item2{
-    display: block;
-    width: 30vw;
-    height: 5vw;
-    font-size: 4vw;
-    color: #2b362d;
-    font-family: "Otama.ep";
-    text-align: center;
+
+.item2 {
+  display: block;
+  width: 30vw;
+  height: 5vw;
+  font-size: 4vw;
+  color: #2b362d;
+  font-family: "Otama.ep";
+  text-align: center;
 }
 
 .item3 {
-    border-top: 4px solid #2b362d;
-    margin-top: 8vh;
+  border-top: 4px solid #2b362d;
+  margin-top: 8vh;
 }
 
 /* Bootstrap Overwrite */
@@ -188,6 +186,7 @@ color: #F2F0ED;
 .nav-link {
   color: #2B362D !important;
 }
+
 nav {
   display: flex;
   padding: 2% 6%;
@@ -212,8 +211,8 @@ nav {
   text-decoration: none;
   font-size: 20px;
 }
-@media screen and (min-width:991px){
-  
+
+@media screen and (min-width:991px) {
   .nav-links ul li::after {
     content: "";
     width: 0%;
@@ -224,7 +223,7 @@ nav {
     transition: 0.5s;
     margin-top: -.5em;
   }
-  
+
   .nav-links ul li:hover::after {
     width: calc(100% - 1em);
   }
