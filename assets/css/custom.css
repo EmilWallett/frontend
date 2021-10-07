@@ -118,9 +118,8 @@ width: 100%;
 height: 100px;
 }
 #goaltext{
-background-color: #2B362D;
 width: 100%;
-height: 100px;
+height: auto;
 color: #F2F0ED;
 }
 
@@ -132,6 +131,8 @@ color: #F2F0ED;
     padding: 10px;
     align-items: center;
     grid-column-gap: 3vw;
+
+    grid-area: gridContainer;
   }
 
   .grid-container > div {
@@ -158,6 +159,41 @@ color: #F2F0ED;
     border-top: 4px solid #2b362d;
 }
 
+p{
+  grid-area: p;
+}
+
+/* goal line*/
+.goal{
+  background-color:  #546957 ;
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "gridContainer gridContainer gridContainer"
+    ". p ."
+  ;
+}
+
+.item4 {
+  border-top: 4px solid white;   
+}
+
+.item5{
+  display: block;
+  font-size: 4em;
+  color: white;
+  font-family: "Otama.ep";
+  text-align: center; 
+}
+
+.item6 {
+  border-top: 4px solid white;
+}
 
 
 /* Bootstrap Overwrite */
