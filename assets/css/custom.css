@@ -14,11 +14,11 @@
   }
 }
 strong{
-font-family:"Otama.ep";
+font-family:'otama.epregular';
 
 }
 #page-top {
-  font-family: "Otama.ep";
+  font-family: 'otama.epregular';
 }
 
 #textpiccss {
@@ -40,7 +40,7 @@ font-family:"Otama.ep";
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #f2f0ed;
-  font-family: "Otama.ep";
+  font-family: 'otama.epregular';
 }
 
 .navbar-custom .navbar-brand {
@@ -48,7 +48,7 @@ font-family:"Otama.ep";
   font-size: 3rem;
   letter-spacing: 0.1rem;
   font-weight: bolder;
-  font-family: "Otama.ep";
+  font-family: 'otama.epregular';
   background-color: #f2f0ed;
 }
 
@@ -59,7 +59,7 @@ font-family:"Otama.ep";
   font-family: otama;
   letter-spacing: 0.1rem;
   background-color: #f2f0ed;
-  font-family: "Otama.ep";
+  font-family: 'otama.epregular';
 }
 
 header.masthead {
@@ -154,7 +154,7 @@ color: #F2F0ED;
     height: 5vw;
     font-size: 4vw;
     color: #2b362d;
-    font-family: "Otama.ep";
+    font-family: 'otama.epregular';
     text-align: center;
 }
 
@@ -162,6 +162,8 @@ color: #F2F0ED;
     border-top: 4px solid #2b362d;
     margin-top: 8vh;
 }
+
+
 
 /* Bootstrap Overwrite */
 .row {
@@ -213,7 +215,7 @@ nav {
   font-size: 20px;
 }
 @media screen and (min-width:991px){
-  
+
   .nav-links ul li::after {
     content: "";
     width: 0%;
@@ -224,7 +226,7 @@ nav {
     transition: 0.5s;
     margin-top: -.5em;
   }
-  
+
   .nav-links ul li:hover::after {
     width: calc(100% - 1em);
   }
