@@ -8,35 +8,20 @@
 	<!--Linking in the css, js and favicon-->
 	<link href="img/favicon.ico" rel="icon">
 	<link href="../assets/css/custom.css" rel="stylesheet" />
-	<script src="assets/js/statistics.js" defer></script>
+	<script type="text/javascript" src="../assets/js/statistics.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>dataPicFameShame</title>
 </head>
-<script>
-	data = {
-		"nrOfPictures": 2500,
-		"nrOfVotes": 3400,
-		"nrOfFames": 1500,
-		"nrOfShames": 1000,
-		"nrOfUsers": 112,
-		"percentageOfFame": 0,
-		"percentageOfShame": 0
-	};
-
-
-
-
-	document.write(textpic)
-</script>
 
 <body>
+	<button onclick="doFetch()">fetchtestbutton</button>
 	<div id="tfs">
 	<p id="tpic"style="padding-top:25px;" ></p>
 	<p id="fpic"style="padding-top:60px;" ></p>
 	<p id="spic"style="padding-top:60px;" ></p>
 </div>
 </body>
-<script>
+<script type="text/javascript">
 	let textpic = "Number of Pictures on the Website: " + data.nrOfPictures;
 	let textfame = "Number of Fame Pictures on the Website: " + data.nrOfFames;
 	let textshame = "Number of Shame Pictures on the Website: " + data.nrOfShames;
