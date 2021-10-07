@@ -171,3 +171,9 @@ nav {
 .nav-link {
   color: #2B362D !important;
 }
+
+#green-spacer{
+  width: 100%;
+  height: 100px;
+  background-color: #2B362D;
+}
