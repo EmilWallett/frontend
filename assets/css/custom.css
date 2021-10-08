@@ -220,9 +220,10 @@ img.right {
 }
 
 /* Bootstrap Overwrite */
-.btn-primary {
+.btn-primary, .btn-primary:hover {
   background-color: #A68163 !important;
   border-color: #A68163 !important;
+  box-shadow: 0 0 0 0.25rem #A68163 !important;
 }
 
 .row {
@@ -304,7 +305,7 @@ nav {
   font-size: 5rem;
   color: #2B362D;
 }
- 
+
 
 .f2s {
   margin-top: 3rem;
@@ -318,4 +319,3 @@ nav {
   margin-right: 15rem;
   color: #f2f0ed;
 }
-
