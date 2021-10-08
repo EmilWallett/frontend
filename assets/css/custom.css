@@ -279,7 +279,7 @@ nav {
   .nav-links ul li::after {
     content: "";
     width: 0%;
-    height: 2px;
+    height: 1px;
     background: #2B362D;
     display: block;
     margin: auto;
