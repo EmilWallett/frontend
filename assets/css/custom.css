@@ -104,30 +104,28 @@ footer a {
   padding-top: 1rem;
 }
 
-
-#goaltext{
+#goaltext {
   width: 100%;
   height: auto;
   color: #F2F0ED;
-  }
+}
 
-p{
+p {
   grid-area: p;
 }
-  
-/* goal line*/
-.goal{
-  background-color:  #546957 ;
+
+/*goal line*/
+.goal {
+  background-color: #546957;
   padding: 2%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto auto;
-  grid-template-areas: 
+  grid-template-areas:
     "gridContainer gridContainer gridContainer"
     ". p ."
-    ;
-  }
-
+  ;
+}
 
 .grid-container {
   display: grid;
@@ -136,7 +134,6 @@ p{
   padding: 10px;
   align-items: center;
   grid-column-gap: 3vw;
-
   grid-area: gridContainer;
 }
 
@@ -144,12 +141,12 @@ p{
   border-top: 4px solid white;
 }
 
-.goal-header{
+.goal-header {
   display: block;
   font-size: 4em;
   color: white;
   font-family: "Otama.ep";
-  text-align: center; 
+  text-align: center;
 }
 
 .goal-spacer-right {
@@ -163,19 +160,63 @@ p{
 .spacer-left {
   border-top: 4px solid #2b362d;
 }
-.spacer-left2{
-  border-top: 4px solid  #F2F0ED;
+
+.spacer-left2 {
+  border-top: 4px solid #F2F0ED;
 }
 
 .spacer-right {
   border-top: 4px solid #2b362d;
 }
-.spacer-right2{
+
+.spacer-right2 {
   border-top: 4px solid #F2F0ED;
 }
 
 .header-image {
   width: 100%;
+}
+
+h3.about {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+h2.about {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+p.about {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  max-width: 30rem;
+  margin-left: 10px;
+}
+
+img.about {
+  width: auto;
+}
+
+img.right {
+  float: right;
+  margin-right: 40px;
+  max-width: 80rem !important;
 }
 
 /* Bootstrap Overwrite */
