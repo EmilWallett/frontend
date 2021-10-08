@@ -42,9 +42,39 @@
             <path d="M256 144c-19.72 0-37.55 7.39-50.22 20.82s-19 32-17.57 51.93C191.11 256 221.52 288 256 288s64.83-32 67.79-71.24c1.48-19.74-4.8-38.14-17.68-51.82C293.39 151.44 275.59 144 256 144z"></path>
           </svg>
         </a>
-        <a href="#" class="btn btn-primary" id="fileUpload" onclick="openForm()">Upload</a>
+        <a href="#" class="btn btn-primary" id="fileUpload" data-toggle="modal" data-target="#exampleModalCenter" onclick="openForm()">Upload</a>
         <div id="popup">
-          <iframe src="iframes/uploadpopup.html" title="uploadpopup" width="600" height="400"></iframe>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Upload</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!--Upload-->
+                  <form class="fileupload">
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    <br>
+                    <input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
+                    <input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
+                    <!--<input type="checkbox" name="shameBox" id="shameCheckBox" onchange="ShameBoxChange(this.value)">-->
+                  </form><br>
+                  <section id="imgTest">
+                    <img src="" id="imgPrew" style="visibility: hidden;">
+                </div>
+                <div class="modal-footer">
+                  <button id="fame-btn" onclick="FameClick()">Fame</button>
+                  <button id="shame-btn" onclick="ShameClick()">Shame</button>
+                  <br>
+                  <button id="upload-btn" onclick="tryToPost()">Upload</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -149,6 +179,8 @@
   <!-- Core theme JS-->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/monthlyFameShameLoader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     document.getElementById("popup").style.display = "none";
 
