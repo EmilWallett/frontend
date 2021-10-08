@@ -295,8 +295,9 @@ nav {
 
 .f1s {
   margin-top: 3rem;
-  font-size: 5em;
+  font-size: 5rem;
   color: #2B362D;
+
 }
 
 .f1s_p {
@@ -307,13 +308,14 @@ nav {
 
 .f2s {
   margin-top: 3rem;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color:#2B362D
 }
 .f3s {
   margin-top: 3rem;
-  font-size: 1.5em;
-  margin-left: 15%;
-  margin-right: 15%;
+  font-size: 1.5rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
   color: #f2f0ed;
 }
+
