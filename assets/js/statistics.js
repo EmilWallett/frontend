@@ -13,17 +13,16 @@ var data = {
   percentageOfShame: 0
 };
 
-function doFetch() {
-  var posts = getPosts();
-  post.forEach(post => {
+window.onload = function(){doFetch();};
 
-  });
-}
-const getPosts = () => {
-  return fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(posts => {
-      console.log(posts);
-      danielTestar = posts[1].title;
-    }) //how to get the Variable into an Variable
+function doFetch(){
+    return fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(Response => Response.json())
+        .then(data =>{
+
+            data.forEach(element => {
+                console.log(element.id);
+                console.log(element.title);
+            });
+        });
 }
