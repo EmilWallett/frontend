@@ -32,7 +32,11 @@ a{
   margin:auto ;
  }
 nav > a ~ a {
-  background: #A68163;
+  background-color: #A68163;
+  border-color: #A68163;
+  box-shadow: 0 0 0 0.25rem #a68163;
+border-radius: 25px;
+padding: .375rem .75rem;
   color: white;
 }
 
