@@ -1,0 +1,75 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Linking in the css, js and favicon-->
+	<link href="img/favicon.ico" rel="icon">
+	<script type="text/javascript" src="../assets/js/statistics.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>FameShamePie</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+		</header>
+		<main>
+			<!--Projekt deskription-->
+			<section class="images">
+				<canvas id="FameandShamePieChart" style="width:100%;max-width:1800px"></canvas>
+				<section>
+				</section>
+				<script type="text/javascript">
+					var percentageold = [data.nrOfFames / data.nrOfPictures * 100, data.nrOfShames / data.nrOfPictures * 100];
+					//	var percentage = [data.percentageOfFame, data.percentageOfShame]
+					var xValues = ["Fame", "Shame"];
+					//	var yValues = [data.nrOfFames, data.nrOfShames];
+					var barColors = [
+						"rgba(34,139,34,1.0)",
+						"rgba(255,0,0,1.0)"
+					];
+
+					new Chart("FameandShamePieChart", {
+						type: "pie",
+						data: {
+							labels: xValues,
+							datasets: [{
+								backgroundColor: barColors,
+								data: percentageold,
+							}]
+						},
+						options: {
+							plugins: {
+								// legend: false,
+								// That how you remove the Legend.
+								title: {
+									display: true,
+									text: "Division of Fame and Shame in %",
+									legend: {
+										display: false,
+										labels: {
+											display: false
+										},
+									},
+									padding: {
+										top: 0,
+										bottom: 0
+									},
+									font: {
+										size: 20
+									}
+								}
+							}
+						}
+					});
+				</script>
+			</section>
+
+		</main>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Linking in the css, js and favicon-->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="js/index.js" rel="script">
+		<link href="img/favicon.ico" rel="icon">
+		<script defer src="js/protoFileUpload.js"></script>
+		<meta name="google-signin-scope" content="profile email">
+		<meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<title>Sustaining - Upload</title>
+	</head>
+	<body>
+        <div class="wrapper">
+            <header>
+                <a href="index.html"><img src="img/logo.webp" alt="Sustaining logo" class="logo"></a>
+                <!--logotype in header-->
+                <h1>Sustaining</h1>
+				<!--drop down menu here-->
+				<nav>
+					<div class="dropdown">
+						<!--Burger menu-->
+						<div class="burgermenu"></div>
+						<!--nedeed for drop down menu-->
+						<div class="burgermenu"></div>
+						<div class="burgermenu"></div>
+                        <div class="dropdown-content">
+                            <!--the drop down menu-->
+                            <a href="index.html">Home</a>
+                            <!--link to Uploade-->
+                            <a href="fileUpload.html">Upload images</a>
+                            <!--link to gallery-->
+                            <a href="gallery.html">Gallery of images</a>
+                            <!--link to voting-->
+                            <a href="vote.html">Vote for images</a>
+                            <!--link to about-->
+                            <a href="about.html">About Us</a>
+                            <!--link to about-->
+                            <a href="supporters.html">Our Supporters</a>
+                        </div>
+					</div>
+				</nav>
+            </header>
+            <main>
+                <section class="images">
+                    <section></section>
+                </section>
+                <section class="textblock">
+                    <section>
+                        <h2> Upload </h2>
+                    </section>
+                    <section>
+                        <!--Upload-->
+                        <form class="fileupload">
+                            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+														<br>
+                            <input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
+                            <input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
+                            <!--<input type="checkbox" name="shameBox" id="shameCheckBox" onchange="ShameBoxChange(this.value)">-->
+                        </form><br>
+                        <section id="imgTest">
+                            <img src="" id="imgPrew" style="visibility: hidden;">
+                        </section>
+										<button id="fame-btn" onclick="FameClick()">Fame</button>
+										<button id="shame-btn" onclick="ShameClick()">Shame</button>
+										<br>
+										<button id="upload-btn" onclick="tryToPost()">Upload</button>
+								</section>
+            </main>
+            <!--footer for links-->
+			<footer>
+                <div>
+                    <img class="footerErasmus" src="img/erasmus.webp" alt="Erasmus+ Logo"><!--Eu logo-->
+                </div>
+				<section>
+                    <ul>
+                        <li>
+                            <!--Galary-link-->
+                            <a href="gallery.html">GALLERY</a>
+                        </li>
+                        <li>
+                            <!--ABOUT-Link-->
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <!--Our Supporters link-->
+                            <a href="supporters.html">OUR SUPPORTERS</a>
+                        </li>
+                        <li>
+                            <!--TOS-Link-->
+                            <a href="tos.html">TOS</a>
+                        </li>
+                    </ul>
+				</section>
+				<div>
+                    <img class="footerLogo" src="img/logo.webp" alt="Sustaining logo"><!--Project logo-->
+                </div>
+            </footer>
+        </div>
+  </body>
+</html>
