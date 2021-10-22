@@ -99,3 +99,39 @@ footer > a ~ a{
     }
   }
   
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .grid-container > div {
+
+    text-align: center;
+    padding: 20px 0;
+    font-size: 60px;
+    height: 10px;
+  }
+
+
+
+.item1 {
+    border-top: 4px solid #2b362d;
+    margin-top: 8vh;
+}
+.item2{
+    display: block;
+    width: 30vw;
+    height: 5vw;
+    font-size: 4vw;
+    color: #2b362d;
+    font-family: "Otama.ep";
+    text-align: center;
+}
+
+.item3 {
+    border-top: 4px solid #2b362d;
+    margin-top: 8vh;
+}
