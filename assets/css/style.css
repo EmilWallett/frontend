@@ -60,6 +60,10 @@ footer > a{
 }
 
 
+footer img{
+  height: 70px;
+}
+
 footer > a ~ a{
   margin-left: 20px;
 }
