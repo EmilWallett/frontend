@@ -23,6 +23,7 @@ header nav{
 header h1{
   margin:0%;
   margin-top: 10px;
+  margin-right: 50px;
 }
 header img{
   vertical-align: middle;
@@ -61,6 +62,7 @@ footer{
  display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   background-color: #F2F0ED;
+  font-size: 150%;
 }
 
 footer > a{

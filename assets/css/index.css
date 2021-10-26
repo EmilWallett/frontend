@@ -39,7 +39,9 @@
   .grid > .grid-container {
     grid-column: 1 / 6;
   }
-  
+.grid > .grid-con {
+  grid-column: 6 / 1;
+}  
 
   .grid > header {
     grid-column: 2 / 3;
@@ -74,6 +76,9 @@
   }
 .imgright{
     justify-self: right;
+}
+.imgleft{
+  justify-self: left;
 }
 
 
