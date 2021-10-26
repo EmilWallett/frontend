@@ -48,13 +48,17 @@ a{
   color: black;
   margin:auto ;
  }
-nav > a {
+nav > button {
   background-color: #A68163;
   border-color: #A68163;
   box-shadow: 0 0 0 0.25rem #a68163;
   padding: .375rem .75rem;
   color: white;
   border-radius: 1px;
+  width: 75px;
+  height: 25%;
+  justify-self: center;
+  align-self: center;
 }
 
 
@@ -141,4 +145,12 @@ h1{
   }
   
 
- 
+ /*---upload----*/
+ .closeX {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
