@@ -24,3 +24,11 @@ h2,h3,p{
         grid-template-columns: 1fr;
     }
 }
+
+.imgschool1{
+    grid-row: 15/16;
+    align-self: center;
+}
+.imgschool2{
+    grid-row: 15/16;
+}
