@@ -8,6 +8,11 @@ var webbServerIp = "http://its.teknikum.it:8080/", serverPath = "sustaining_back
 var webbServerAdress = webbServerIp + serverPath;
 var ratingIsFame;
 
+//The line of text that tells the user if image was uploaded successfully
+var feedbackTxt = document.getElementById(/*"idForFeedbackText"*/);
+var colorCodeSuccessful = "green";
+var colorCodeFailed = "red";
+
 let user = {
 	isSignedIn : function() {
 		return false;
@@ -71,16 +76,16 @@ function ResetFameShameButtons(){
 function tryToPost(){
 	if(titleData != "" && imageLoaded && user.isSignedIn() && ratingSet){
 		postData(imageData, titleData, user);
-		alert("image has been uploaded");
+		showFeedback("Image uploaded successfully", colorCodeSuccessful);
 	}
 	else if(titleData == ""){
-		alert("it needs a title");
+		showFeedback("You need to give the image a title", colorCodeFailed);
 	} else if(!imageLoaded){
-		alert("you need to upload an image");
+		showFeedback("You need to upload an image", colorCodeFailed);
 	} else if(!ratingSet){
-		alert("you need to rate it");
+		showFeedback("You need to rate the image", colorCodeFailed);
 	} else if(!user.isSignedIn()){
-		alert("You need to sign in");
+		showFeedback("You need to sign in", colorCodeFailed);
 	}
 }
 
@@ -122,6 +127,12 @@ async function postData(imageData, title, currentUser) {
 	//const json = await response.json();
 	//return json;
 }
+
+function showFeedback(message, color){
+	feedbackTxt.innerHTML = message;
+	feedbackTxt.style.color = color;
+}
+
 /*
 async function PostRating(rating, currentUser, imageID){
 	let token = currentUser.getAuthResponse().id_token;
