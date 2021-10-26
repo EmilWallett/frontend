@@ -52,6 +52,10 @@
     background-color:  var(--background-color-fame-shame);
     margin-right: 50%;
   }
+
+  .grid > header:last-of-type{
+    grid-column: 3/5;
+  }
   
   section > header > h2 {
     font-size: 3rem;
@@ -107,4 +111,12 @@
     padding: 3rem;
     width: 10rem;
 
+  }
+
+  section > header > .imga {
+    grid-row: 6 / 3 ;
+  }
+
+  section > header > .imga {
+    grid-row: 3 ;
   }
