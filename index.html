@@ -8,6 +8,7 @@
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/index.css" rel="stylesheet">
+  <script src="assets/js/Upload.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,19 @@
           </ul>
         </div>
         <img class="class" src="assets/img/profile.png" alt="profilbild">
-        <button href="#" id="fileUpload">Upload</button>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Upload</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>upload image</p>
+  </div>
+</div>
+</div>
         
     </nav>
   </header>
@@ -97,20 +110,7 @@
   <!-- Core theme JS-->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/monthlyFameShameLoader.js"></script>
-  <script defer src="../old/js/protoFileUpload.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    document.getElementById("popup").style.display = "none";
-
-    function openForm() {
-      document.getElementById("popup").style.display = "block";
-    }
-
-    function closeForm() {
-      document.getElementById("popup").style.display = "none";
-    }
-  </script>
+  <script src="assets/js/Upload.js"></script>
 </body>
 
 </html>
