@@ -89,14 +89,14 @@
   img > :nth-child(3) {
     justify-self: right;
   }
-  
+ /*---edit
   section > div {
     display: grid;
       grid-template-columns:repeat(6,1fr); 
       align-items: center;
       
   }
-  
+ ---*/
   section > div ~ p {
     border: 10px solid #a111;
     border-radius: 2px;
@@ -120,3 +120,19 @@
   section > header > .imga {
     grid-row: 3 ;
   }
+
+
+
+  /*----frontpage text and img----*/
+  .gridfront{
+    grid-template-columns: 50% 50%;
+    background-color: #b6c3b7;
+  }
+
+  div > img{
+    width: 950px;
+    height: auto;
+  }
+
+
+
