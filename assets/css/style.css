@@ -13,7 +13,7 @@ body{
   margin:0;
 }
 
-/*---header/footer---*/
+/*---header---*/
 header nav{
    display: grid;
  grid-template-columns: 3fr 4fr 0.25fr 0.7fr;
@@ -31,6 +31,10 @@ header img{
   margin: auto;
  }
 
+ h1{
+  text-align: right;
+  font-size: 220%;
+}
 
 h1 img{
   vertical-align: middle;
@@ -48,7 +52,8 @@ a{
   color: black;
   margin:auto ;
  }
-nav > button {
+/*---uploadbutton---*/
+ nav > button {
   background-color: #A68163;
   border-color: #A68163;
   box-shadow: 0 0 0 0.25rem #a68163;
@@ -61,7 +66,7 @@ nav > button {
   align-self: center;
 }
 
-
+/*---/footer---*/
 footer{
  display: grid;
   grid-template-columns: 2fr 2fr 2fr;
@@ -87,23 +92,8 @@ a {
   text-decoration: none;
 }
 
-h1{
-  text-align: right;
-  font-size: 220%;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*---underline hover---*/
   nav ul {
     text-align: right;
     list-style: none;
