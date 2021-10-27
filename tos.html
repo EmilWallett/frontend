@@ -16,7 +16,7 @@
     <nav>
       <h1> 
       <a href="index.html">
-        <img src="assets/img/logo.webp" alt="Sustaining logo"  class="logo">Sustaining
+        <img src="assets/img/logo.webp" alt="Sustaining logo">Sustaining
         </a>
       </h1>
         <div>
@@ -27,7 +27,8 @@
           </ul>
         </div>
         <img class="class" src="assets/img/profile.png" alt="profilbild">
-        <button id="myBtn">Upload</button>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Upload</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -36,10 +37,17 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>upload image</p>
+    <form action="/action_page.php">
+      <input type="file" id="myFile" name="filename">
+      <input type="submit">
+    </form>
   </div>
 </div>
+</div>
+        
     </nav>
   </header>
+
   <!-- Mainpage-->
   <main>
     <section >
@@ -212,9 +220,8 @@
   
 </footer>
   <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Core theme JS-->
-  <script src="assets/js/scripts.js"></script>
+
+  <script src="assets/js/Upload.js"></script>
 </body>
 
 </html>

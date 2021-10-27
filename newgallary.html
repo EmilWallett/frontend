@@ -6,37 +6,46 @@
     <link href="assets/css/gallary.css" rel="stylesheet">
     <script src="assets/js/imageUploader.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/Upload.js"></script>
 </head>
 <body>
-  <header>
-    <!-- Navigation-->
-    <nav>
-      <h1> 
-      <a href="index.html">
-        <img src="assets/img/logo.webp" alt="Sustaining logo"  class="logo">Sustaining
-        </a>
-      </h1>
-        <div>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="newgallary.html">Gallery & Vote</a></li>
-            <li><a href="about.html">About Us</a></li>
-          </ul>
-        </div>
-        <img class="class" src="assets/img/profile.png" alt="profilbild">
-        <button id="myBtn">Upload</button>
+<header>
+  <!-- Navigation-->
+  <nav>
+    <h1> 
+    <a href="index.html">
+      <img src="assets/img/logo.webp" alt="Sustaining logo">Sustaining
+      </a>
+    </h1>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="newgallary.html">Gallery & Vote</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <img class="class" src="assets/img/profile.png" alt="profilbild">
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Upload</button>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-        
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>upload image</p>
-          </div>
-        </div>
-    </nav>
-  </header>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close">&times;</span>
+  <p>upload image</p>
+  <form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+    <input type="submit">
+  </form>
+</div>
+</div>
+</div>
+      
+  </nav>
+</header>
+
     <h2>
         Gallery
     </h2>
@@ -101,5 +110,7 @@
           </div>
     </div>
     </div>
+    <script src="assets/js/Upload.js"></script>
 </body>
+
 </html>
