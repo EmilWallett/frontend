@@ -106,7 +106,18 @@ nav > button{
   cursor: pointer;
 }
 
+form{
+  padding:25px
+}
 
+input{
+  margin-bottom: 25px;
+}
+
+.uploadbutton{
+  text-align: right;
+  margin-left: 10px;
+}
 /*---/footer---*/
 footer{
  display: grid;
