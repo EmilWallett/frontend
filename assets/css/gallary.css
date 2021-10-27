@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+ .gallery{
+     border: 1px solid #ccc;
+ }
+ .gallery img{
+     max-width: 100%;
+     min-width: 300px;
+ }
+ body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+ 
