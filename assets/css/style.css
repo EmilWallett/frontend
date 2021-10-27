@@ -64,6 +64,7 @@ header button{
   height: 25%;
   justify-self: center;
   align-self: center;
+  border-style: hidden;
 }
 
 /* The Modal (background) */
