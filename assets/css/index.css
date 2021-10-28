@@ -125,13 +125,9 @@
 
   /*----frontpage text and img----*/
   .gridfront{
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 3fr 3fr;
     background-color: #b6c3b7;
-  }
-
-  div > img{
-    width: 950px;
-    height: auto;
+    text-align: center ;
   }
 
 
