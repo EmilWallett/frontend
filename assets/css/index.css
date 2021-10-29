@@ -72,7 +72,7 @@
 
   section > header > p {
     font-size: 1.2rem;
-    margin:1em 3em 1em 3em ;
+    margin:1em 3em 1em 3em;  
   }
 
   section >  .imgleft {
@@ -86,8 +86,8 @@
   
   .grid > img {
     border: 1px solid #ddd;
-    border-radius: 30px;
-    width: 100%;
+
+    width: 250px;
     aspect-ratio: 16/9;
   }
 .imgright{
