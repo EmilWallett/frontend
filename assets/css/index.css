@@ -57,9 +57,9 @@
   .grid > header {
     text-align: center;
     color: var(--text-color);
-    border: 1px solid transparent;
     background-color:  var(--background-color-fame-shame);
     grid-column: 2 / 4;
+    min-height: 165;
   }
 
   .grid > header:last-of-type{
@@ -90,7 +90,7 @@
   .grid > img {
     border: 1px solid #ddd;
 
-    width: 250px;
+    width: 275px;
     aspect-ratio: 16/9;
   }
 .imgright{
