@@ -12,6 +12,10 @@
     margin: 0 60px;
     
   }
+
+  .gridfront img::first-line {
+    width: 200px;
+  }
   
   .grid-container {
     display:grid;
@@ -78,7 +82,7 @@
     column-gap: 10vw;
   }
   
-  section > img {
+  .grid > img {
     border: 1px solid #ddd;
     border-radius: 30px;
     width: 150px;
@@ -121,7 +125,7 @@
   .gridfront{
     grid-template-columns: repeat(5, 1fr);
     background-color: #b6c3b7;
-    text-align: center ;
+    text-align: center;
   }
 
 
@@ -137,3 +141,4 @@
   align-self: center;
   border-style: hidden;
 }
+
