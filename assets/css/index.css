@@ -43,14 +43,13 @@
 }  
 
   .grid > header {
-    grid-column: 2 / 3;
     align-self: center;
     font-family:"otama.epregula";
     text-align: center;
     color: var(--text-color);
     border: 1px solid transparent !important;
     background-color:  var(--background-color-fame-shame);
-    margin-right: 50%;
+    grid-column: 2 / 4;
   }
 
   .grid > header:last-of-type{
@@ -118,7 +117,7 @@
   }
 
   section > header > .imga {
-    grid-row: 3 ;
+    grid-row: 3 / 2  ;
   }
 
 
