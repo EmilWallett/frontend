@@ -13,8 +13,12 @@
     
   }
 
-  .gridfront img::first-line {
-    width: 200px;
+  .gridfront img {
+    grid-column: 1;
+  }
+
+  .gridfront img + div {
+    grid-column: 3;
   }
   
   .grid-container {
@@ -44,9 +48,9 @@
   .grid > .grid-container {
     grid-column: 1 / 7;
   }
-.grid > .grid-con {
+ .grid > .grid-con {
   grid-column: 6 / 1;
-}  
+ }  
 
   .grid > header {
     text-align: center;
@@ -79,7 +83,6 @@
 
   section{
     display: grid;
-    column-gap: 10vw;
   }
   
   .grid > img {
@@ -124,7 +127,7 @@
   }
   /*----frontpage text and img----*/
   .gridfront{
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 60% repeat(3, 1fr);
     background-color: #b6c3b7;
     text-align: center;
   }
