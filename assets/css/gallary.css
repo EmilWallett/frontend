@@ -4,11 +4,11 @@
  .gallery{
      border: 1px solid #ccc;
  }
-img{
+main img{
      max-width: 100%;
      min-width: 300px;
  }
- body {
+main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto auto auto auto;
