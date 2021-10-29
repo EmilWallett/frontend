@@ -6,6 +6,8 @@
 }
 .grid {
     display: grid;
+    grid-template-columns:repeat(6,1fr); 
+    align-items: center;
     gap: 20px;
     margin: 0 60px;
     
@@ -36,24 +38,24 @@
   
   
   .grid > .grid-container {
-    grid-column: 1 / 6;
+    grid-column: 1 / 7;
   }
 .grid > .grid-con {
   grid-column: 6 / 1;
 }  
 
   .grid > header {
-    align-self: center;
-    font-family:"otama.epregula";
     text-align: center;
     color: var(--text-color);
-    border: 1px solid transparent !important;
+    border: 1px solid transparent;
     background-color:  var(--background-color-fame-shame);
     grid-column: 2 / 4;
   }
 
   .grid > header:last-of-type{
-    grid-column: 3/5;
+    align-self: center;
+    grid-column: 4/6;
+
   }
   
   section > header > h2 {
@@ -66,6 +68,10 @@
     margin-top: 1em;
   }
 
+  section >  .imgleft {
+    grid-column: 2 / 3;
+    justify-self: right;
+  }
 
   section{
     display: grid;
@@ -111,17 +117,6 @@
     width: 10rem;
 
   }
-
-  section > header > .imga {
-    grid-row: 6 / 3 ;
-  }
-
-  section > header > .imga {
-    grid-row: 3 / 2  ;
-  }
-
-
-
   /*----frontpage text and img----*/
   .gridfront{
     grid-template-columns: 3fr 3fr;
