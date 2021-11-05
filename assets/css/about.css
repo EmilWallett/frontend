@@ -1,35 +1,35 @@
-main{
-    display: grid;
-    grid-template-rows: repeat(8,auto);
-    grid-template-columns: repeat(2,50%)
+main {
+  display: grid;
+  grid-template-rows: repeat(8, auto);
+  grid-template-columns: repeat(2, 50%)
 }
 
 /*---- img size for both mobile and computer ---*/
-main img{
-    width: 400px;
-   max-height: 500px;
+main img {
+  width: 400px;
+  max-height: 500px;
 }
 
 @media screen and (max-width: 800px) {
-    main{
-        grid-template-columns: 1fr;
-    }
+  main {
+    grid-template-columns: 1fr;
+  }
 }
 
-h2,h3{
-    grid-column: 1/3;
+h2, h3 {
+  grid-column: 1/3;
 }
 
-
-h2,h3,p{
-    margin: 0 8rem;
+h2, h3, p {
+  margin: 0 8rem;
 }
 
 /*---img for the schools----*/
-.imgschool1{
-    grid-row: 15/16;
-    align-self: center;
+.imgschool1 {
+  grid-row: 15/16;
+  align-self: center;
 }
-.imgschool2{
-    grid-row: 15/16;
+
+.imgschool2 {
+  grid-row: 15/16;
 }

@@ -1,67 +1,65 @@
-
 /*-- only for code that should apply to every page*/
-
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-
-
-body{
-  margin:0;
+body {
+  margin: 0;
 }
-Header{
+
+Header {
   font-family: 'otama.epregular';
   src: url('Otama-ep-webfont.eot');
   src: url('Otama-ep-webfont.eot?#iefix') format('embedded-opentype'),
-       url('Otama-ep-webfont.woff2') format('woff2'),
-       url('Otama-ep-webfont.woff') format('woff'),
-       url('Otama-ep-webfont.ttf') format('truetype'),
-       url('Otama-ep-webfont.svg#otama.epregular') format('svg');
+    url('Otama-ep-webfont.woff2') format('woff2'),
+    url('Otama-ep-webfont.woff') format('woff'),
+    url('Otama-ep-webfont.ttf') format('truetype'),
+    url('Otama-ep-webfont.svg#otama.epregular') format('svg');
   font-weight: normal;
   font-style: normal;
-
-  }
-/*---header---*/
-header nav{
-   display: grid;
- grid-template-columns: 3fr 4fr 0.25fr 0.7fr;
- background-color: #F2F0ED;
 }
 
-header h1{
-  margin:0%;
+/*---header---*/
+header nav {
+  display: grid;
+  grid-template-columns: 3fr 4fr 0.25fr 0.7fr;
+  background-color: #F2F0ED;
+}
+
+header h1 {
+  margin: 0%;
   margin-top: 10px;
   margin-right: 50px;
 }
-header img{
+
+header img {
   vertical-align: middle;
   height: 2em;
   margin: auto;
- }
+}
 
- h1{
+h1 {
   text-align: right;
   font-size: 220%;
 }
 
-h1 img{
+h1 img {
   vertical-align: middle;
-margin-right: 40px;
-height: 100px;
- }
-
-
-nav div a{
-    text-decoration: none;
-    text-align: center;
+  margin-right: 40px;
+  height: 100px;
 }
-a{
-  font-family:"otama.epregula";
+
+nav div a {
+  text-decoration: none;
+  text-align: center;
+}
+
+a {
+  font-family: "otama.epregula";
   color: black;
-  margin:auto ;
- }
+  margin: auto;
+}
+
 /*---uploadbutton---*/
-nav > button{
+nav>button {
   background-color: #A68163;
   border-color: #A68163;
   box-shadow: 0 0 0 0.25rem #a68163;
@@ -77,17 +75,26 @@ nav > button{
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -114,88 +121,85 @@ nav > button{
   cursor: pointer;
 }
 
-form{
-  padding:25px
+form {
+  padding: 25px
 }
 
-input{
+input {
   margin-bottom: 25px;
 }
 
-.uploadbutton{
+.uploadbutton {
   text-align: right;
   margin-left: 10px;
 }
+
 /*---/footer---*/
-footer{
- display: grid;
+footer {
+  display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   background-color: #F2F0ED;
   font-size: 150%;
 }
 
-footer > a{
+footer>a {
   text-decoration: none;
 }
 
-
-footer img{
+footer img {
   height: 70px;
 }
 
-footer > a ~ a{
+footer>a~a {
   margin-left: 20px;
 }
-
 
 a {
   text-decoration: none;
 }
 
-
 /*---underline hover---*/
-  nav ul {
-    text-align: right;
-    list-style: none;
-    display: flex;
-    align-items: center;
+nav ul {
+  text-align: right;
+  list-style: none;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
   height: 100%;
   margin: 0;
-  }
-  
-  nav ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 10px 15px;
-    position: relative;
-  }
-  
-  nav ul li a {
-    color: #2B362D;
-    text-decoration: none;
-    font-size: 20px;
-  }
-  
-  @media screen and (min-width:991px) {
-    nav ul li::after {
-      content: "";
-      width: 0%;
-      height: 1px;
-      background: #2B362D;
-      display: block;
-      margin: auto;
-      transition: 0.5s;
-      margin-top: -.1em;
-    }
-  
-    nav ul li:hover::after {
-      width: calc(100%);
-    }
-  }
-  
-/*--dropdown profile----*/
+}
 
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 15px;
+  position: relative;
+}
+
+nav ul li a {
+  color: #2B362D;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media screen and (min-width:991px) {
+  nav ul li::after {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background: #2B362D;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+    margin-top: -.1em;
+  }
+
+  nav ul li:hover::after {
+    width: calc(100%);
+  }
+}
+
+/*--dropdown profile----*/
 /* Dropdown Button */
 .dropbtn {
   color: #F2F0ED;
@@ -217,7 +221,7 @@ a {
   position: absolute;
   background-color: #F2F0ED;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -230,9 +234,11 @@ a {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #F2F0ED;}
+.dropdown-content a:hover {
+  background-color: #F2F0ED;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-
+.dropdown:hover .dropdown-content {
+  display: block;
+}

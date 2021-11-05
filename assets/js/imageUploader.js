@@ -1,136 +1,139 @@
 //Image encoding
 var imageData;
 var titleData = "";
-var imageLoaded = false, ratingSet = false;
-var famebox = false, shamebox = false;
-var fbox = document.getElementById("fameCheckBox"), sbox = document.getElementById("shameCheckBox");
-var webbServerIp = "http://its.teknikum.it:8080/", serverPath = "sustaining_backend/api/";
+var imageLoaded = false,
+  ratingSet = false;
+var famebox = false,
+  shamebox = false;
+var fbox = document.getElementById("fameCheckBox"),
+  sbox = document.getElementById("shameCheckBox");
+var webbServerIp = "http://its.teknikum.it:8080/",
+  serverPath = "sustaining_backend/api/";
 var webbServerAdress = webbServerIp + serverPath;
 var ratingIsFame;
 
 //The line of text that tells the user if image was uploaded successfully
-var feedbackTxt = document.getElementById(/*"idForFeedbackText"*/);
+var feedbackTxt = document.getElementById( /*"idForFeedbackText"*/ );
 var colorCodeSuccessful = "green";
 var colorCodeFailed = "red";
 
 let user = {
-	isSignedIn : function() {
-		return false;
-	}
+  isSignedIn: function() {
+    return false;
+  }
 };
 
 function onSignIn(googleUser) {
-	user = googleUser;
+  user = googleUser;
 }
 
 function encodeImageFileAsURL() { // <- Function to encode an image or anything else
-	var srcData;
-	var filesSelected = document.getElementById("inputFileToLoad").files;
-	if (filesSelected.length > 0) {
-		var fileToLoad = filesSelected[0];
-		var fileReader = new FileReader();
-		fileReader.readAsDataURL(fileToLoad);
-		fileReader.onload = function (fileLoadedEvent) {
-			srcData = fileLoadedEvent.target.result; // <--- data: base64
-			var imgElement = document.getElementById("imgPrew");
-			imgElement.src = srcData;
-			imgElement.style.visibility = "visible";
-			imageData = srcData;
-			console.log(srcData);
+  var srcData;
+  var filesSelected = document.getElementById("inputFileToLoad").files;
+  if (filesSelected.length > 0) {
+    var fileToLoad = filesSelected[0];
+    var fileReader = new FileReader();
+    fileReader.readAsDataURL(fileToLoad);
+    fileReader.onload = function(fileLoadedEvent) {
+      srcData = fileLoadedEvent.target.result; // <--- data: base64
+      var imgElement = document.getElementById("imgPrew");
+      imgElement.src = srcData;
+      imgElement.style.visibility = "visible";
+      imageData = srcData;
+      console.log(srcData);
 
-		}
-		//let result= postData(srcData);
-		//console.log(result);		
-		imageLoaded = true;
+    }
+    //let result= postData(srcData);
+    //console.log(result);
+    imageLoaded = true;
 
-	}
+  }
 }
 
-function TitleChange(value){
-	titleData = value;
+function TitleChange(value) {
+  titleData = value;
 }
 
-function FameClick(){
-	ratingSet = true;
-	ratingIsFame = true;
-	ResetFameShameButtons();
-	let fameButton = document.getElementById("fame-btn");
-	fameButton.classList.add("currentlySelected");
+function FameClick() {
+  ratingSet = true;
+  ratingIsFame = true;
+  ResetFameShameButtons();
+  let fameButton = document.getElementById("fame-btn");
+  fameButton.classList.add("currentlySelected");
 }
 
-function ShameClick(){
-	ratingSet = true;
-	ratingIsFame = false;
-	ResetFameShameButtons();
-	let shameButton = document.getElementById("shame-btn");
-	shameButton.classList.add("currentlySelected");
+function ShameClick() {
+  ratingSet = true;
+  ratingIsFame = false;
+  ResetFameShameButtons();
+  let shameButton = document.getElementById("shame-btn");
+  shameButton.classList.add("currentlySelected");
 }
 
-function ResetFameShameButtons(){
-	let fameButton = document.getElementById("fame-btn");
-	let shameButton = document.getElementById("shame-btn");
-	fameButton.classList = [];
-	shameButton.classList = [];
+function ResetFameShameButtons() {
+  let fameButton = document.getElementById("fame-btn");
+  let shameButton = document.getElementById("shame-btn");
+  fameButton.classList = [];
+  shameButton.classList = [];
 }
 
-function tryToPost(){
-	if(titleData != "" && imageLoaded && user.isSignedIn() && ratingSet){
-		postData(imageData, titleData, user);
-		showFeedback("Image uploaded successfully", colorCodeSuccessful);
-	}
-	else if(titleData == ""){
-		showFeedback("You need to give the image a title", colorCodeFailed);
-	} else if(!imageLoaded){
-		showFeedback("You need to upload an image", colorCodeFailed);
-	} else if(!ratingSet){
-		showFeedback("You need to rate the image", colorCodeFailed);
-	} else if(!user.isSignedIn()){
-		showFeedback("You need to sign in", colorCodeFailed);
-	}
+function tryToPost() {
+  if (titleData != "" && imageLoaded && user.isSignedIn() && ratingSet) {
+    postData(imageData, titleData, user);
+    showFeedback("Image uploaded successfully", colorCodeSuccessful);
+  } else if (titleData == "") {
+    showFeedback("You need to give the image a title", colorCodeFailed);
+  } else if (!imageLoaded) {
+    showFeedback("You need to upload an image", colorCodeFailed);
+  } else if (!ratingSet) {
+    showFeedback("You need to rate the image", colorCodeFailed);
+  } else if (!user.isSignedIn()) {
+    showFeedback("You need to sign in", colorCodeFailed);
+  }
 }
 
 async function postData(imageData, title, currentUser) {
-	let ratingNumb = 0;
-	if(ratingIsFame){
-		ratingNumb = 1;
-	}
-	else{
-		ratingNumb = -1;
-	}
+  let ratingNumb = 0;
+  if (ratingIsFame) {
+    ratingNumb = 1;
+  } else {
+    ratingNumb = -1;
+  }
 
-	//Puts date into a string. Format: (yyyy-mm-dd)
-	var today = new Date();
-	let day = today.getDate() + "", month = (today.getMonth()+1) + "";
-	if(day.length == 1){
-		day = "0" + day;
-	}
-	if(month.length == 1){
-		month = "0" + month
-	}
-	var date = today.getFullYear()+'-'+month+'-'+day;
+  //Puts date into a string. Format: (yyyy-mm-dd)
+  var today = new Date();
+  let day = today.getDate() + "",
+    month = (today.getMonth() + 1) + "";
+  if (day.length == 1) {
+    day = "0" + day;
+  }
+  if (month.length == 1) {
+    month = "0" + month
+  }
+  var date = today.getFullYear() + '-' + month + '-' + day;
 
-	let token = currentUser.getAuthResponse().id_token;
-	let response = await fetch(webbServerAdress + "image/", {
-		headers: {
-			"Content-Type": "application/json",
-			"Authorization": token
-		},
-		method: "POST",
-		body: JSON.stringify({
-			image: imageData,
-			title: title,
-			date: date,
-			location: "TEST-location",
-			rating: ratingNumb
-		})
-	});
-	//const json = await response.json();
-	//return json;
+  let token = currentUser.getAuthResponse().id_token;
+  let response = await fetch(webbServerAdress + "image/", {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": token
+    },
+    method: "POST",
+    body: JSON.stringify({
+      image: imageData,
+      title: title,
+      date: date,
+      location: "TEST-location",
+      rating: ratingNumb
+    })
+  });
+  //const json = await response.json();
+  //return json;
 }
 
-function showFeedback(message, color){
-	feedbackTxt.innerHTML = message;
-	feedbackTxt.style.color = color;
+function showFeedback(message, color) {
+  feedbackTxt.innerHTML = message;
+  feedbackTxt.style.color = color;
 }
 
 /*

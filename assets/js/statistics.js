@@ -13,16 +13,18 @@ var data = {
   percentageOfShame: 0
 };
 
-window.onload = function(){doFetch();};
+window.onload = function() {
+  doFetch();
+};
 
-function doFetch(){
-    return fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(Response => Response.json())
-        .then(data =>{
+function doFetch() {
+  return fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(Response => Response.json())
+    .then(data => {
 
-            data.forEach(element => {
-                console.log(element.id);
-                console.log(element.title);
-            });
-        });
+      data.forEach(element => {
+        console.log(element.id);
+        console.log(element.title);
+      });
+    });
 }

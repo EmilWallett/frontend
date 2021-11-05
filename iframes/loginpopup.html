@@ -1,48 +1,50 @@
-﻿
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--Linking in the css, js and favicon-->
-	<link href="img/favicon.ico" rel="icon">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<title>loginpopup</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Linking in the css, js and favicon-->
+		<link href="img/favicon.ico" rel="icon">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<title>loginpopup</title>
+	</head>
 
-<body>
-	<div class="wrapper">
-		<header>
-		</header>
-		<main>
-			<div class="form-popup" id="myForm">
- <form action="/action_page.php" class="form-container">
-	 <h1>Login</h1>
+	<body>
+		<div class="wrapper">
+			<header></header>
+			<main>
+				<div class="form-popup" id="myForm">
+					<form action="/action_page.php" class="form-container">
+						<h1>Login</h1>
 
-	 <label for="email"><b>Email</b></label>
-	 <input type="text" placeholder="Enter Email" name="email" required>
+						<label for="email">
+							<b>Email</b>
+						</label>
+						<input type="text" placeholder="Enter Email" name="email" required="required">
 
-	 <label for="psw"><b>Password</b></label>
-	 <input type="password" placeholder="Enter Password" name="psw" required>
+						<label for="psw">
+							<b>Password</b>
+						</label>
+						<input type="password" placeholder="Enter Password" name="psw" required="required">
 
-	 <button type="submit" class="btn">Login</button>
-	 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
- </form>
-</div>
-<script>
-	document.getElementById("myForm").style.display = "none";
+						<button type="submit" class="btn">Login</button>
+						<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+					</form>
+				</div>
+				<script>
+					document.getElementById("myForm").style.display = "none";
 
-	function openForm() {
-		document.getElementById("myForm").style.display = "block";
-	}
+					function openForm() {
+						document.getElementById("myForm").style.display = "block";
+					}
 
-	function closeForm() {
-		document.getElementById("myForm").style.display = "none";
-	}
-</script>
-		</main>
-	</div>
-</body>
+					function closeForm() {
+						document.getElementById("myForm").style.display = "none";
+					}
+				</script>
+			</main>
+		</div>
+	</body>
 
 </html>

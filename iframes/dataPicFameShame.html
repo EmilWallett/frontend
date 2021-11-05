@@ -1,33 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--Linking in the css, js and favicon-->
-	<link href="img/favicon.ico" rel="icon">
-	<link href="../assets/css/stastistic.css" rel="stylesheet" >
-	<script type="text/javascript" src="../assets/js/statistics.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<title>dataPicFameShame</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Linking in the css, js and favicon-->
+		<link href="img/favicon.ico" rel="icon">
+		<link href="../assets/css/stastistic.css" rel="stylesheet">
+		<script type="text/javascript" src="../assets/js/statistics.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js" integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<title>dataPicFameShame</title>
+	</head>
 
-<body>
-	<div id="tfs">
-		<p id="tpic" style="padding-top:25px;"></p>
-		<p id="fpic" style="padding-top:60px;"></p>
-		<p id="spic" style="padding-top:60px;"></p>
-	</div>
-</body>
-<script type="text/javascript">
-	let textpic = "Number of Pictures on the Website: " + data.nrOfPictures;
-	let textfame = "Number of Fame Pictures on the Website: " + data.nrOfFames;
-	let textshame = "Number of Shame Pictures on the Website: " + data.nrOfShames;
+	<body>
+		<div id="tfs">
+			<p id="tpic" style="padding-top:25px;"></p>
+			<p id="fpic" style="padding-top:60px;"></p>
+			<p id="spic" style="padding-top:60px;"></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let textpic = "Number of Pictures on the Website: " + data.nrOfPictures;
+		let textfame = "Number of Fame Pictures on the Website: " + data.nrOfFames;
+		let textshame = "Number of Shame Pictures on the Website: " + data.nrOfShames;
 
-	document.getElementById("tpic").innerHTML = "<span id='textpiccss'>" + textpic + "</span>";
-	document.getElementById("fpic").innerHTML = "<span id='textfamecss'>" + textfame + "</span>";
-	document.getElementById("spic").innerHTML = "<span id='textshamecss'>" + textshame + "</span>";
-</script>
+		document.getElementById("tpic").innerHTML = "<span id='textpiccss'>" + textpic + "</span>";
+		document.getElementById("fpic").innerHTML = "<span id='textfamecss'>" + textfame + "</span>";
+		document.getElementById("spic").innerHTML = "<span id='textshamecss'>" + textshame + "</span>";
+	</script>
 
 </html>
-

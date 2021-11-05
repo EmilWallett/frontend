@@ -1,16 +1,18 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
- .gallery{
-     border: 1px solid #ccc;
- }
-main img{
-     max-width: 100%;
-     min-width: 300px;
- }
+
+.gallery {
+  border: 1px solid #ccc;
+}
+
+main img {
+  max-width: 100%;
+  min-width: 300px;
+}
+
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: auto auto auto auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto auto auto auto;
 }
- 

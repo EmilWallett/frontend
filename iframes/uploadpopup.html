@@ -1,68 +1,65 @@
-﻿
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--Linking in the css, js and favicon-->
-	<link href="old/js/index.js" rel="script">
-	<link href="old/img/favicon.ico" rel="icon">
-	<script defer src="../old/js/protoFileUpload.js"></script>
-	<meta name="google-signin-scope" content="profile email">
-	<meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<title>uploadpopup</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Linking in the css, js and favicon-->
+		<link href="old/js/index.js" rel="script">
+		<link href="old/img/favicon.ico" rel="icon">
+		<script defer="defer" src="../old/js/protoFileUpload.js"></script>
+		<meta name="google-signin-scope" content="profile email">
+		<meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async="async" defer="defer"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<title>uploadpopup</title>
+	</head>
 
-<body>
-	<div class="wrapper">
-		<header>
-		</header>
-		<main>
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-			  Launch demo modal
-			</button>
+	<body>
+		<div class="wrapper">
+			<header></header>
+			<main>
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+					Launch demo modal
+				</button>
 
-			<!-- Modal -->
-			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered" role="document">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLongTitle">Upload</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-							<!--Upload-->
-							<form class="fileupload">
-								<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-								<br>
-								<input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
-								<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*" />
-								<!--<input type="checkbox" name="shameBox" id="shameCheckBox" onchange="ShameBoxChange(this.value)">-->
-							</form><br>
-							<section id="imgTest">
-								<img src="" id="imgPrew" style="visibility: hidden;">
-			      </div>
-			      <div class="modal-footer">
-							<button id="fame-btn" onclick="FameClick()">Fame</button>
-							<button id="shame-btn" onclick="ShameClick()">Shame</button>
-							<br>
-							<button id="upload-btn" onclick="tryToPost()">Upload</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLongTitle">Upload</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<!--Upload-->
+								<form class="fileupload">
+									<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+									<br>
+									<input type="text" id="titleText" value="" placeholder="Title" onchange="TitleChange(this.value)">
+									<input class="DataUpload" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL(this)" accept="image/*"/>
+									<!--<input type="checkbox" name="shameBox" id="shameCheckBox" onchange="ShameBoxChange(this.value)">-->
+								</form><br>
+								<section id="imgTest">
+									<img src="" id="imgPrew" style="visibility: hidden;">
+								</div>
+								<div class="modal-footer">
+									<button id="fame-btn" onclick="FameClick()">Fame</button>
+									<button id="shame-btn" onclick="ShameClick()">Shame</button>
+									<br>
+									<button id="upload-btn" onclick="tryToPost()">Upload</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
-		</main>
-		<footer>
-		</footer>
-</body>
+				</main>
+				<footer></footer>
+			</body>
 
-</html>
+		</html>

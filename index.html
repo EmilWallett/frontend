@@ -1,66 +1,71 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Sustaining</title>
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/index.css" rel="stylesheet">
-  <script src="assets/js/Upload.js"></script>
-  <script src="assets/js/login.js"></script>
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sustaining</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
+    <script src="assets/js/Upload.js"></script>
+    <script src="assets/js/login.js"></script>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async="async" defer="defer"></script>
+  </head>
 
-<body>
-  <header>
-    <!-- Navigation-->
-    <nav>
-      <h1> 
-      <a href="index.html">
-        <img src="assets/img/logo.webp" alt="Sustaining logo">Sustaining
-        </a>
-      </h1>
+  <body>
+    <header>
+      <!-- Navigation-->
+      <nav>
+        <h1>
+          <a href="index.html">
+            <img src="assets/img/logo.webp" alt="Sustaining logo">Sustaining
+          </a>
+        </h1>
         <div>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="newgallary.html">Gallery & Vote</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="newgallary.html">Gallery & Vote</a>
+            </li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
           </ul>
         </div>
         <div class="dropdown">
-        <img class="class dropbtn" src="assets/img/profile.png" alt="profilbild">
-        <div class="dropdown-content">
-          <a></a>
-          <a></a>
-          <a class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></a>
+          <img class="class dropbtn" src="assets/img/profile.png" alt="profilbild">
+          <div class="dropdown-content">
+            <a></a>
+            <a></a>
+            <a class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></a>
+          </div>
         </div>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Upload</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>upload image</p>
+
+            <form action="/action_page.php">
+              <input type="file" id="myFile" name="filename">
+              <div class="uploadbutton">
+                <button>Fame</button>
+                <button>Shame</button>
+                <input type="submit">
+              </form>
+            </div>
+          </div>
         </div>
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Upload</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>upload image</p>
- 
-    <form action="/action_page.php">
-      <input type="file" id="myFile" name="filename">
-      <div class="uploadbutton">
-        <button>Fame</button>
-        <button>Shame</button>
-        <input type="submit">
-    </form>
-  </div>
-</div>
-</div>
-</div>
+      </div>
     </nav>
   </header>
 
@@ -68,79 +73,78 @@
   <main>
     <section class="gridfront">
       <img src="assets/img/background.webp">
-          <div>
-            <h2>Awareness equals impact-</h2>
-            <p>Share examples of good and bad environment actions to educate and inspire</p>
-              <h3> Be part of the solution</h3>
-               <p>Upload your images and help us raise awareness of climate, nature and how we can improve our lifestyle. <i>Inspireothers and be inspired by our gallery. By uploading you agree to our <a class="text-white"
-                href="tos.html">Terms of Service</a> and how we handle
-              your data.</i></p>
-<!-- Trigger/Open The Modal -->
-<button id="myBtn" class="upload">Upload</button>
+      <div>
+        <h2>Awareness equals impact-</h2>
+        <p>Share examples of good and bad environment actions to educate and inspire</p>
+        <h3>
+          Be part of the solution</h3>
+        <p>Upload your images and help us raise awareness of climate, nature and how we can improve our lifestyle.
+          <i>Inspireothers and be inspired by our gallery. By uploading you agree to our
+            <a class="text-white" href="tos.html">Terms of Service</a>
+            and how we handle your data.</i>
+        </p>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" class="upload">Upload</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>upload image</p>
-    <form action="/action_page.php">
-      <input type="file" id="myFile" name="filename">
-      <input type="submit">
-    </form>
-  </div>
-</div>
-</div>
-        
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>upload image</p>
+            <form action="/action_page.php">
+              <input type="file" id="myFile" name="filename">
+              <input type="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+
     </section>
-    
-   
+
+    <section></main>
+    <section class="grid">
+      <div class="grid-container">
+        <div class="spacer-left"></div>
+        <h2>Fame / Shame</h2>
+        <div class="spacer-right"></div>
+      </div>
+      <header>
+        <h2>Fame</h2>
+        <p>Fame is to be sustainable! If you are sustaining you act in a way which allows you children and grandchildren to live a life like yourself have been able to live. That means you are thinking about how.</p>
+      </header>
+      <img class="imgright" src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
+      <img src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
+      <img class="imgleft" src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
+      <img src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
+      <header>
+        <h2>Shame</h2>
+        <p>Shame is the opposite of fame! That means you don’t care if your offspring have the same opportunities in life as you had. You are either consciously overconsuming limited resources, producing too
+        </p>
+      </header>
+    </section>
 
     <section>
-  </main>
-  <section class="grid">
-    <div class="grid-container">
-      <div class="spacer-left"></div>
-      <h2>Fame / Shame</h2>
-      <div class="spacer-right"></div>
-    </div>    
-        <header>
-          <h2>Fame</h2>
-          <p>Fame is to be sustainable! If you are sustaining you act in a way which allows you children and grandchildren to live a life like yourself have been able to live. That means you are thinking about how.</p>
-        </header>
-          <img class="imgright" src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
-          <img  src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
-          <img class="imgleft" src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
-          <img src="https://cdn.discordapp.com/attachments/690511341986775130/895322105162383430/photo_2021-10-03_19-47-24.jpg">
-          <header>
-          <h2>Shame</h2>
-          <p>Shame is the opposite of fame! That means you don’t care if your offspring have the same opportunities in life as you had. You are either consciously overconsuming limited resources, producing too </p>
-          </header>
-  </section>
-
-  <section>
-    <article>
-      <div>
-        <h2>Our Goals</h2>
-      </div>
-      <p>
-        Our goal is to raise environmental awareness!
-        We aim to reward good actions and shame bad ones, all while engageing the public.
-        Join us today in our struggle to make everybody aware of what happens around us.
-      </p>
-    </article>
+      <article>
+        <div>
+          <h2>Our Goals</h2>
+        </div>
+        <p>
+          Our goal is to raise environmental awareness! We aim to reward good actions and shame bad ones, all while engageing the public. Join us today in our struggle to make everybody aware of what happens around us.
+        </p>
+      </article>
     </div>
   </section>
   <!-- Footer-->
   <footer>
-    
+
     <img src="assets/img/erasmus.webp">
     <a href="tos.html">Terms of Service</a>
     <a href="statistic.html">Statistics</a>
-  
-</footer>
- 
+
+  </footer>
+
   <!-- Core theme JS-->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/monthlyFameShameLoader.js"></script>
