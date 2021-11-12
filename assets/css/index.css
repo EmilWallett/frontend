@@ -20,25 +20,12 @@
   grid-column: 1 / 7;
 }
 
-<<<<<<< Updated upstream
 /* Text size */
 .grid-container>div {
   font-size: 3vw;
-=======
-.gridfront img+div {
-  grid-column: 2;
-  grid-row: 2;
-  font-size: 25px;
 }
 
-.gridfront p + p{
-  color:white;
-}
 
-.gridfront a {
-  color:white;
->>>>>>> Stashed changes
-}
 
 /* Title "Fame/Shame" and lines */
 .grid-container {
@@ -87,12 +74,6 @@ section>header>p {
   grid-column: 1;
   grid-row: 1/4;
   width: 100%;
-}
-
-/* img positon */
-.gridfront img + div {
-  grid-column: 3;
-  grid-row: 2;
 }
 
 /* Shame second <header> position */
@@ -217,19 +198,40 @@ section>div~h3 {
   display: block;
 }
 
-@media screen and (max-width: 1150px) {
-  .gridfront {
-    grid-template-columns: 15% 70% 15%;
-    grid-template-rows: auto auto;
-  }
 
   .gridfront img {
     grid-row: 1;
     grid-column: 1/4;
   }
 
-  .gridfront img+div {
-    grid-column: 2;
-    grid-row: 2;
+.gridfront img + div {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 25px;
+}
+
+.gridfront p + p{
+  color:white;
+}
+
+.gridfront a {
+  color:white;
+}
+
+.gridfront img + div {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.gridfront img {
+  grid-column: 1;
+  grid-row: 1/4;
+  width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+  .gridfront {
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: auto auto;
   }
 }
