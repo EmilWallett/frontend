@@ -20,9 +20,24 @@
   grid-column: 1 / 7;
 }
 
+<<<<<<< Updated upstream
 /* Text size */
 .grid-container>div {
   font-size: 3vw;
+=======
+.gridfront img+div {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 25px;
+}
+
+.gridfront p + p{
+  color:white;
+}
+
+.gridfront a {
+  color:white;
+>>>>>>> Stashed changes
 }
 
 /* Title "Fame/Shame" and lines */
@@ -139,7 +154,7 @@ section>div~h3 {
 
 /*----frontpage text and img----*/
 .gridfront {
-  grid-template-columns: 60% 6% 20% 16%;
+  grid-template-columns: 60% 36% 4%;
   grid-template-rows: repeat(3, auto);
   background-color: #b6c3b7;
   text-align: center;
@@ -202,7 +217,7 @@ section>div~h3 {
   display: block;
 }
 
-@media screen and (max-width: 915px) {
+@media screen and (max-width: 1150px) {
   .gridfront {
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: auto auto;
