@@ -1,9 +1,12 @@
+
+/* index colors */
 :root {
   --text-color: #2b362d;
   --background-color: #F2F0ED;
   --background-color-fame-shame: #b6c3b7;
 }
 
+/* main grid for Fame and Shame*/
 .grid {
   display: grid;
   grid-template-columns: 100px repeat(4, 1fr) 100px;
@@ -11,18 +14,18 @@
   margin: 0 60px;
   align-items: start;
 }
-
-.gridfront img {
-  grid-column: 1;
-  grid-row: 1/4;
-  width: 100%;
+  
+/* Position for Fame/Shame text */
+.grid>.grid-container {
+  grid-column: 1 / 7;
 }
 
-.gridfront img+div {
-  grid-column: 3;
-  grid-row: 2;
+/* Text size */
+.grid-container>div {
+  font-size: 3vw;
 }
 
+/* Title "Fame/Shame" and lines */
 .grid-container {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -33,49 +36,57 @@
   grid-template-rows: auto auto auto;
 }
 
-.grid-container>div {
-  font-size: 3vw;
-}
-
+/* Left line */
 .spacer-left {
   border-top: 4px solid rgb(43, 54, 45);
 }
 
+/* right line */
 .spacer-right {
   border-top: 4px solid rgb(43, 54, 45);
 }
 
-.grid>.grid-container {
-  grid-column: 1 / 7;
-}
-
-.grid>.grid-con {
-  grid-column: 6 / 1;
-}
-
+/* Fame and Shame  <header> text design and position */
 .grid>header {
   text-align: center;
   color: var(--text-color);
   background-color: var(--background-color-fame-shame);
   grid-column: 2 / 4;
-  min-height: 165;
+  min-height: 181px;
 }
 
-.grid>header:last-of-type {
-  align-self: center;
-  grid-column: 4/6;
-}
-
+/* text design */
 section>header>h2 {
   font-size: 3rem;
   margin: 0;
 }
 
+/* text  position and design */
 section>header>p {
   font-size: 1.2rem;
   margin: 1em 3em 1em 3em;
 }
 
+/* image size and space */
+.gridfront > img {
+  grid-column: 1;
+  grid-row: 1/4;
+  width: 100%;
+}
+
+/* img positon */
+.gridfront img + div {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Shame second <header> position */
+.grid>header:last-of-type {
+  align-self: center;
+  grid-column: 4/6;
+}
+
+/* text positon */
 section>.imgleft {
   grid-column: 2 / 3;
   justify-self: right;
@@ -102,6 +113,7 @@ section {
 img> :nth-child(3) {
   justify-self: right;
 }
+
 
 /*---edit
 section>div {
