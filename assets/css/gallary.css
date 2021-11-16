@@ -13,6 +13,9 @@ main img {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: auto auto auto auto auto auto;
+}
+.txtwow{
+  text-align: center;
 }
