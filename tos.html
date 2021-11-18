@@ -8,6 +8,9 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <link href="assets/css/style.css" rel="stylesheet">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="460081610512-2oj0qq8g65u4gk91obanganpq63tt3m2.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async="async" defer="defer"></script>
   </head>
 
   <body>
@@ -32,7 +35,12 @@
             </li>
           </ul>
         </div>
-        <img class="class" src="assets/img/profile.png" alt="profilbild">
+        <div class="dropdown">
+          <img class="class dropbtn" src="assets/img/profile.png" alt="profilbild">
+          <div class="dropdown-content">
+            <a class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></a>
+          </div>
+        </div>
         <!-- Trigger/Open The Modal -->
         <button id="myBtn">Upload</button>
 
