@@ -1,4 +1,3 @@
-
 /* index colors */
 :root {
   --text-color: #2b362d;
@@ -7,7 +6,6 @@
 }
 
 /* header index down here */
-
 /* Uplouad butten design*/
 .upload {
   background-color: #A68163;
@@ -66,9 +64,7 @@
   display: block;
 }
 
-
-/* Main index down here */ 
-
+/* Main index down here */
 /* Fronten grids and size*/
 .gridfront {
   grid-template-columns: 60% 36% 4%;
@@ -78,38 +74,38 @@
 }
 
 /* front text color */
-.gridfront p + p{
-  color:white;
+.gridfront p+p {
+  color: white;
 }
+
 /* Terms of Service color text*/
 .gridfront a {
-  color:white;
+  color: white;
 }
+
 /* ? */
 @media screen and (max-width: 1150px) {
-  
-  /* Position */ 
+
+  /* Position */
   .gridfront {
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: auto auto;
   }
 
-/* image positon */
+  /* image positon */
   .gridfront img {
     grid-row: 1;
     grid-column: 1/4;
   }
-  
 }
 
 /* Image and text position*/
-.gridfront > img+div {
-    grid-column: 2;
-    grid-row: 2;
-  }
+.gridfront>img+div {
+  grid-column: 2;
+  grid-row: 2;
+}
 
 /* Fame and Shame down  here*/
-
 /* main grid for Fame and Shame*/
 .grid {
   display: grid;
@@ -118,7 +114,7 @@
   margin: 0 60px;
   align-items: start;
 }
-  
+
 /* Position for Fame/Shame text */
 .grid>.grid-container {
   grid-column: 1 / 7;
@@ -172,7 +168,7 @@ section>header>p {
 }
 
 /* image size and space */
-.gridfront > img {
+.gridfront>img {
   grid-column: 1;
   grid-row: 1/4;
   width: 100%;
@@ -190,7 +186,7 @@ section>.imgleft {
   justify-self: right;
 }
 
-/* do the display grid */ 
+/* do the display grid */
 section {
   display: grid;
 }
@@ -202,12 +198,12 @@ section {
   aspect-ratio: 16/9;
 }
 
-/* right line for Fame / Shame title*/ 
+/* right line for Fame / Shame title*/
 .imgright {
   justify-self: right;
 }
 
-/* left line for Fame / Shame title*/ 
+/* left line for Fame / Shame title*/
 .imgleft {
   justify-self: left;
 }
@@ -223,7 +219,6 @@ section>div {
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
 }*/
-
 /* text design */
 section>div~p {
   border: 10px solid #a111;
@@ -232,6 +227,7 @@ section>div~p {
   width: 10rem;
   margin-left: 5%;
 }
+
 /* text design */
 section>div~h3 {
   border: 1px solid #a111;
@@ -239,4 +235,3 @@ section>div~h3 {
   padding: 3rem;
   width: 10rem;
 }
-
