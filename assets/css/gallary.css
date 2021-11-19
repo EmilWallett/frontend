@@ -12,6 +12,8 @@ main {
   box-sizing: border-box;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: auto auto auto auto auto auto;
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
 .txtwow {
