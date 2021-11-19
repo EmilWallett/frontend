@@ -18,4 +18,25 @@ main {
 
 .txtwow {
   text-align: center;
+  border-top-style: solid;
+  border-top-color: #b6c3b7;
+  border-top-width: 20px;
+  border-right-style: solid;
+  border-right-color: #b6c3b7;
+  border-right-width: 20px;
+  border-left-style: solid;
+  border-left-color: #b6c3b7;
+  border-left-width: 20px;
+  margin-bottom: 0;
+}
+.ggally {
+  border-top-style: solid;
+  border-top-color: #b6c3b7;
+  border-top-width: 20px;
+  border-right-style: solid;
+  border-right-color: #b6c3b7;
+  border-right-width: 20px;
+  border-left-style: solid;
+  border-left-color: #b6c3b7;
+  border-left-width: 20px;
 }
