@@ -128,12 +128,12 @@
 
 /* Position for Fame/Shame text */
 .grid>.grid-container {
-  grid-column: 1 / 7;
+  grid-column: 1 / 5;
 }
 
 /* Text size */
 .grid-container>div {
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 /* Title "Fame/Shame" and lines */
@@ -205,27 +205,6 @@ section {
   margin: auto 0;
 }
 
-/* right line for Fame / Shame title*/
-.imgright {
-  justify-self: right;
-}
-
-/* left line for Fame / Shame title*/
-.imgleft {
-  justify-self: left;
-}
-
-/* second img position */
-img> :nth-child(3) {
-  justify-self: right;
-}
-
-/*---edit
-section>div {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
-}*/
 /* text design */
 section>div~p {
   border: 10px solid #a111;
@@ -247,7 +226,7 @@ section>div~h3 {
   /*creates new grid*/
     .grid {
       grid-template-columns: 10% 40% 40% 10%;
-      grid-template-rows: repeat(5 15%);
+      grid-template-rows: repeat(5, auto);
     }
     /*aligns the imges correctly*/
     .grid>img {
@@ -255,8 +234,18 @@ section>div~h3 {
     }
 
     /*changes position of shame header*/
-    .grid img + header {
-        grid-row: 3;
+    .grid>header:last-of-type {
+        grid-row: 4;
+        grid-column: 2/4;
+    }
+    /*left shame img positon*/
+    img:nth-child(3) {
+        grid-row: 5;
         grid-column: 2;
     }
+    /*right shame img positon*/
+    img:nth-child(4) {
+      grid-row: 5;
+      grid-column: 3;
+  }
 }
