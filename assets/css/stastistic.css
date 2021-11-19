@@ -1,23 +1,48 @@
 main {
   display: grid;
   grid-template-columns: 10% 40% 40% 10%;
+  
 }
 
-main>iframe:first-child {
+main > iframe:first-child{
   width: 600px;
   height: 400px;
   grid-column: 2;
+
   border: none;
 }
 
-main>iframe+iframe {
+main > iframe + iframe{
   width: 400px;
   height: 400px;
   grid-column: 3;
+
   border: none;
 }
 
 p {
   font-size: 24px;
   color: rgb(43, 54, 45);
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      margin: 0 2em;
+  }
+
+  main > iframe + iframe {
+      grid-column: 1;
+      margin: 0 auto;
+  }
+
+  main > iframe:first-child {
+      grid-column: 1;
+      margin: 0 auto;
+  }
+
+  p {
+      text-align: center;
+  }
 }
