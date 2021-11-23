@@ -6,7 +6,6 @@ main {
 
 /*---- img size for both mobile and computer ---*/
 main img {
-  width: 400px;
   max-height: 500px;
 }
 

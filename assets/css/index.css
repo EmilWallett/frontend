@@ -231,6 +231,10 @@ article{
   background-color: #2b362d;
   color: #F2F0ED;
 }
+
+h3{
+  font-size: 2rem;
+}
 article>div~p{
   margin-left: 20%;
   margin-right: 20%;
@@ -273,3 +277,13 @@ article>div~p{
       grid-column: 3;
   }
 }
+
+
+/* Left line */
+.spacer-left2{
+  border-top: 4px solid rgb(43, 54, 45);
+}
+
+/* right line */
+.spacer-right2 {
+  border-top: 4px solid rgb(43, 54, 45);
