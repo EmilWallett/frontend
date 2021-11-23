@@ -1,7 +1,7 @@
 main {
   display: grid;
   grid-template-rows: repeat(8, auto);
-  grid-template-columns: repeat(2, 50%)
+  grid-template-columns: repeat(2, 50%);
 }
 
 /*---- img size for both mobile and computer ---*/
@@ -10,10 +10,24 @@ main img {
   max-height: 500px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
   main {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(16, auto);
   }
+  main img {
+    grid-column: 1;
+    margin: 0 auto;
+}
+/*---img for the schools----*/
+.imgschool1 {
+  grid-row: 23;
+  align-self: center;
+}
+/*---img for the schools----*/
+.imgschool2 {
+  grid-row: 24;
+}
 }
 
 h2, h3 {
@@ -24,12 +38,5 @@ h2, h3, p {
   margin: 0 8rem;
 }
 
-/*---img for the schools----*/
-.imgschool1 {
-  grid-row: 15/16;
-  align-self: center;
-}
 
-.imgschool2 {
-  grid-row: 15/16;
-}
+
