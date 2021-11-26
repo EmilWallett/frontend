@@ -282,9 +282,9 @@ h3{
 
 .Our_goals {
   background-color: var(--text-color);
-  max-height: 400px;
+  height: 20vh;
 }
 
 article {
-  font-size: 1.3em;
+  margin: 0 28% 0 28%;
 }
