@@ -119,11 +119,17 @@
 
 /* Fame and Shame down  here*/
 /* main grid for Fame and Shame*/
+
+.fame_shame {
+  margin: 0 5% 0 5%;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 0px repeat(4, 1fr) 0px;
   gap: 20px;
   align-items: start;
+  margin: 0 10% 0 10%;
 }
 
 /* Position for Fame/Shame text */
@@ -205,9 +211,7 @@ section>div~p {
   width: 10rem;
   margin-left: 5%;
 }
-
-
-
+ 
 article{
   text-align: center;
   background-color: #2b362d;
@@ -251,3 +255,13 @@ article>div~p{
       grid-column: 1;
     }
   }
+
+/* Our goals*/
+.line1_1 {
+  border-top: 4px solid var(--background-color);
+}
+
+/* right line */
+.line2_1 {
+border-top: 4px solid var(--background-color);
+}
