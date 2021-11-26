@@ -229,8 +229,12 @@ article>div~p{
 @media screen and (max-width: 1050px) {
   /*creates new grid*/
     .grid {
-      grid-template-columns: 10% 40% 40% 10%;
-      grid-template-rows: repeat(5, auto);
+      grid-template-columns: auto auto;
+      grid-template-rows: repeat(3, auto);
+    }
+
+    .grid>header {
+      grid-column: 1/3;
     }
     /*aligns the imges correctly*/
     .grid>img {
@@ -239,27 +243,11 @@ article>div~p{
 
     /*changes position of shame header*/
     .grid>header:last-of-type {
-        grid-row: 4;
-        grid-column: 2/4;
+        grid-row: 3;
+        grid-column: 1/3;
     }
-    /*left fame img positon*/
-    .grid img:nth-child(3) {
-      grid-row:2;
-      grid-column: 2/3;
+    
+    .img3{
+      grid-column: 1;
     }
-  /*right fame img positon*/
-    .grid img:nth-child(4) {
-      grid-row: 2;
-      grid-column: 3/4;
-    }
-    /*left shame img positon*/
-    .grid img:nth-child(5) {
-        grid-row: 4;
-        grid-column: 2 / 3;
-    }
-    /*right shame img positon*/
-    .grid img:nth-child(6) {
-      grid-row: 5;
-      grid-column: 3/ 4;
   }
-}
