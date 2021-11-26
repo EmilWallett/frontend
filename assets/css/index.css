@@ -71,6 +71,7 @@
   grid-template-rows: repeat(3, auto);
   background-color: #b6c3b7;
   text-align: center;
+  font-size: 25px;
 }
 
 /* image size and space */
@@ -83,6 +84,7 @@
 /* front text color */
 .gridfront p+p {
   color: white;
+  font-size: 20px;
 }
 
 /* Terms of Service color text*/
