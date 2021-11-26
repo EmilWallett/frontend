@@ -259,12 +259,28 @@ article>div~p{
     }
   }
 
+.title_1 {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background-color: var(--text-color);
+    grid-gap: 3vw;
+}
+
 /* Our goals*/
 .line1_1 {
   border-top: 4px solid var(--background-color);
 }
-
 /* right line */
-.line2_1 {
-border-top: 4px solid var(--background-color);
+
+line2_1 {
+  border-top: 4px solid var(--background-color);
+  }
+
+.title_1 > h2 {
+  color: var(--background-color);
+}
+
+.Our_goals {
+  margin: 0 0 0 5%;
 }
