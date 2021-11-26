@@ -270,7 +270,7 @@ article>div~p{
 /* Our goals*/
 .line1_1 {
   border-top: 4px solid var(--background-color);
-}
+}  
 /* right line */
 
 .line2_1 {
@@ -282,5 +282,5 @@ article>div~p{
 }
 
 .Our_goals {
-  margin: 0 5% 0 5%;
+  margin: 0 0 0 5%;
 }
