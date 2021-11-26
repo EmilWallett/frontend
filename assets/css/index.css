@@ -273,7 +273,7 @@ article>div~p{
 }
 /* right line */
 
-line2_1 {
+.line2_1 {
   border-top: 4px solid var(--background-color);
   }
 
