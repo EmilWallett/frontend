@@ -224,10 +224,6 @@ article{
 h3{
   font-size: 2rem;
 }
-article>div~p{
-  margin-left: 20%;
-  margin-right: 20%;
-}
 
 .img3 { 
   grid-column: 2/3;
@@ -265,12 +261,15 @@ article>div~p{
     align-items: center;
     background-color: var(--text-color);
     grid-gap: 3vw;
+    margin: 0 5% 0 5%;
+    
 }
 
 /* Our goals*/
 .line1_1 {
   border-top: 4px solid var(--background-color);
-}
+  
+}  
 /* right line */
 
 .line2_1 {
@@ -282,5 +281,10 @@ article>div~p{
 }
 
 .Our_goals {
-  margin: 0 5% 0 5%;
+  background-color: var(--text-color);
+  max-height: 400px;
+}
+
+article {
+  font-size: 1.3em;
 }
