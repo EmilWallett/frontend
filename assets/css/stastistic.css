@@ -25,6 +25,10 @@ p {
   color: rgb(43, 54, 45);
 }
 
+footer img {
+  
+}
+
 @media screen and (max-width: 1300px) {
   main {
       grid-template-columns: 1fr;
