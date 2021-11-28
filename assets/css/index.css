@@ -151,20 +151,25 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   grid-gap: 3vw;
-  margin: 2% 0 2% 0;
+  margin: 1% 0 1% 0;
 }
 /* Left line */
 .line1 {
-  border-top: 4px solid rgb(43, 54, 45);
+  border-top: 4px solid var(--text-color);
 }
 
 /* right line */
 .line2 {
-border-top: 4px solid rgb(43, 54, 45);
+border-top: 4px solid var(--text-color);
+}
+
+.title > h2 {
+  color: var(--text-color);
+  font-size: 2.5rem;
 }
 
 /* Fame and Shame <header> text design and position */
-.grid>header {
+.grid > header {
   text-align: center;
   color: var(--text-color);
   background-color: var(--background-color-fame-shame);
@@ -176,6 +181,7 @@ border-top: 4px solid rgb(43, 54, 45);
 .grid > header > h2 {
   font-size: 3rem;
   margin: 0;
+  color: var(--text-color);
 }
 
 /* text  position and design */
@@ -224,7 +230,7 @@ section>div~p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
-  gap: 15px;
+  gap: 10px;
   color: var(--text-color);
 }
 
@@ -253,7 +259,7 @@ section>div~p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
-  gap: 15px;
+  gap: 10px;
   color: var(--text-color);
 }
 
@@ -271,7 +277,7 @@ section>div~p {
   grid-row: 2;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 950px) {
   /*creates new grid*/
     .grid {
       grid-template-columns: auto auto;
@@ -322,6 +328,7 @@ section>div~p {
 
 .title_1 > h2 {
   color: var(--background-color);
+  font-size: 2rem;
 }
 
 .Our_goals {
@@ -339,4 +346,5 @@ article {
  
 article > p {
   grid-column: 2 / 3;
+  font-size: 1.1rem;
 }
