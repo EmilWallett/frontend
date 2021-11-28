@@ -129,9 +129,10 @@
 .grid {
   display: grid;
   grid-template-columns: 0px repeat(4, 1fr) 0px;
-  gap: 5px;
+  gap: 15px;
   align-items: start;
   margin: 0 10% 0 10%;
+
 }
 
 /* Position for Fame/Shame text */
@@ -172,15 +173,14 @@ border-top: 4px solid rgb(43, 54, 45);
 }
 
 /* text design */
-section>header>h2 {
-  font-size: 2rem;
+.grid > header > h2 {
+  font-size: 3rem;
   margin: 0;
-  color: var(--text-color);
 }
 
 /* text  position and design */
-section>header>p {
-  font-size: 1.2rem;
+.grid > header > p {
+  font-size: 1rem;
   margin: 1em 3em 1em 3em;
 }
 
@@ -218,20 +218,14 @@ section>div~p {
 }
  
 
-
-h3{
-  font-size: 2rem;
-}
-
-
-
 .grid > .main { 
   grid-column: 4 / 6;
   grid-row: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
-  gap: 5px;
+  gap: 15px;
+  color: var(--text-color);
 }
 
 .grid > .main > img {
@@ -259,7 +253,8 @@ h3{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
-  gap: 5px;
+  gap: 15px;
+  color: var(--text-color);
 }
 
 .grid > .main2 > img {
