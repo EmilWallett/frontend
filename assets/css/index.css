@@ -234,6 +234,7 @@ section>div~p {
   grid-template-rows: 1fr auto;
   gap: 10px;
   color: var(--text-color);
+  margin: 0;
 }
 
 /* image position and design */ 
@@ -242,7 +243,6 @@ section>div~p {
   grid-column: 1 ;
   align-items: center;
   aspect-ratio: 16/9;
-    margin: auto 0;
 }
 
 /* image position*/ 
@@ -267,6 +267,7 @@ section>div~p {
   grid-template-rows: 1fr auto;
   gap: 10px;
   color: var(--text-color);
+  margin: 0;
 }
 
 /* image position*/
