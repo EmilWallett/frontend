@@ -293,7 +293,7 @@ section>div~p {
       grid-template-rows: repeat(3, auto);
     }
     /* text position*/ 
-    .grid>header {
+    .grid> div {
       grid-column: 1/3;
     }
     /*aligns the imges correctly*/
@@ -303,7 +303,7 @@ section>div~p {
     }
 
     /*changes position of shame header*/
-    .grid>header:last-of-type {
+    .grid>div:last-of-type {
         grid-row: 3;
         grid-column: 1/3;
     }
