@@ -171,7 +171,7 @@ border-top: 4px solid var(--text-color);
 }
 
 /* Fame and Shame <header> text design and position */
-.grid > header {
+.grid > div {
   text-align: center;
   color: var(--text-color);
   background-color: var(--background-color-fame-shame);
@@ -180,14 +180,14 @@ border-top: 4px solid var(--text-color);
 }
 
 /* text design */
-.grid > header > h2 {
+.grid > div > h2 {
   font-size: 3rem;
   margin: 0;
   color: var(--text-color);
 }
 
 /* text  position and design */
-.grid > header > p {
+.grid > div > p {
   font-size: 1rem;
   margin: 1em 3em 1em 3em;
 }
@@ -195,7 +195,7 @@ border-top: 4px solid var(--text-color);
 
 
 /* Shame second <header> position */
-.grid>header:last-of-type {
+.grid>div:last-of-type {
   align-self: center;
   grid-column: 4/6;
   grid-row: 2;
