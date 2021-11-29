@@ -4,15 +4,17 @@
 body {
   margin: 0;
 }
+main {
+  margin-top: 110px;
+}
 
 Header {
+  height: 110px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
   font-family: 'otama.epregular';
-  src: url('Otama-ep-webfont.eot');
-  src: url('Otama-ep-webfont.eot?#iefix') format('embedded-opentype'),
-    url('Otama-ep-webfont.woff2') format('woff2'),
-    url('Otama-ep-webfont.woff') format('woff'),
-    url('Otama-ep-webfont.ttf') format('truetype'),
-    url('Otama-ep-webfont.svg#otama.epregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
