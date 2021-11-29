@@ -4,15 +4,16 @@
 body {
   margin: 0;
 }
-
+main {
+  margin-top: 110px;
+}
 Header {
+  height: 110px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
   font-family: 'otama.epregular';
-  src: url('Otama-ep-webfont.eot');
-  src: url('Otama-ep-webfont.eot?#iefix') format('embedded-opentype'),
-    url('Otama-ep-webfont.woff2') format('woff2'),
-    url('Otama-ep-webfont.woff') format('woff'),
-    url('Otama-ep-webfont.ttf') format('truetype'),
-    url('Otama-ep-webfont.svg#otama.epregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -255,4 +256,38 @@ nav ul li a {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.topnav a {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+
+  .topnav a.icon{
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .topnav a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #myLinks{
+    display: none;
+  }
+
+  nav div a {
+    display: none;
+  }
 }
