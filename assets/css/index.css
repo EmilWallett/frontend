@@ -361,25 +361,3 @@ article > p {
   font-size: 1.1rem;
 }
 
-@media screen and (max-width: 500px) {
-    footer {
-      display:grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-    }
-    
-    footer > img  {
-      grid-row: 1;
-      justify-self: center;
-    }
-
-    footer > a {
-      grid-row: 2;  
-      
-    }
-
-    footer > a:last-of-type {
-      grid-row: 3;
-      justify-self: center;
-    }
-}

@@ -150,13 +150,27 @@ footer img {
   height: 70px;
 }
 
-footer>a~a {
-  margin-left: 20px;
-}
 
-a {
-  text-decoration: none;
-}
+
+@media screen and (max-width: 500px) {
+  footer {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+  footer > img  {
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  footer > a {
+    text-align: center;
+    }
+   footer > a ~ a{
+     text-align: center;
+   }
+  }
 
 /*---underline hover---*/
 nav ul {
